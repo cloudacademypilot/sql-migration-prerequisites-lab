@@ -21,11 +21,11 @@ Open the target SQL Server Overview.
 
 4. Leave the default values and click OK
 
-![DMS](assets/5.png)
+![DMS](assets/4.png)
 
 5. Under Firewall rules, click + Add your client IPv4 address followed by Save:
 
-![DMS](assets/6.png)
+![DMS](assets/5.png)
 
 Then Select Query editor and provide SQL Credentials to run SQL commands:
 - Login: Enter sqladmin
