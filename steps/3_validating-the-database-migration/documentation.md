@@ -28,8 +28,8 @@ You will manually validate all of the table data has been migrated to the target
     ![DMS](assets/6.png)
 
 6. Then Select Query editor and provide SQL Credentials to run SQL commands:
-  - Login: Enter sqladmin
-  - Password: Enter Password@123
+    - Login: Enter sqladmin
+    - Password: Enter Password@123
 
     ![DMS](assets/7.png)
 
