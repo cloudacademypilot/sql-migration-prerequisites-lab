@@ -27,13 +27,13 @@ Open the target SQL Server Overview.
 
 ![DMS](assets/5.png)
 
-Then Select Query editor and provide SQL Credentials to run SQL commands:
+6. Then Select Query editor and provide SQL Credentials to run SQL commands:
 - Login: Enter sqladmin
 - Password: Enter Password@123
 
 ![DMS](assets/7.png)
 
-Execute below SQL Query: 
+7. Execute below SQL Query: 
 
 ``` SQL
 select schema_name(tab.schema_id) + '.' + tab.name as [table],
