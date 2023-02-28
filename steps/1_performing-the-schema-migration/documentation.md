@@ -48,27 +48,27 @@ Select either all databases or specific databases that you want to migrate to Az
 
 2. Provide the **Target Server Name**: targetservernamesjlkt4djbbjr4.database.windows.net
 
-    ![DMS](assets/5.png)
+    ![DMS](assets/6.png)
     
 3. Provide **SQL Username**: sqladmin and **Password**: Password@123 
 
-    ![DMS](assets/6.png)
+    ![DMS](assets/7.png)
     
 4. Select **Next: Select database and schema**.
 
-    ![DMS](assets/7.png)
+    ![DMS](assets/8.png)
     
 5. Select Target database as **TargetDatabaseName1**.
 
-    ![DMS](assets/01.png)
+    ![DMS](assets/9.png)
 
 6. Select Schema source as **Generate from Source**.
 
-    ![DMS](assets/8.png)
+    ![DMS](assets/10.png)
 
 7. Select Next: Summary, review the migration configuration and in the Activity name text box, specify a name Schemaonlymigrationactivity for the migration activity. 
 
-    ![DMS](assets/9.png)
+    ![DMS](assets/11.png)
     
 ## Run the migration
 
