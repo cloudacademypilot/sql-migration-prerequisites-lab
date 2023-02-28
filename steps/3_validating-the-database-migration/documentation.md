@@ -64,5 +64,5 @@ dbo.ErrorLog, 0
 ## Summary
 You have now validated the migration of the database into Azure SQL Database after having performed the schema and data migration activities. 
 
-To learn more about migrating from SQL Server to Azure SQL Database refer to the official documentation[https://learn.microsoft.com/en-ca/azure/dms/tutorial-sql-server-to-azure-sql].
+To learn more about migrating from SQL Server to Azure SQL Database refer to the [official documentation](https://learn.microsoft.com/en-ca/azure/dms/tutorial-sql-server-to-azure-sql).
 
