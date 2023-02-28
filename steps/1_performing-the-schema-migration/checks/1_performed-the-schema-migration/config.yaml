@@ -1,0 +1,6 @@
+title: Performed the Schema Migration
+internal_name: Performed the Schema Migration
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
