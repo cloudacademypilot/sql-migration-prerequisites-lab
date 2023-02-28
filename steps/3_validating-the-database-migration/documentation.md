@@ -25,6 +25,7 @@ You will manually validate all of the table data has been migrated to the target
 5. Under Firewall rules, click + Add your client IPv4 address followed by Save:
 
     ![DMS](assets/5.png)
+    ![DMS](assets/6.png)
 
 6. Then Select Query editor and provide SQL Credentials to run SQL commands:
   - Login: Enter sqladmin
