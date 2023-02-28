@@ -6,32 +6,31 @@ You will manually validate all of the table data has been migrated to the target
 
 ## Instructions
 
-1. Check Target SQL Server Networking Firewall rules and add your client IP address like below.
-Open the target SQL Server Overview.
+1. Check Target SQL Server Networking Firewall rules and add your client IP address like below. Open the target SQL Server Overview.
 
-![DMS](assets/1.png)
+    ![DMS](assets/1.png)
 
 2. Navigate to the Networking on the left side blade.
 
-![DMS](assets/2.png)
+    ![DMS](assets/2.png)
 
 3. Select Add a virtual network rule
 
-![DMS](assets/3.png)
+    ![DMS](assets/3.png)
 
 4. Leave the default values and click OK
 
-![DMS](assets/4.png)
+    ![DMS](assets/4.png)
 
 5. Under Firewall rules, click + Add your client IPv4 address followed by Save:
 
-![DMS](assets/5.png)
+    ![DMS](assets/5.png)
 
 6. Then Select Query editor and provide SQL Credentials to run SQL commands:
-- Login: Enter sqladmin
-- Password: Enter Password@123
+  - Login: Enter sqladmin
+  - Password: Enter Password@123
 
-![DMS](assets/7.png)
+    ![DMS](assets/7.png)
 
 7. Execute below SQL Query: 
 
