@@ -1,0 +1,1 @@
+﻿New-Item -Path 'C:\Test Folder' -ItemType Directory
