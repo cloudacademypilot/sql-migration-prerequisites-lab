@@ -1,1 +1,1 @@
-Invoke-WebRequest 'https://raw.githubusercontent.com/CSALabsAutomation/quickstart-templates/main/azure-sqlvm-migration-service/createfolder.ps1' -OutFile .\createfolderNew.ps1
+Invoke-WebRequest 'https://raw.githubusercontent.com/CSLabsInternal/sql-migration-prerequisites-lab/main/environments/env1/SMF_DMAPreReqAssessCombo_V5.8.ps1' -OutFile .\SMF_DMAPreReqAssessCombo_V5.8.ps1
