@@ -50,7 +50,7 @@
 
 24. Enter ```Y``` to run the data gathering step.
 
-25. Enter ```0```  for Day and Hours.
+25. Enter ```0```  for Days and Hours value.
 
 26. It will perform data gathering and stores the output files in ```C:\Users\sqladmin\output\PerfData``` folder.
 
