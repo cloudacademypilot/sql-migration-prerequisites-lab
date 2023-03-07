@@ -52,13 +52,13 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/6.jpg)
 
-3. Go to **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
+3. File will be downloaded inside **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
 
     ![DMA Assessment](assets/7.jpg)
     
     ![DMA Assessment](assets/8.jpg)
 
-4. Click on **More choices** and then select **use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
     
     ![DMA Assessment](assets/9.jpg)
     
@@ -74,23 +74,27 @@ DBPort | Database Port (e.g. 1433)
 
 ## Exercise 2: Setup powershell scripts and input excel file for DMA assessment
 
-1. Click on **File Explorer** present in Taskbar at the bottom. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path. This folder contains ```DMA-INPUT-FILE.xlsx```, ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` and ```Terminate.ps1```.
+1. Click on **File Explorer** present in Taskbar at the bottom. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path. This folder contains ```DMA-INPUT-FILE.xlsx```, ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` and ```Terminate.ps1``` files.
 
     ![DMA Assessment](assets/14.jpg)
     
     ![DMA Assessment](assets/15.jpg)
+    
+    ![DMA Assessment](assets/16.jpg)
 
 2. Select these files and right-click on the mouse and select **Copy** or press **Ctrl + C**.
 
-    ![DMA Assessment](assets/16.jpg)
+    ![DMA Assessment](assets/17.jpg)
 
 3. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to paste the files in this folder.
 
-    ![DMA Assessment](assets/17.jpg)
-    
     ![DMA Assessment](assets/18.jpg)
+    
+    ![DMA Assessment](assets/19.jpg)
 
 4. Search for ```Office``` in Search bar and open it.
+
+    ![DMA Assessment](assets/20.jpg)
 
 5. Sign into **MS office** using your lab credentials.
 
