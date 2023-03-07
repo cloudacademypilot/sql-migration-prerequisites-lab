@@ -34,7 +34,7 @@ DBUserName | Database User Name (e.g. sa) in case of SQL Server Authentication. 
 DBPassword | Database User Password (e.g. Password123) in case of SQL Server Authentication
 DBPort | Database Port (e.g. 1433)
 
-## Exercise 1: Setup and connect to virtual machine via RDP
+## Exercise 1: Connecting to virtual machine via RDP
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Target{*}```.
 
@@ -68,11 +68,11 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/12.jpg)
 
-5. Now you are inside **virtual machine**.
+5. Now you are inside the **virtual machine**.
 
     ![DMA Assessment](assets/13.jpg)
 
-## Exercise 2: Setup powershell scripts and input excel file for DMA assessment
+## Exercise 2: Copying powershell scripts and input excel file for DMA assessment
 
 1. Click on **File Explorer** present in Taskbar at the bottom. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path. This folder contains ```DMA-INPUT-FILE.xlsx```, ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` and ```Terminate.ps1``` files.
 
@@ -91,51 +91,150 @@ DBPort | Database Port (e.g. 1433)
     ![DMA Assessment](assets/18.jpg)
     
     ![DMA Assessment](assets/19.jpg)
+    
+## Exercise 3: Preparing the Input excel file
 
-4. Search for ```Office``` in Search bar and open it.
+1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
 
     ![DMA Assessment](assets/20.jpg)
 
-5. Sign into **MS office** using your lab credentials.
+2. Click **Sign in** and sign into **MS office** using your lab credentials.
 
-6. Select **Upload and open** option to open ```DMA-INPUT-FILE``` file. It will be opened in the browser.
+    ![DMA Assessment](assets/21.jpg)
 
-7. You need to edit this excel file by changing ```Computer Name```, ```DBUserName``` and ```DBPassword``` columns. 
+3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```DMA-INPUT-FILE.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
 
-8. **DBUserName** should be ```sqladmin``` and  **DBPassword** should be ```Mail@123```.
+    ![DMA Assessment](assets/22.jpg)
+    
+    ![DMA Assessment](assets/23.jpg)
 
-9. To get the **Computer name**, go to your resource group and copy the virtual machine name starting with ```Source{*}```. And paste it in the excel replacing **localhost**.
+4. This is the sample input file. You need to edit the contents of the excel file ```Computer Name```, ```DBUserName``` and ```DBPassword``` columns and make sure other columns are correct. 
 
-10. Select **File** and then **Save As** and click **Download a copy**. 
+    ![DMA Assessment](assets/24.jpg)
 
-11. Go to **Downloads** folder in virtual machine and copy the excel and replace it with existing ```DMA-INPUT-FILE```. Please make sure that the file name should not be changed.
+5. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace```12345``` with  ```Mail@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
 
-## Exercise 3: Run DMA assessment powershell script
+    ![DMA Assessment](assets/25.jpg)
 
-1. Right click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` and select **Run with powershell** to run the powershell script.
+6. To get the **Computer name**, go back to the azure portal opened in your local machine and inside resource group, copy the virtual machine name starting with ```Source{*}```. And switch back to virtual machine and paste it in the excel replacing **localhost**. Ensure the Computer Names are correct and connectivity exists between the virtual machine which runs the DMA assessment and Computer Name provided in the column.
+
+    ![DMA Assessment](assets/26.jpg)
+    
+    ![DMA Assessment](assets/27.jpg)
+
+7. Ensure the **SQL SERVER Product Name** is one of the below given values:
+   - Microsoft SQL Server 2022
+   - Microsoft SQL Server 2019
+   - Microsoft SQL Server 2017
+   - Microsoft SQL Server 2016
+   - Microsoft SQL Server 2014
+   - Microsoft SQL Server 2012
+   - Microsoft SQL Server 2008
+
+    ![DMA Assessment](assets/28.jpg)
+ 
+8. Ensure that **Authentication type** is either **Windows Authentication** or **SQL Server Authentication**.
+
+    ![DMA Assessment](assets/29.jpg)
+
+9. Ensure Database ports are correct and can connect to SQL Server instance with this port. 
+
+    ![DMA Assessment](assets/30.jpg)
+
+10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
+
+    ![DMA Assessment](assets/31.jpg)
+    
+    ![DMA Assessment](assets/32.jpg)
+
+11. Open **File explorer** and Go to **Downloads** folder and select ```DMA-INPUT-FILE.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
+
+    ![DMA Assessment](assets/33.jpg)
+    
+    ![DMA Assessment](assets/34.jpg)
+
+## Exercise 4: Runing DMA assessment powershell script
+
+1. In ```C:\Users\sqladmin``` path, right-click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script and select **Run with PowerShell** to run the script.
+
+    ![DMA Assessment](assets/35.jpg)
 
 2. Now **Windows powershell** will open and ask for your input.
 
-3. Give ```2``` as value and hit enter to run DMA Assessment.
+    ![DMA Assessment](assets/36.jpg)
 
+3. Give ```2``` as input value and hit enter to perform DMA Assessment. After triggering the automation all the support folders( Archive , output , Downloads etc. ) will be created automatically by the automation script in the ```C:\Users\sqladmin``` folder. 
+
+    ![DMA Assessment](assets/37.jpg)
+    
+    ![DMA Assessment](assets/38.jpg)
+    
 > Note: .Net 4.8, .Net Core and DMA are required for this assessment.  
 
-4. **.Net 4.8** is already available in the virtual machine. So, it will ask for your input to install **DMA**. Enter ```Y```.
+4. **.Net 4.8** is already available in the virtual machine. So, it will ask for your input to install **DMA**. Enter ```Y``` to download & install the DMA 5.6.
 
-5. Once DMA is installed, it will ask for your input to install **.Net Core**. Enter ```Y```.
+    ![DMA Assessment](assets/39.jpg)
 
-6. After all the requirements are installed, DMA assessment will run and store the output in ```C:\Users\sqladmin\output``` folder.
+5. Once DMA is installed, it will check for **.Net Core** availability and ask for your input to install **.Net Core**. Enter ```Y``` to install .Net Core.
 
-7. Again you need to run the script to perform data gathering. Right click on ```SMF_DMAPreReqAssessCombo_V5.8``` and select **Run with powershell**.
+    ![DMA Assessment](assets/40.jpg)
 
-8. Give ```3``` as input to select perform data gathering.
+6. Next it will check for ImportExcel PowerShell module and then install it.
 
-9. Enter ```Y``` to run the data gathering step.
+    ![DMA Assessment](assets/41.jpg)
 
-10. Enter ```0```  for Days and Hours value.
+7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment and SKU performance results are available as shown below.
 
-11. It will perform data gathering and stores the output files in ```C:\Users\sqladmin\output\PerfData``` folder.
+    ![DMA Assessment](assets/43.jpg)
 
+8. Press any key to continue.
 
+    ![DMA Assessment](assets/42.jpg)
 
+9. Again you need to run the script to Perform performance data gathering. In ```C:\Users\sqladmin``` path, right-click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script and select **Run with PowerShell** to run the script.
 
+    ![DMA Assessment](assets/35.jpg)
+
+10. Give ```3``` as input value to select Perform performance data gathering.
+
+    ![DMA Assessment](assets/44.jpg)
+
+11. It will again check for all the prerequisites and ask for your input. Enter ```Y``` to continue performance data collection. 
+
+    ![DMA Assessment](assets/45.jpg)
+
+12. Upon entering ```Y``` the console will ask for two additional parameters:
+   
+   - Please Provide the Data Collection duration in Day/s – Here , please put any value between 0 to 15 .
+> Note : There might be a situation where user may want to run this below 24 hours , in that situation user should put 0.
+In the below example we put the day range as 2.
+
+   ![DMA Assessment](assets/46.jpg)
+    
+   - Next the console will ask Hour value (Please Provide the Data Collection duration Hours) –
+Here , please put any value between 0 to 23 . and press enter.
+> Note : If you put the Day value as 0 , please do not put the Hour value as 0 ( It should be anything between 1-23 )
+In the below example we put the hour range as 1.
+
+   ![DMA Assessment](assets/47.jpg)
+
+13. After that the process will initiate. The process will continue to run as per the time range provided by the user in the last step and terminate automatically (Note – User also can terminate the process by pressing enter key).
+
+    ![DMA Assessment](assets/48.jpg)
+
+This will allow the performance data to be collected to select the best Azure SQL Database, SQL Managed Instance, or SQL Server on Azure VM target and SKU for your database. Database Migration Assistant (DMA) helps address these questions and make your database migration experience easier by providing these SKU recommendations. It is recommended that the performance data gathering is run for minimum four hours during the peak SQL Server workloads.
+
+After running for a specific period of time, the process will stop executing on its own as per the Day/Hour values provided by the user, otherwise Press Enter Key in the window where the script is running.
+
+14. Press enter after few minutes to terminate the process. It will bring up a pop up window where the DMA assessment and SKU performance results are available.
+
+    ![DMA Assessment](assets/43.jpg)
+    
+    
+    
+    
+    
+    
+    
+    
+    
