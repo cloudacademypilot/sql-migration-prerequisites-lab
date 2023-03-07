@@ -169,7 +169,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/38.jpg)
     
-> Note: .Net 4.8, .Net Core and DMA are required for this assessment.  
+> Note: .Net 4.8, .Net Core, DMA and ImportExcel PS module are required for this assessment.  
 
 4. **.Net 4.8** is already available in the virtual machine. So, it will ask for your input to install **DMA**. Enter ```Y``` to download & install the DMA 5.6.
 
