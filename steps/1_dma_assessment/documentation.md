@@ -259,7 +259,9 @@ In the below example we put the hour range as 1.
 
 This will allow the performance data to be collected to select the best Azure SQL Database, SQL Managed Instance, or SQL Server on Azure VM target and SKU for your database. Database Migration Assistant (DMA) helps address these questions and make your database migration experience easier by providing these SKU recommendations. It is recommended that the performance data gathering is run for minimum four hours during the peak SQL Server workloads.
 
-14. After running for a specific period of time, the process will stop executing on its own as per the Day/Hour values provided by the user, otherwise Press Enter Key in the window where the script is running. It will bring up a pop up window where the DMA assessment and SKU performance results are available.
+After running for a specific period of time, the process will stop executing on its own as per the Day/Hour values provided by the user, otherwise Press Enter Key in the window where the script is running.
+
+14. Wait for few minutes and press enter to terminate. It will bring up a pop up window where the DMA assessment and SKU performance results are available.
 
     ![DMA Assessment](assets/43.jpg)
     
