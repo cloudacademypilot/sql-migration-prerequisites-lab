@@ -317,7 +317,7 @@
                             "fileUris": "[variables('scriptFiles')]"
                         },
                         "protectedSettings": {
-                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('scriptLocation'))]"
+                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('scriptLocation'), ' ', variables('scriptParameters'))]"
                         }
                     }
                 }
