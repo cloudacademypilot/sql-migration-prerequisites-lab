@@ -44,7 +44,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/3.jpg)
 
-2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to the download.
+2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.
 
     ![DMA Assessment](assets/4.jpg)
     
