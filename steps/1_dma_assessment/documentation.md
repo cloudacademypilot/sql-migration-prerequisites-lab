@@ -2,11 +2,35 @@
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Target{*}```.
 
+    ![DMA Assessment](assets/1.jpg)
+    
+    ![DMA Assessment](assets/2.jpg)
+    
+    ![DMA Assessment](assets/3.jpg)
+
 2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to the download.
+
+    ![DMA Assessment](assets/4.jpg)
+    
+    ![DMA Assessment](assets/5.jpg)
+    
+    ![DMA Assessment](assets/6.jpg)
 
 3. Go to **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
 
+    ![DMA Assessment](assets/7.jpg)
+
 4. Click on **More choices** and then select **use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+
+    ![DMA Assessment](assets/8.jpg)
+    
+    ![DMA Assessment](assets/9.jpg)
+    
+    ![DMA Assessment](assets/10.jpg)
+    
+    ![DMA Assessment](assets/11.jpg)
+    
+    ![DMA Assessment](assets/12.jpg)
 
 5. Now you are inside **virtual machine**. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path in vm file manager.
 
