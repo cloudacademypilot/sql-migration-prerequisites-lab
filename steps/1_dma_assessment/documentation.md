@@ -231,7 +231,7 @@ After running for a specific period of time, the process will stop executing on 
 
     ![DMA Assessment](assets/43.jpg)
     
-    
+15. Press Enter key.
     
     
     
