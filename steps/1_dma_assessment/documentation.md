@@ -26,7 +26,7 @@
   - Schema of databases
   - Data and users
   - Server roles
-- SQL Server and Windows logins
+  - SQL Server and Windows logins
 
 - After a successful migration, applications can connect to the target SQL Server databases seamlessly.
 
