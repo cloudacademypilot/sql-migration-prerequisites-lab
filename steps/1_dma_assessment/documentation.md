@@ -19,10 +19,10 @@
 3. Go to **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
 
     ![DMA Assessment](assets/7.jpg)
+    
+    ![DMA Assessment](assets/8.jpg)
 
 4. Click on **More choices** and then select **use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
-
-    ![DMA Assessment](assets/8.jpg)
     
     ![DMA Assessment](assets/9.jpg)
     
