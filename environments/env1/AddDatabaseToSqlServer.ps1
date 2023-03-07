@@ -65,14 +65,14 @@ $credentials = New-Object System.Management.Automation.PSCredential ($username, 
 Restore-SqlDatabase `
 	-ReplaceDatabase `
 	-ServerInstance . `
-	-Database "SampleDatabaseForOnline" `
+	-Database "SampleDatabase1" `
 	-BackupFile "$pwd\AdventureWorksLT2019.bak" `
 	-RelocateFile $relocateFiles `
 	-Credential $credentials; 
 Restore-SqlDatabase `
 	-ReplaceDatabase `
 	-ServerInstance . `
-	-Database "SampleDatabaseForOffline" `
+	-Database "SampleDatabase2" `
 	-BackupFile "$pwd\AdventureWorksLT2019.bak" `
 	-RelocateFile $relocateFilesForoffline `
 	-Credential $credentials;
