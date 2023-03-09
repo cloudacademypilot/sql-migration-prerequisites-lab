@@ -348,9 +348,7 @@ After running for a specific period of time, the process will stop executing on 
 ## Exercise 6: Executing SQL queries on source database to increase complexity and create compatibility issues
 
 1. Click on **New Query** and Copy-Paste the following query and click **Execute**. 
-
-    ![DMA Assessment](assets/65.jpg)
-
+    
     ```
     use SampleDatabase1
     Go
@@ -363,9 +361,11 @@ After running for a specific period of time, the process will stop executing on 
     end
     GO
     ```
-2. Click on **New Query** and Copy-Paste the following query and click **Execute**.
-    
     ![DMA Assessment](assets/65.jpg)
+    
+    ![DMA Assessment](assets/66.jpg)
+
+2. Click on **New Query** and Copy-Paste the following query and click **Execute**.    
     
     ```
     use SampleDatabase1
@@ -379,10 +379,13 @@ After running for a specific period of time, the process will stop executing on 
     end
     Go
     ```
+
+    ![DMA Assessment](assets/67.jpg)
+    
+    ![DMA Assessment](assets/68.jpg)
+
 3. Click on **New Query** and Copy-Paste the following query and click **Execute**.    
-    
-    ![DMA Assessment](assets/65.jpg)
-    
+        
     ```
     use SampleDatabase1
     Go
@@ -393,23 +396,31 @@ After running for a specific period of time, the process will stop executing on 
     )
     Go
     ```
+
+    ![DMA Assessment](assets/69.jpg)
+    
+    ![DMA Assessment](assets/70.jpg)
+
 4. Click on **New Query** and Copy-Paste the following query and click **Execute**.    
-    
-    ![DMA Assessment](assets/65.jpg)
-    
+        
     ```
     ALTER DATABASE SampleDatabase1 SET ENABLE_BROKER WITH ROLLBACK IMMEDIATE
     GO
     ```
 
-5. Now again go back to Target virtual machine and run ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script following the instructions of previous exercise **Exercise 4**.
+    ![DMA Assessment](assets/71.jpg)
+    
+    ![DMA Assessment](assets/72.jpg)
+
+5. Now again go back to Target virtual machine and perform all the instructions of **Exercise 4** again.
 
 ## Exercise 7: Comparing compatibility 
 
 Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 6**(after creating compatibility issues).
 
+1. Output of the previous runs will be moved to **Archive** folder inside ```C:\Users\sqladmin\Archive``` path.
 
-
+    ![DMA Assessment](assets/73.jpg)
 
 
 
