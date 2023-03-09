@@ -265,7 +265,7 @@ This will allow the performance data to be collected to select the best Azure SQ
 
 After running for a specific period of time, the process will stop executing on its own as per the Day/Hour values provided by the user, otherwise Press Enter Key in the window where the script is running.
 
-14. Wait for few minutes and press enter to terminate. It will bring up a pop up window where the DMA assessment and SKU performance results are available.
+14. Wait for 2-3 minutes and press enter to terminate. It will bring up a pop up window where the SKU performance results are available.
 
     ![DMA Assessment](assets/43.jpg)
     
