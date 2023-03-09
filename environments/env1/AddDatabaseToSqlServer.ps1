@@ -76,3 +76,8 @@ Restore-SqlDatabase `
 	-BackupFile "$pwd\AdventureWorksLT2019.bak" `
 	-RelocateFile $relocateFilesForoffline `
 	-Credential $credentials;
+	
+Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+Restart-Computer
