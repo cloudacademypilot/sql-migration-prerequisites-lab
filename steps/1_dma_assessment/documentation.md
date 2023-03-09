@@ -221,7 +221,7 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/41.jpg)
 
-7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment and SKU performance results are available as shown below.
+7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment result is available as shown below.
 
     ![DMA Assessment](assets/43.jpg)
 
