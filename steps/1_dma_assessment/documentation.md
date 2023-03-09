@@ -267,9 +267,72 @@ After running for a specific period of time, the process will stop executing on 
     
 15. Press Enter key.
     
+## Exercise 5: Increasing complexity on the source database
+
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Source{*}```.
     
+2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.   
     
+3. File will be downloaded inside **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.    
     
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+
+5. Now you are inside the **virtual machine**.
+6. Search for ```SSMS``` in the **Search bar** at the bottom and click **Open**.
+7. You will see two databases by default: ```SampleDatabase1``` and ```SampleDatabase2```. Please refresh if you are not able to see the databases.
+8. Click on **New Query** and exceute the following each queries to increase complexity and create compatibility issues.
+
+    ```
+    use SampleDatabase1
+    Go
+    create proc Display_Files_CDrive
+    as
+    begin
+    DECLARE @CommandL1 varchar(512)
+    SET @CommandL1 = 'dir C:\'
+    exec master..xp_cmdshell @CommandL1
+    end
+    GO
+    ```
+
+    ```
+    use SampleDatabase1
+    Go
+    Create proc uspPrintShift
+    as
+    begin
+    select distinct sdb1.Name  from SampleDatabase1.[SalesLT].[Product] sdb1
+    left join SampleDatabase2.[SalesLT].[Product] sdb2
+    on sdb2.ProductID =sdb1.ProductID
+    end
+    Go
+    ```
     
+    ```
+    use SampleDatabase1
+    Go
+    Create table SalesLT.Job_Description
+    (
+    Jobid int,
+    jobDescription Text
+    )
+    Go
+    ```
     
-    
+    ```
+    ALTER DATABASE SampleDatabase1 SET ENABLE_BROKER WITH ROLLBACK IMMEDIATE
+    GO
+    ```
+
+9. Now again go back to Target virtual machine and run ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script following the instructions of previous exercise **Exercise 4**.
+
+## Exercise 6: Comparing compatibility 
+
+Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 5**(after creating compatibility issues).
+
+
+
+
+
+
+
