@@ -46,6 +46,10 @@ This lab step is to provide the detailed procedure/step to use the **Data Migrat
     - To discover the compatibility issues that block migrating on-premises SQL Server database(s) to Azure SQL Database
     - To discover the compatibility issues that block migrating on-premises SQL Server database(s) to Azure SQL Managed Instance
     - To discover the compatibility issues that block migrating on-premises SQL Server database(s) to SQL Server on Azure Virtual Machines 
+- Compatibility issues - Data Migration Assistant also identifies compatibility issues related to the following areas:
+    - Breaking changes: The specific schema objects that may break the functionality migrating to the target database. We recommend fixing these schema objects after the database migration.
+    - Behavioral changes: The schema objects reported may continue to work, but they may exhibit a different behavior, for example performance degradation.
+    - Informational issues: These objects won't impact the migration but may have been deprecated from feature SQL Server releases.
 - And to initiate & terminate the data-collection process for the target SKU assessment.
 
 ## Prerequisites for DMA Assessment
