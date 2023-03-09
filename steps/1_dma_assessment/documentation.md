@@ -271,20 +271,63 @@ After running for a specific period of time, the process will stop executing on 
     
 15. Press Enter key.
     
-## Exercise 5: Increasing complexity on the source database
+## Exercise 5: Connecting to Source Virtual Machine
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Source{*}```.
+
+    ![DMA Assessment](assets/1.jpg)
+    
+    ![DMA Assessment](assets/2.jpg)
+    
+    ![DMA Assessment](assets/50.jpg)
     
 2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.   
+
+    ![DMA Assessment](assets/51.jpg)
     
+    ![DMA Assessment](assets/52.jpg)
+    
+    ![DMA Assessment](assets/53.jpg) 
+
 3. File will be downloaded inside **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.    
+
+    ![DMA Assessment](assets/54.jpg)
     
+    ![DMA Assessment](assets/55.jpg) 
+
 4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
 
-5. Now you are inside the **virtual machine**.
-6. Search for ```SSMS``` in the **Search bar** at the bottom and click **Open**.
-7. You will see two databases by default: ```SampleDatabase1``` and ```SampleDatabase2```. Please refresh if you are not able to see the databases.
-8. Click on **New Query** and exceute the following each queries to increase complexity and create compatibility issues.
+    ![DMA Assessment](assets/56.jpg) 
+    
+    ![DMA Assessment](assets/57.jpg) 
+    
+    ![DMA Assessment](assets/58.jpg)
+    
+    ![DMA Assessment](assets/59.jpg) 
+
+5. Now you are inside the **virtual machine**. **Server Manager** page will pop up. Please close it.
+
+    ![DMA Assessment](assets/60.jpg)    
+
+6. Search for ```SSMS``` in the **Search bar** at the bottom and Open it.
+
+    ![DMA Assessment](assets/61.jpg)
+
+7. **Connect to Server** page will pop up. Click **Connect** to connect to the server. 
+
+    ![DMA Assessment](assets/62.jpg)
+
+8. Expand **Databases** by clicking on ⊕. You will see two databases by default: ```SampleDatabase1``` and ```SampleDatabase2```. Please refresh if you are not able to see the databases.
+
+    ![DMA Assessment](assets/63.jpg)
+    
+    ![DMA Assessment](assets/64.jpg)
+
+## Exercise 6: Executing SQL queries on source database to increase complexity and create compatibility issues
+
+1. Click on **New Query** and Copy-Paste the following query and click **Execute**. 
+
+    ![DMA Assessment](assets/65.jpg)
 
     ```
     use SampleDatabase1
@@ -298,7 +341,10 @@ After running for a specific period of time, the process will stop executing on 
     end
     GO
     ```
-
+2. Click on **New Query** and Copy-Paste the following query and click **Execute**.
+    
+    ![DMA Assessment](assets/65.jpg)
+    
     ```
     use SampleDatabase1
     Go
@@ -311,6 +357,9 @@ After running for a specific period of time, the process will stop executing on 
     end
     Go
     ```
+3. Click on **New Query** and Copy-Paste the following query and click **Execute**.    
+    
+    ![DMA Assessment](assets/65.jpg)
     
     ```
     use SampleDatabase1
@@ -322,17 +371,20 @@ After running for a specific period of time, the process will stop executing on 
     )
     Go
     ```
+4. Click on **New Query** and Copy-Paste the following query and click **Execute**.    
+    
+    ![DMA Assessment](assets/65.jpg)
     
     ```
     ALTER DATABASE SampleDatabase1 SET ENABLE_BROKER WITH ROLLBACK IMMEDIATE
     GO
     ```
 
-9. Now again go back to Target virtual machine and run ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script following the instructions of previous exercise **Exercise 4**.
+5. Now again go back to Target virtual machine and run ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script following the instructions of previous exercise **Exercise 4**.
 
-## Exercise 6: Comparing compatibility 
+## Exercise 7: Comparing compatibility 
 
-Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 5**(after creating compatibility issues).
+Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 6**(after creating compatibility issues).
 
 
 
