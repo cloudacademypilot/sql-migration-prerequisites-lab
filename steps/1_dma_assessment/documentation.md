@@ -270,7 +270,29 @@ After running for a specific period of time, the process will stop executing on 
     ![DMA Assessment](assets/49.jpg)
     
 15. Press Enter key.
+
+16.  Search for ```powershell``` in the **Search bar** at the bottom and Click on **Run as Administrator**.
+
+     ![DMA Assessment](assets/49-1.jpg)
+
+17. Navigate to **C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole** path by entering ```cd 'C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole'``` 
+
+    ![DMA Assessment](assets/49-2.jpg)
+
+18. Execute the following command to generate Azure SQL SKU Recommendation Report.
+
+    ![DMA Assessment](assets/49-3.jpg)
     
+    ![DMA Assessment](assets/49-4.jpg)
+    
+    ```
+    .\SqlAssessment.exe GetSkuRecommendation --outputFolder C:\Users\sqladmin\output\PerfData --targetPlatform AzureSqlManagedInstance
+    ```
+
+19. Go to ```C:\Users\sqladmin\output\PerfData``` path, you will see two report files and three csv files.
+
+    ![DMA Assessment](assets/49-5.jpg)
+
 ## Exercise 5: Connecting to Source Virtual Machine
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Source{*}```.
@@ -305,7 +327,7 @@ After running for a specific period of time, the process will stop executing on 
     
     ![DMA Assessment](assets/59.jpg) 
 
-5. Now you are inside the **virtual machine**. **Server Manager** page will pop up. Please close it.
+5. Now you are inside the source **virtual machine**. **Server Manager** window will pop up. Please close it.
 
     ![DMA Assessment](assets/60.jpg)    
 
@@ -313,7 +335,7 @@ After running for a specific period of time, the process will stop executing on 
 
     ![DMA Assessment](assets/61.jpg)
 
-7. **Connect to Server** page will pop up. Click **Connect** to connect to the server. 
+7. **Connect to Server** window will pop up. Click **Connect** to connect to the server. 
 
     ![DMA Assessment](assets/62.jpg)
 
