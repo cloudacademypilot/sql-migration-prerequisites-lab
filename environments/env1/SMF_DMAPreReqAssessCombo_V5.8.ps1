@@ -1118,14 +1118,11 @@ if($SKUNeeded.Contains($taskToPerform))
             exitCode
         }
 }
-$SKUNeed = "1", "2"
-if($SKUNeed.Contains($taskToPerform))
-{
-Write-Host "Server Name : " $namelist
-az login -u student-1545-1760379@labscloudacademy.onmicrosoft.com -p Ca1_xFfgb8W0
+
 $username = "student-1545-1760379@labscloudacademy.onmicrosoft.com"
 $password= "Ca1_xFfgb8W0"
-$SecurePassword = ConvertTo-SecureString “$password” -AsPlainText -Force
+az login -u $username -p $password
+$SecurePassword = ConvertTo-SecureString Â“$passwordÂ” -AsPlainText -Force
 $credentials = New-Object System.Management.Automation.PSCredential($username, $SecurePassword)
 Login-AzAccount -Credential $credentials
 $resourceGroupNames = Get-AzResourceGroup
@@ -1134,7 +1131,13 @@ $StorageAccountNames = Get-AzStorageAccount -ResourceGroupName $resourceGroupNam
 $StorageAccountName = $StorageAccountNames[0].StorageAccountName
 
 $Context = $StorageAccountNames[0].Context
-$ContainerName = 'backup1'
+$ContainerName = 'backup'
+
+$SKUNeed = "1", "2"
+if($SKUNeed.Contains($taskToPerform))
+{
+Write-Host "Server Name : " $namelist
+
 # upload a file to the default account (inferred) access tier
 $Blob1HT = @{
   File             = 'C:\Users\sqladmin\output\'+$namelist+'_MSSQLSERVER_AzureSqlDatabase.csv'
@@ -1149,19 +1152,7 @@ Set-AzStorageBlobContent @Blob1HT
 $SKUNeed1 = "1", "3"
 if($SKUNeed1.Contains($taskToPerform))
 {
-az login -u student-1545-1760379@labscloudacademy.onmicrosoft.com -p Ca1_xFfgb8W0
-$username = "student-1545-1760379@labscloudacademy.onmicrosoft.com"
-$password= "Ca1_xFfgb8W0"
-$SecurePassword = ConvertTo-SecureString “$password” -AsPlainText -Force
-$credentials = New-Object System.Management.Automation.PSCredential($username, $SecurePassword)
-Login-AzAccount -Credential $credentials
-$resourceGroupNames = Get-AzResourceGroup
-$resourceGroupName = $resourceGroupNames[0].ResourceGroupName
-$StorageAccountNames = Get-AzStorageAccount -ResourceGroupName $resourceGroupName
-$StorageAccountName = $StorageAccountNames[0].StorageAccountName
 
-$Context = $StorageAccountNames[0].Context
-$ContainerName = 'backup1'
 # upload a file to the default account (inferred) access tier
 $Blob1HT = @{
   File             = 'C:\Users\sqladmin\output\'+$namelist+',MSSQLSERVER_PerformanceAggregated_Counters.csv'
