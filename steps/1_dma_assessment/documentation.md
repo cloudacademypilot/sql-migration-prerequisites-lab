@@ -160,14 +160,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/27.jpg)
 
-7. Ensure the **SQL SERVER Product Name** is one of the below given values:
-   - Microsoft SQL Server 2022
-   - Microsoft SQL Server 2019
-   - Microsoft SQL Server 2017
-   - Microsoft SQL Server 2016
-   - Microsoft SQL Server 2014
-   - Microsoft SQL Server 2012
-   - Microsoft SQL Server 2008
+7. Replace ```Microsoft SQL Server 2017``` with ```Microsoft SQL Server 2019``` in  **SQL SERVER Product Name** column.
 
     ![DMA Assessment](assets/28.jpg)
  
