@@ -74,7 +74,7 @@ DBPort | Database Port (e.g. 1433)
 
 ## Exercise 1: Connecting to virtual machine via RDP
 
-1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Target{*}```.
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```DMA```.
 
     ![DMA Assessment](assets/1.jpg)
     
@@ -420,31 +420,27 @@ After running for a specific period of time, the process will stop executing on 
     
     ![DMA Assessment](assets/72.jpg)
 
-5. Now again go back to Target virtual machine and perform all the instructions of **Exercise 4** again.
+5. Now again go back to DMA virtual machine and perform all the instructions of **Exercise 4** again.
 
 ## Exercise 7: Comparing compatibility 
 
 Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 6**(after creating compatibility issues).
 
-1. Output of the previous runs will be moved to **Archive** folder inside ```C:\Users\sqladmin\Archive``` path. 
-
-    ![DMA Assessment](assets/73.jpg)
-
-2. Open the folder where you copied the outputs in **Exercise 4**. And open the DMA file.
+1. Open the folder where you copied the outputs in **Exercise 4**. And open the DMA file.
 
     ![DMA Assessment](assets/74.jpg)
     
-3. Here you can see there are no compatibiliy issues with both databases.
+2. Here you can see there are no compatibiliy issues with both databases.
     
     ![DMA Assessment](assets/75.jpg)
     
     ![DMA Assessment](assets/76.jpg)
 
-4. Now open the folder where you copied the outputs in **Exercise 6** after executing SQL queries. And open the DMA file.
+3. Now open the folder where you copied the outputs in **Exercise 6** after executing SQL queries. And open the DMA file.
 
     ![DMA Assessment](assets/77.jpg)
 
-5. Here you can see there are 3 compatibiliy issues with **SampleDatabase1** database beacuse we executed the queries only on SampleDatabase1 database. And there are no compatibiliy issues with **SampleDatabase2** database as we have not done anything on this database. 
+4. Here you can see there are 3 compatibiliy issues with **SampleDatabase1** database beacuse we executed the queries only on SampleDatabase1 database. And there are no compatibiliy issues with **SampleDatabase2** database as we have not done anything on this database. 
 
     ![DMA Assessment](assets/78.jpg)
     
