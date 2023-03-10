@@ -147,7 +147,7 @@
         "contributorRoleDefinitionId":"B24988ac-6180-42a0-ab88-20f7382dd24c",
         "DMSServiceName": "[concat('DMS', uniqueString(resourceGroup().id))]",
         "sourceServerName": "[take(concat('Source', uniqueString(resourceGroup().id)), 15)]",
-        "targetServerName": "[take(concat('Target', uniqueString(resourceGroup().id)), 15)]",
+        "targetServerName": "[take(concat('DMA', uniqueString(resourceGroup().id)), 15)]",
         "scriptLocation": "AddDatabaseToSqlServer.ps1",
         "scriptLocation1": "uploadfiles.ps1",
         "scriptLocationToUploadFile": "UploadBlobFile.ps1",
