@@ -426,10 +426,27 @@ After running for a specific period of time, the process will stop executing on 
 
 Here we will compare the output of **Exercise 4**(without any compatibility issues) and **Exercise 6**(after creating compatibility issues).
 
-1. Output of the previous runs will be moved to **Archive** folder inside ```C:\Users\sqladmin\Archive``` path.
+1. Output of the previous runs will be moved to **Archive** folder inside ```C:\Users\sqladmin\Archive``` path. 
 
     ![DMA Assessment](assets/73.jpg)
 
+2. Open the folder where you copied the outputs in **Exercise 4**. And open the DMA file.
 
+    ![DMA Assessment](assets/74.jpg)
+    
+3. Here you can see there are no compatibiliy issues with both databases.
+    
+    ![DMA Assessment](assets/75.jpg)
+    
+    ![DMA Assessment](assets/76.jpg)
 
+4. Now open the folder where you copied the outputs in **Exercise 6** after executing SQL queries. And open the DMA file.
+
+    ![DMA Assessment](assets/77.jpg)
+
+5. Here you can see there are 3 compatibiliy issues with **SampleDatabase1** database beacuse we executed the queries only SampleDatabase1 database. And there are no compatibiliy issues with SampleDatabase2 database as we have not done anything on this database. 
+
+    ![DMA Assessment](assets/78.jpg)
+    
+    ![DMA Assessment](assets/79.jpg)
 
