@@ -225,28 +225,34 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/43.jpg)
 
-8. Press any key to continue.
+8. Go to ```C:\Users\sqladmin\output``` path and copy all the files and paste it in any other folder. You need them in next exercise.
+
+    ![DMA Assessment](assets/43-1.jpg)
+    
+    ![DMA Assessment](assets/43-2.jpg)
+
+9. Go back to **Windows Powershell** and Press any key to continue. It will close the Powershell window.
 
     ![DMA Assessment](assets/42.jpg)
 
-9. Again you need to run the script to Perform performance data gathering. In ```C:\Users\sqladmin``` path, right-click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script and select **Run with PowerShell** to run the script.
+10. Again you need to run the script to Perform performance data gathering. In ```C:\Users\sqladmin``` path, right-click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script and select **Run with PowerShell** to run the script.
 
     ![DMA Assessment](assets/35.jpg)
 
-10. Give ```3``` as input value to select Perform performance data gathering.
+11. Give ```3``` as input value to select Perform performance data gathering.
 
     ![DMA Assessment](assets/44.jpg)
 
-11. It will again check for all the prerequisites and ask for your input. Enter ```Y``` to continue performance data collection. 
+12. It will again check for all the prerequisites and ask for your input. Enter ```Y``` to continue performance data collection. 
 
     ![DMA Assessment](assets/45.jpg)
 
-12. Upon entering ```Y``` the console will ask for two additional parameters:
+13. Upon entering ```Y``` the console will ask for two additional parameters:
    
    - Please Provide the Data Collection duration in Day/s – Here , please put any value between 0 to 15 .
 > Note : There might be a situation where user may want to run this for less than 24 hours , in that situation user should put 0.
 
-In the below example we put the day range as 1.
+In the below example we put the day range as 0.
 
    ![DMA Assessment](assets/46.jpg)
     
@@ -257,7 +263,7 @@ In the below example we put the hour range as 1.
 
    ![DMA Assessment](assets/47.jpg)
 
-13. After that the process will initiate. The process will continue to run as per the time range provided by the user in the last step and terminate automatically (Note – User also can terminate the process by pressing enter key).
+14. After that the process will initiate. The process will continue to run as per the time range provided by the user in the last step and terminate automatically (Note – User also can terminate the process by pressing enter key).
 
     ![DMA Assessment](assets/48.jpg)
 
@@ -265,31 +271,33 @@ This will allow the performance data to be collected to select the best Azure SQ
 
 After running for a specific period of time, the process will stop executing on its own as per the Day/Hour values provided by the user, otherwise Press Enter Key in the window where the script is running.
 
-14. Wait for 2-3 minutes and press enter to terminate. It will bring up a pop up window where the SKU performance results are available.
+15. Wait for 1-2 minutes and press enter to terminate the process. It will bring up a pop up window where the SKU performance results are available.
 
     ![DMA Assessment](assets/49.jpg)
     
-15. Press Enter key.
+16. Go back to **Windows Powershell** and Press any key to continue. It will close the Powershell window.
 
-16.  Search for ```powershell``` in the **Search bar** at the bottom and Click on **Run as Administrator**.
+    ![DMA Assessment](assets/43-3.jpg)
+
+17.  Search for ```powershell``` in the **Search bar** at the bottom and Click on **Run as Administrator**.
 
      ![DMA Assessment](assets/49-1.jpg)
 
-17. Navigate to **C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole** path by entering ```cd 'C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole'``` 
+18. Navigate to **C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole** path by entering ```cd 'C:\Program Files\Microsoft Data Migration Assistant\SqlAssessmentConsole'``` 
 
     ![DMA Assessment](assets/49-2.jpg)
 
-18. Execute the following command to generate Azure SQL SKU Recommendation Report.
-
-    ![DMA Assessment](assets/49-3.jpg)
-    
-    ![DMA Assessment](assets/49-4.jpg)
+19. Execute the following command to generate Azure SQL SKU Recommendation Report.
     
     ```
     .\SqlAssessment.exe GetSkuRecommendation --outputFolder C:\Users\sqladmin\output\PerfData --targetPlatform AzureSqlManagedInstance
     ```
 
-19. Go to ```C:\Users\sqladmin\output\PerfData``` path, you will see two report files and three csv files.
+    ![DMA Assessment](assets/49-3.jpg)
+    
+    ![DMA Assessment](assets/49-4.jpg)
+
+20. Go to ```C:\Users\sqladmin\output\PerfData``` path, you will see two report files and three csv files.
 
     ![DMA Assessment](assets/49-5.jpg)
 
