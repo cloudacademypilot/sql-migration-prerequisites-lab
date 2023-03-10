@@ -231,7 +231,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/43-2.jpg)
 
-9. Go back to **Windows Powershell** and Press any key to continue. It will close the Powershell window.
+9. Go back to **Windows PowerShell** and Press any key to continue. It will close the PowerShell window.
 
     ![DMA Assessment](assets/42.jpg)
 
@@ -275,7 +275,7 @@ After running for a specific period of time, the process will stop executing on 
 
     ![DMA Assessment](assets/49.jpg)
     
-16. Go back to **Windows Powershell** and Press any key to continue. It will close the Powershell window.
+16. Go back to **Windows PowerShell** and Press any key to continue. It will close the PowerShell window.
 
     ![DMA Assessment](assets/43-3.jpg)
 
@@ -444,7 +444,7 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
 
     ![DMA Assessment](assets/77.jpg)
 
-5. Here you can see there are 3 compatibiliy issues with **SampleDatabase1** database beacuse we executed the queries only SampleDatabase1 database. And there are no compatibiliy issues with SampleDatabase2 database as we have not done anything on this database. 
+5. Here you can see there are 3 compatibiliy issues with **SampleDatabase1** database beacuse we executed the queries only on SampleDatabase1 database. And there are no compatibiliy issues with **SampleDatabase2** database as we have not done anything on this database. 
 
     ![DMA Assessment](assets/78.jpg)
     
