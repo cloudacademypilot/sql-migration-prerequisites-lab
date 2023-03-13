@@ -172,9 +172,11 @@
         "publicIPSourceServer": "[take(concat('SourceIp', uniqueString(resourceGroup().id)), 15)]",
         "sourceServerNSG": "[take(concat('Sourcensg', uniqueString(resourceGroup().id)), 15)]",
         "adVNet": "[take(concat('Sourcevnet', uniqueString(resourceGroup().id)), 15)]",
+        "SQLServerNSG": "[take(concat('SQLnsg', uniqueString(resourceGroup().id)), 15)]",
         "defaultSubnetName": "default",
         "targetNicName": "[take(concat('TargetNIC', uniqueString(resourceGroup().id)), 15)]",
         "SQLtargetNicName": "[take(concat('SQLTargetNIC', uniqueString(resourceGroup().id)), 15)]",
+        "publicIPSQLSourceServer": "[take(concat('SQLSourceIp', uniqueString(resourceGroup().id)), 15)]",
         "publicIPTargetServer": "[take(concat('TargetIp', uniqueString(resourceGroup().id)), 15)]",
         "targetServerNSG": "[take(concat('Targetnsg', uniqueString(resourceGroup().id)), 15)]",
         "adVNettarget": "[take(concat('Targetvnet', uniqueString(resourceGroup().id)), 15)]",
@@ -183,6 +185,9 @@
         },
         "publicIpAddressIdTarget": {
             "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPTargetServer'))]"
+        },
+        "publicIpAddressIdSQLSource": {
+            "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPSQLSourceServer'))]"
         }
     },
     "resources": [
@@ -630,6 +635,38 @@
         },
         {
             "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('SQLtargetNicName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]",
+                "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIPSQLSourceServer'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('SQLServerNSG'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]"
+                            },
+                            "publicIPAddress": "[if(parameters('createPublicIP'), variables('publicIpAddressIdSQLSource'), json('null'))]",
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('SQLServerNSG'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('targetNicName')]",
             "apiVersion": "2020-05-01",
             "location": "[parameters('location')]",
@@ -663,6 +700,44 @@
         {
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('sourceServerNSG')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "AllowSQLServerInBound",
+                        "properties": {
+                            "description": "Allow inbound SQL Server Traffic",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "1433",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "AllowAnyRDPInbound",
+                        "properties": {
+                            "description": "Allow virtual machine connection through rdp",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 110,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('SQLServerNSG')]",
             "apiVersion": "2020-05-01",
             "location": "[parameters('location')]",
             "properties": {
@@ -744,6 +819,22 @@
                 "tier": "Regional"
             },
             "name": "[variables('publicIPSourceServer')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            }
+        },
+        {
+            "condition": "[parameters('createPublicIP')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[variables('publicIPSQLSourceServer')]",
             "apiVersion": "2020-05-01",
             "location": "[parameters('location')]",
             "properties": {
