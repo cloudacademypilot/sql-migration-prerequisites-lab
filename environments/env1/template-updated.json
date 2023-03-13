@@ -188,7 +188,9 @@
         },
         "publicIpAddressIdSQLSource": {
             "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPSQLSourceServer'))]"
-        }
+        },
+        "SourceDNS": "source123",
+        "TargetDNS": "target123"
     },
     "resources": [
         {
@@ -824,7 +826,10 @@
             "properties": {
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Dynamic",
-                "idleTimeoutInMinutes": 4
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('SourceDNS')]"
+                }
             }
         },
         {
@@ -840,7 +845,10 @@
             "properties": {
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Dynamic",
-                "idleTimeoutInMinutes": 4
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('TargetDNS')]"
+                }
             }
         },
         {
