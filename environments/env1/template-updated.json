@@ -100,6 +100,13 @@
             },
             "defaultValue": "Standard_D8s_v3"
         },
+        "vmSize1": {
+            "type": "string",
+            "metadata": {
+                "description": "Target VM size"
+            },
+            "defaultValue": "Standard_D2as_v4"
+        },
         "dataDisksLUNs": {
             "type": "array",
             "defaultValue": [0]
@@ -344,7 +351,7 @@
             ],
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "[parameters('vmSize')]"
+                    "vmSize": "[parameters('vmSize1')]"
                 },
                 "storageProfile": {
                     "imageReference": {
