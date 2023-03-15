@@ -49,18 +49,14 @@
     ![DMA Assessment](assets/14.jpg)
     
     ![DMA Assessment](assets/15.jpg)
-    
-    ![DMA Assessment](assets/16.jpg)
 
 2. Select these files and right-click on the mouse and select **Copy** or press **Ctrl + C**.
 
-    ![DMA Assessment](assets/17.jpg)
+    ![DMA Assessment](assets/16.jpg)
 
 3. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to paste the files in this folder.
 
-    ![DMA Assessment](assets/18.jpg)
-    
-    ![DMA Assessment](assets/19.jpg)
+    ![DMA Assessment](assets/17.jpg)
     
 ## Exercise 3: Preparing the Input excel file
 
