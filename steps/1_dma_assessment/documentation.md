@@ -283,17 +283,25 @@ After running for a specific period of time, the process will stop executing on 
 19. Execute the following command to generate Azure SQL SKU Recommendation Report.
     
     ```
-    .\SqlAssessment.exe GetSkuRecommendation --outputFolder C:\Users\sqladmin\output\PerfData --targetPlatform AzureSqlManagedInstance
+    .\SqlAssessment.exe GetSkuRecommendation --outputFolder C:\Users\sqladmin\output\PerfData --targetPlatform AzureSqlVirtualMachine
     ```
 
     ![DMA Assessment](assets/49-3.jpg)
     
     ![DMA Assessment](assets/49-4.jpg)
 
+> Note: You can also generate SKU recommendation for Managed Instance and SQL database by changing the target platform to **AzureSqlManagedInstance** and **AzureSqlDatabase** respectively in the above command replacing **AzureSqlVirtualMachine**.
+
 20. Go to ```C:\Users\sqladmin\output\PerfData``` path, you will see two report files and three csv files.
 
     ![DMA Assessment](assets/49-5.jpg)
 
+21. Open the ```SkuRecommendationReport{*}.html``` file and click on the source virtual machine name. You will see SKU recommendations like compute size, platform, storage size etc. Recommended compute size is given as **D2as_v4**, which we have used to create the target virtual machine.
+
+    ![DMA Assessment](assets/49-6.jpg)
+    
+    ![DMA Assessment](assets/49-7.jpg)
+    
 ## Exercise 5: Connecting to Source Virtual Machine
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Source{*}```.
