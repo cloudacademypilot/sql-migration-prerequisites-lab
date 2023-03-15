@@ -60,25 +60,11 @@
     
 ## Exercise 3: Preparing the Input excel file
 
-1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
-
-    ![DMA Assessment](assets/20.jpg)
-
-2. Click **Sign in** and sign into **MS office** using your lab credentials.
-
-    ![DMA Assessment](assets/21.jpg)
-
-3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
+1. Since this virtual machine is based on SQL server image, it won't have ```MS Office``` installed, so you can't edit the file here. To edit the excel file copy-paste this ```Network_Validation.xlsx``` file to another virtual machine where you edited the excel in the previous lab step.
 
     ![DMA Assessment](assets/22.jpg)
-    
-    ![DMA Assessment](assets/23.jpg)
 
-4. This is the sample input file. You need to edit the contents of the excel file.
-
-    ![DMA Assessment](assets/24.jpg)
-
-
+2. Open ```MS Office``` 
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/31.jpg)
