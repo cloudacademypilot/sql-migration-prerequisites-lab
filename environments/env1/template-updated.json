@@ -196,8 +196,8 @@
         "publicIpAddressIdSQLSource": {
             "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPSQLSourceServer'))]"
         },
-        "SourceDNS": "source123",
-        "TargetDNS": "target123"
+        "SourceDNS":  "[take(concat('source', uniqueString(resourceGroup().id)), 15)]",
+        "TargetDNS":  "[take(concat('target', uniqueString(resourceGroup().id)), 15)]"
     },
     "resources": [
         {
