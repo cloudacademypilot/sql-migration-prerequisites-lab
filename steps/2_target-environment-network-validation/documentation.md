@@ -80,22 +80,20 @@
 
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
-    ![DMA Assessment](assets/31.jpg)
-    
-    ![DMA Assessment](assets/32.jpg)
+    ![DMA Assessment](assets/35.jpg)
 
 11. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go back to the virtual machine name starting with ```Target{*}``` and go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
-    ![DMA Assessment](assets/33.jpg)
+    ![DMA Assessment](assets/36.jpg)
     
-    ![DMA Assessment](assets/34.jpg)
+    ![DMA Assessment](assets/37.jpg)
 
 ## Exercise 4: Runing DMA assessment powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```Network_Validation.ps1``` script and select **Run with PowerShell** to run the script.
 
-    ![DMA Assessment](assets/35.jpg)
+    ![DMA Assessment](assets/38.jpg)
 
 2. Now **Windows powershell** will open and ask for your input.
 
-    ![DMA Assessment](assets/36.jpg)
+    ![DMA Assessment](assets/39.jpg)
