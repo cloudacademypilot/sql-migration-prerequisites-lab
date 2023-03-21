@@ -457,21 +457,21 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
     ![DMA Assessment](assets/79.jpg)
 
 5. You can click on each compatibility issues to see more details like impacts while migrating and recommendations for migration.
-  - **xp_cmdshell** is not supported in Azure SQL Database.
+    - **xp_cmdshell** is not supported in Azure SQL Database.
 
-    ![DMA Assessment](assets/83.jpg)
+      ![DMA Assessment](assets/83.jpg)
     
-  - **cross-database** queries are not supported in Azure SQL Database.
+    - **cross-database** queries are not supported in Azure SQL Database.
 
-    ![DMA Assessment](assets/82.jpg)
+      ![DMA Assessment](assets/82.jpg)
     
-  - Using **TEXT**, **IMAGE** or **NTEXT** might harm performance and are discontinued.
+    - Using **TEXT**, **IMAGE** or **NTEXT** might harm performance and are discontinued.
 
-    ![DMA Assessment](assets/80.jpg)
+      ![DMA Assessment](assets/80.jpg)
     
-  - **Service Broker** feature is not supported in Azure SQL Database.
+    - **Service Broker** feature is not supported in Azure SQL Database.
 
-    ![DMA Assessment](assets/81.jpg)
+      ![DMA Assessment](assets/81.jpg)
 
 ## Summary
 
