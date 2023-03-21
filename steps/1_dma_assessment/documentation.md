@@ -475,8 +475,8 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
 
 ## Summary
 
-
-
-
-
-
+In this lab, you learned:
+- What is DMA and Capabilities of DMA.
+- How to prepare DMA input file which contains details of source database server.
+- How to use the DMA automation script to detect/assess the issues.
+- How to get SKU recommendation report for migrating on-premises SQL Server database(s) to target server i.e., Azure SQL Database, Azure SQL Managed Instance or SQL Server on Azure Virtual Machines.
