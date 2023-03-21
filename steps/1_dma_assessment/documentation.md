@@ -475,7 +475,7 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
 
 ## Summary
 
-In this lab, you learned:
+In this lab step, you learned:
 - What is DMA and Capabilities of DMA.
 - How to prepare DMA input file which contains details of source database server.
 - How to use the DMA automation script to detect/assess the issues.
