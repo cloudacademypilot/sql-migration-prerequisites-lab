@@ -232,7 +232,7 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/35.jpg)
 
-11. Give ```3``` as input value to select Perform performance data gathering.
+11. Give ```3``` as input value to select Perform performance data gathering. This will gather all the data required to provide you with SKU recommendation.
 
     ![DMA Assessment](assets/44.jpg)
 
@@ -296,7 +296,7 @@ After running for a specific period of time, the process will stop executing on 
 
     ![DMA Assessment](assets/49-5.jpg)
 
-21. Open the ```SkuRecommendationReport{*}.html``` file and click on the source virtual machine name. You will see SKU recommendations like compute size, platform, storage size etc. Recommended compute size is given as **D2as_v4**, which we have used to create the target virtual machine.
+21. Open the ```SkuRecommendationReport{*}.html``` file and click on the source virtual machine name. You will see SKU recommendations like compute size, platform, storage size etc. Recommended compute size is given as **D2as_v4**, which we have used in this lab to create the target virtual machine. Click on **View** under **Justifications** and **Requirements** to see more details about the SKU recommendations. 
 
     ![DMA Assessment](assets/49-6.jpg)
     
@@ -370,6 +370,9 @@ After running for a specific period of time, the process will stop executing on 
     end
     GO
     ```
+
+    xp_cmdshell which spawns a Windows command shell and passes in a string for execution is not supported in Azure SQL Database.
+
     ![DMA Assessment](assets/65.jpg)
     
     ![DMA Assessment](assets/66.jpg)
@@ -389,6 +392,8 @@ After running for a specific period of time, the process will stop executing on 
     Go
     ```
 
+    Azure SQL Database does not support cross-database queries. Here we are creating compatibility issue by running a cross-database query.
+
     ![DMA Assessment](assets/67.jpg)
     
     ![DMA Assessment](assets/68.jpg)
@@ -405,7 +410,9 @@ After running for a specific period of time, the process will stop executing on 
     )
     Go
     ```
-
+    
+    Datatypes like TEXT, IMAGE or NTEXT are deprecated.
+    
     ![DMA Assessment](assets/69.jpg)
     
     ![DMA Assessment](assets/70.jpg)
@@ -416,6 +423,8 @@ After running for a specific period of time, the process will stop executing on 
     ALTER DATABASE SampleDatabase1 SET ENABLE_BROKER WITH ROLLBACK IMMEDIATE
     GO
     ```
+
+    SQL Server Service Broker provides native support for messaging and queuing applications in the SQL Server Database Engine. Service Broker feature is not supported in Azure SQL Database. Here we are creating a compatibility issue by enabling broker feature.
 
     ![DMA Assessment](assets/71.jpg)
     
@@ -446,4 +455,28 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
     ![DMA Assessment](assets/78.jpg)
     
     ![DMA Assessment](assets/79.jpg)
+
+5. You can click on each compatibility issues to see more details like impacts while migrating and recommendations for migration.
+  - **xp_cmdshell** is not supported in Azure SQL Database.
+
+    ![DMA Assessment](assets/83.jpg)
+    
+  - **cross-database** queries are not supported in Azure SQL Database.
+
+    ![DMA Assessment](assets/82.jpg)
+    
+  - Using **TEXT**, **IMAGE** or **NTEXT** might harm performance and are discontinued.
+
+    ![DMA Assessment](assets/80.jpg)
+    
+  - **Service Broker** feature is not supported in Azure SQL Database.
+
+    ![DMA Assessment](assets/81.jpg)
+
+## Summary
+
+
+
+
+
 
