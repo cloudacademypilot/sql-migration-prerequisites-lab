@@ -9,3 +9,10 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 
 • Analyzing dependencies helps ensure that nothing is left behind, and thus avoids surprise outages after migration.
 
+Excercise 1 : 
+Create a project for the first time
+Set up a new project in an Azure subscription.
+1. In the Azure portal, search for Azure Migrate.
+2. In Services, select Azure Migrate.
+3. In Overview, select Discover, assess, and migrat
+
