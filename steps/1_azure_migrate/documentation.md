@@ -17,7 +17,10 @@ Set up a new project in an Azure subscription.
 3. In Overview, select Discover, assess, and migrat
 <image>
 4. In Servers, databases, and web apps, select Create project.
+      
 5. In Create project, select the Azure subscription, and resource group. Create a resource group if you don't have one.
+      
 6. In Project Details, specify the project name and the geography in which you want to create the project.
       The geography is only used to store the metadata gathered from onpremises servers. You can assess or migrate servers for any target region           regardless of the selected geography.
+      
 7. Select Create to initiate Project deployment
