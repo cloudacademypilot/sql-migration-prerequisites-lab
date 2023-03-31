@@ -41,6 +41,7 @@
 
 #### 3. In Overview , select Discover, assess, and migrate.
 
+![AzureMigrate](assets/image1.png)
 
 #### 4. In Servers, databases, and web apps , select Create project.
 
