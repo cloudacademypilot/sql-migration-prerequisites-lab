@@ -38,15 +38,15 @@ Set up a new project in an Azure subscription -
 
 Set up the appliance by with below steps:
 
-1. In Azure Migrate Hub, under **Migration tools** select “ _Discover_ ”.
+1. In Azure Migrate Hub, under **Migration tools** select **Discover**.
 
     ![AzureMigrate](assets/image4.png)
 
-2. In Discover page, select Yes, with _Physical or other_.
+2. In Discover page, select **Yes, with _Physical or other_**.
 
     ![AzureMigrate](assets/image5.png)
 
-3. Under _How do you want to replicate?_ Select **Using agentless replication**
+3. Under _How do you want to replicate?_ Select **Using agentless replication**.
 
     ![AzureMigrate](assets/image6.png)
 
@@ -58,91 +58,167 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image10.png)
 
-6. Go to Downloads folder on the VM and unzip the Azure migrate folder
+6. Go to **Downloads** folder on the VM and **unzip** the Azure migrate folder.
 
     ![AzureMigrate](assets/image11.png)
 
-7. Run the Azure migrate installer PowerShell script as specified below.
+7. Run the **Azure migrate installer** PowerShell script as specified below.
 
     ![AzureMigrate](assets/image12.png)
-
-8. Once setup is completed, go to Desktop to run the Migrate Appliance configuration webpage
-
+    
     ![AzureMigrate](assets/image13.png)
+    
+    ![AzureMigrate](assets/image15.png)
 
-9. Now Set up Prerequisites.
+    ![AzureMigrate](assets/image17.png)
+    
+8. Once setup is completed, go to Desktop to run the **Migrate Appliance configuration webpage**.
 
+    ![AzureMigrate](assets/image25.png)
 
-10. Provide the Appliance Key that was generated on the Azure Portal and click verify.
+    ![AzureMigrate](assets/image26.png)
+    
+    ![AzureMigrate](assets/image27.png)
+    
+9. Now **Set up Prerequisites**.
 
+    ![AzureMigrate](assets/image28.png)
+    
+    ![AzureMigrate](assets/image29.png)
+    
+10. Provide the **Appliance Key** that was generated on the Azure Portal and click **verify**.
 
-11. Click login to authenticate with Azure Credentials.
+    ![AzureMigrate](assets/image30.png)
+    
+    ![AzureMigrate](assets/image31.png)
+    
+    ![AzureMigrate](assets/image32.png)
 
+11. Click **login** to authenticate with your lab Credentials.
 
+    ![AzureMigrate](assets/image33.png)
+    
+    ![AzureMigrate](assets/image34.png)
 
+    ![AzureMigrate](assets/image35.png)
 
+    ![AzureMigrate](assets/image39.png)
+    
+12. Once Azure credentials are authenticated. Proceed adding **Domain credentials**.
 
-12. Once Azure credentials are authenticated. Proceed adding Domain credentials.
+    ![AzureMigrate](assets/image40.png)
+    
+    ![AzureMigrate](assets/image41.png)
 
+13. Now **add discovery source**. Specify the IP address and the friendly name with given format.
 
-13. Now add discovery source. Specify the IP address and the friendly name with given format.
-14. Verify the input post adding the values.
+    ![AzureMigrate](assets/image42.png)
 
+14. **Verify** the input post adding the values.
 
-15. If any validation fails, fix the error, and do revalidate.
+    ![AzureMigrate](assets/image43.png)
 
+15. If any validation fails, fix the error, and do **revalidate**.
 
-16. Specify the SQL credentials for SQL DB discovery.
+    ![AzureMigrate](assets/image44.png)
+        
+    ![AzureMigrate](assets/image45.png)
 
+16. Specify the **SQL credentials** for SQL DB discovery.
 
-17. Now click Start discovery to initiate the discovery process.
+    ![AzureMigrate](assets/image46.png)
 
+    ![AzureMigrate](assets/image47.png)
+    
+17. Now click **Start discovery** to initiate the discovery process.
+
+    ![AzureMigrate](assets/image48.png)
+    
+    ![AzureMigrate](assets/image49.png)
 
 ## DEPENDANCY ANALYSIS:
 
 18. Go back to Discovered server in Azure Migrate Hub, to enable the dependency mapping.
 
+    ![AzureMigrate](assets/image50.png)
 
-19. Click on Dependency analysis and select Add servers.
-20. Select the servers that needs dependency mapping to initiate the analysis.
+    ![AzureMigrate](assets/image51.png)
+    
+19. Click on **Dependency analysis** and select **Add servers**.
 
+    ![AzureMigrate](assets/image52.png)
 
-21. Oncer servers are added to analysis, you can now see option to view dependencies.
+20. Select the **servers** that needs dependency mapping to initiate the analysis.
 
+    ![AzureMigrate](assets/image53.png)
 
-22. Click and each server to view respective dependency analysis.
+    ![AzureMigrate](assets/image54.png)
+
+21. Once servers are added to analysis, you can now see option to **view dependencies**.
+
+    ![AzureMigrate](assets/image55.png)
+
+22. Click on each server to view respective dependency analysis.
+
+    ![AzureMigrate](assets/image56.png)
 
 #### SAMPLE MAPPING VIEW:
 
-
-
+   ![AzureMigrate](assets/image57.png)
+    
+   ![AzureMigrate](assets/image58.png)
+    
+   ![AzureMigrate](assets/image59.png)
 
 ## ASSESSMENT:
 
 23. Click **create group** to Group the servers for assessment.
 
-##### 24. Provide group name and select the discovered machines. Click create
+    ![AzureMigrate](assets/image60.png)
 
+24. Provide **group name** and select the **discovered machines**. Click **create**.
 
-##### 25. Select Create Assessment and choose Azure VM.
+    ![AzureMigrate](assets/image61.png)
+    
+    ![AzureMigrate](assets/image62.png)
 
+25. Select **Create Assessment** and choose **Azure VM**.
 
-##### 26. Select the Group that was created earlier to perform the assessment on those servers.
+    ![AzureMigrate](assets/image63.png)
+    
+    ![AzureMigrate](assets/image64.png)
+    
+26. Select the **Group** that was created earlier to perform the assessment on those servers.
 
-##### 27. Review and create assessment.
+    ![AzureMigrate](assets/image65.png)
 
+27. Review and **create assessment**.
 
-##### 28. Go to Azure Migrate Hub overview page and select the assessment that has been populated.
+    ![AzureMigrate](assets/image66.png)
+    
+    ![AzureMigrate](assets/image67.png)
 
-##### 29. Click on the assessment report that has been generated.
+28. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
 
+    ![AzureMigrate](assets/image68.png)
 
-##### 30. Click on the various options available assessment details blade to see Azure Readiness & Cost
+29. Click on the **assessment report** that has been generated.
 
-##### details.
+    ![AzureMigrate](assets/image69.png)
 
+30. Click on the various options available assessment details blade to see **Azure Readiness & Cost details**.
 
-##### 31. Click Export Assessment to download the XLSX version.
+    ![AzureMigrate](assets/image70.png)
+    
+    ![AzureMigrate](assets/image71.png)
+    
+    ![AzureMigrate](assets/image72.png)
+    
+31. Click **Export Assessment** to download the XLSX version.
 
-
+    ![AzureMigrate](assets/image73.png)
+    
+    ![AzureMigrate](assets/image74.png)
+    
+    ![AzureMigrate](assets/image75.png)
 
