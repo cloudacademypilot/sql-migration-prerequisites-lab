@@ -52,23 +52,23 @@ Set up the appliance by with below steps:
 
 4. Specify a _name to the appliance_ as shown below and click **Generate Key**.
 
-    ![AzureMigrate](assets/image7.png)
+    ![AzureMigrate](assets/image8.png)
 
 5. Once Key has been generated, click **Download** to get the OVA file.
 
-    ![AzureMigrate](assets/image8.png)
+    ![AzureMigrate](assets/image10.png)
 
 6. Go to Downloads folder on the VM and unzip the Azure migrate folder
 
-    ![AzureMigrate](assets/image9.png)
+    ![AzureMigrate](assets/image11.png)
 
 7. Run the Azure migrate installer PowerShell script as specified below.
 
-    ![AzureMigrate](assets/image10.png)
+    ![AzureMigrate](assets/image12.png)
 
 8. Once setup is completed, go to Desktop to run the Migrate Appliance configuration webpage
 
-    ![AzureMigrate](assets/image11.png)
+    ![AzureMigrate](assets/image13.png)
 
 9. Now Set up Prerequisites.
 
