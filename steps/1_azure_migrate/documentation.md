@@ -8,7 +8,7 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 - Identification of servers that must be migrated together. This is especially useful if there are no data about app dependency.
 - Analyzing dependencies helps ensure that nothing is left behind, and thus avoids surprise outages after migration.
 
-## App Service Migration Assistant
+## Hosting Web Application
 
 ### IIS Configuration
 
@@ -44,6 +44,8 @@ Before hosting any site on the WebServer(IIS), We need to activate the **server*
 
 > Note: VM Restart is not required.
 
+### Hosting Application
+
 Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
 
 1.	Open ```C drive``` and extract the **adventure.zip** file.
@@ -60,7 +62,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 5.	This will open the **IIS Manager**.
 
-6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the **Default Web Site** and delete.
+6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the **Default Web Site** and remove.
 
 7.	Right click on **Sites** and select **Add Website**.
 
