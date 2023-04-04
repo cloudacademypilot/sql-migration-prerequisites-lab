@@ -66,9 +66,15 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image12.png)
     
+    Enter 3 to select "Physical or other"
+    
     ![AzureMigrate](assets/image13.png)
     
+    Enter 1 to select "Azure Public"
+    
     ![AzureMigrate](assets/image15.png)
+    
+    Enter 1 to select "Public Endpoint option"
 
     ![AzureMigrate](assets/image17.png)
     
@@ -136,7 +142,6 @@ Set up the appliance by with below steps:
     
     ![AzureMigrate](assets/image49.png)
 
-## DEPENDANCY ANALYSIS:
 
 18. Go back to Discovered server in Azure Migrate Hub, to enable the dependency mapping.
 
@@ -214,11 +219,13 @@ Set up the appliance by with below steps:
     
     ![AzureMigrate](assets/image72.png)
     
-31. Click **Export Assessment** to download the XLSX version.
+## DEPENDANCY ANALYSIS:
 
-    ![AzureMigrate](assets/image73.png)
-    
-    ![AzureMigrate](assets/image74.png)
-    
-    ![AzureMigrate](assets/image75.png)
+When migrating a workload to Azure, it is important to understand all workload dependencies. A broken dependency could mean that the application doesn't run properly in Azure, perhaps in hard-to-detect ways. Some dependencies, such as those between application tiers, are obvious. Other dependencies, such as DNS lookups, Kerberos ticket validation or certificate revocation checks, are not.
+
+In this task, you will configure the Azure Migrate dependency visualization feature. This requires you to first create a Log Analytics workspace, and then to deploy agents on the to-be-migrated VMs.
+
+1. Return to the Azure Migrate blade in the Azure Portal, and select Servers databases and web apps. Under Azure Migrate: Discovery and assessment select Groups, then select the AdventureVMs group to see the group details. Note that each VM has their Dependencies status as Requires agent installation. Select Requires agent installation for the web1 VM.
+
+2. On the Dependencies blade, select Configure OMS workspace.
 
