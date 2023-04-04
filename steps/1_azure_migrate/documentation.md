@@ -197,3 +197,17 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 
 2. On the Dependencies blade, select Configure OMS workspace.
 
+3. Create a new OMS workspace. Use AzureMigrateWS<unique number> as the workspace name, where <unique number> is a random number. Choose a workspace location close to your lab deployment, then select Configure.
+    
+4.Wait for the Log Analytics workspace to be deployed. Once it is deployed, navigate to it, and select Agents management under Settings on the left. Make a note of the Workspace ID and Primary Key (for example by using Notepad). 
+    
+5. Return to the Azure Migrate 'Dependencies' blade. Copy each of the 2 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step.
+    
+6. Connect to the Web server1 and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer.
+    
+7. Select through the installation wizard until you get to the Agent Setup Options page. From there, select Connect the agent to Azure Log Analytics (OMS) and select Next. Enter the Workspace ID and Workspace Key that you copied earlier, and select Azure Commercial from the Azure Cloud drop-down. Select through the remaining pages and install the agent.
+
+8. Now paste the link to the Dependency Agent Windows installer into the browser address bar. Run the installer and select through the install wizard to complete the installation.
+    
+9. Connect to the SQL and web2 VM and repeat the installation process (steps 6-8) for both agents.
+
