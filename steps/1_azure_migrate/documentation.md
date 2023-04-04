@@ -24,7 +24,7 @@ Before hosting any site on the WebServer(IIS), We need to activate the **server*
 
     ![AzureMigrate](assets/image77.png)
 
-4.	Click on **next** and then install.
+4.	Click on **next** and then **install**.
 
     ![AzureMigrate](assets/image78.png)
     
@@ -36,7 +36,7 @@ Before hosting any site on the WebServer(IIS), We need to activate the **server*
 
     ![AzureMigrate](assets/image80.png)
 
-7.	Click on **next** and then install.
+7.	Click on **next** and then **install**.
 
     ![AzureMigrate](assets/image81.png)
 
