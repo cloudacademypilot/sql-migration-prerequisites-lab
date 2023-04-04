@@ -46,7 +46,7 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image5.png)
 
-3. Under _How do you want to replicate?_ Select **Using agentless replication**.
+3. Under Name your appliance provide name as **SQLDISCOVERYAZ**.
 
     ![AzureMigrate](assets/image6.png)
 
