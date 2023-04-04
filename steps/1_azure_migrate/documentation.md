@@ -14,6 +14,8 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 
 Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the IIS and ASP.NET 4.7.
 
+Connect Webserver1 as mentions above and follow below steps :
+
 1. Open **Server Manager** and click on **Add roles and feature**.
 
     ![AzureMigrate](assets/image76.png)
@@ -76,11 +78,14 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 10.	Add default document as **home.aspx**.
 
+    ![AzureMigrate](assets/image86_1.png)
     ![AzureMigrate](assets/image86.png)
 
 11.	Now Browse the application and check data.
 
-## Create a project for the first time
+     ![AzureMigrate](assets/image87.png)
+
+## Create a project in Azure Migrate
 
 Set up a new project in an Azure subscription -
 
