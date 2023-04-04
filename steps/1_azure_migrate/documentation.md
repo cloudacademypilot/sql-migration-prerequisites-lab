@@ -26,7 +26,7 @@ Set up a new project in an Azure subscription -
 
 5. In Create project , select the **Azure subscription**, and **resource group**.
 
-6. In Project Details , specify the **project name** and the **geography** in which you want to create the project.
+6. In Project Details , specify the **project name** as **adventureMigrate** and the **geography** in which you want to create the project.
 
     - The geography is only used to store the metadata gathered from on-premises servers. You can assess or migrate servers for any target region regardless of the selected geography.
 
