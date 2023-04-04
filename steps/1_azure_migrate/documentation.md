@@ -111,7 +111,7 @@ Set up a new project in an Azure subscription -
 
     ![AzureMigrate](assets/image3.png)
 
-## Azure Migrate appliance – Agentless Migration:
+## Azure Migrate appliance:
 
 Set up the appliance by with below steps:
 
