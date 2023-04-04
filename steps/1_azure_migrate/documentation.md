@@ -12,31 +12,31 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 
 ### IIS Configuration
 
-Before hosting any site on the WebServer(IIS), We need to activate the server role for the IIS and ASP.NET 4.7.
+Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the IIS and ASP.NET 4.7.
 
-1. Open “Server Manager” and click on “Add roles and feature”.
+1. Open **Server Manager** and click on **Add roles and feature**.
 
     ![AzureMigrate](assets/image76.png)
 
-2. Go to Server Roles by clicking on “Next” button.
+2. Go to Server Roles by clicking on **Next** button.
 
-3. Search for WebServer (IIS) and check the checkbox. Use “Add Features” button to add the feature.
+3. Search for **WebServer (IIS)** and check the checkbox. Use **Add Features** button to add the feature.
 
     ![AzureMigrate](assets/image77.png)
 
-4.	Click on “next” and then install.
+4.	Click on **next** and then install.
 
     ![AzureMigrate](assets/image78.png)
     
     ![AzureMigrate](assets/image79.png)
     
-5.	Reopen “Add Roles and Feature Wizard” by clicking on “Add roles and feature”. 
+5.	Reopen **Add Roles and Feature Wizard** by clicking on **Add roles and feature**. 
 
-6.	Goto server role and Check the “ASP.NET 4.7” check box.
+6.	Go to server role and Check the **ASP.NET 4.7** check box.
 
     ![AzureMigrate](assets/image80.png)
 
-7.	Click on “next” and then install.
+7.	Click on **next** and then install.
 
     ![AzureMigrate](assets/image81.png)
 
@@ -46,33 +46,33 @@ Before hosting any site on the WebServer(IIS), We need to activate the server ro
 
 Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
 
-1.	Open C drive and extract the adventure.zip file.
+1.	Open ```C drive``` and extract the **adventure.zip** file.
 
-2.	Open the extracted folder and open web.config in notepad to edit.
+2.	Open the extracted folder and open **web.config** in notepad to edit.
 
-3.	Replace the server name in the connection string with the Source Server IP or hostname.
+3.	Replace the **server name** in the connection string with the **Source Server IP or hostname**.
 
     ![AzureMigrate](assets/image82.png)
 
-4.	Open Run Window using “Ctrl + R“ and enter ‘inetmgr’ and press enter.
+4.	Open Run Window using **Ctrl + R** and enter **inetmgr** and press enter.
 
     ![AzureMigrate](assets/image83.png)
 
-5.	This will open the IIS Manager.
+5.	This will open the **IIS Manager**.
 
-6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the “Default Web Site” and delete.
+6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the **Default Web Site** and delete.
 
-7.	Right click on “Sites” and select Add Website.
+7.	Right click on **Sites** and select **Add Website**.
 
     ![AzureMigrate](assets/image84.png)
 
-8.	Provide the site name as “adventure”.
+8.	Provide the site name as ```adventure```.
 
-9.	Select the “Physical Path” as C:/adventure and use Port number 80.
+9.	Select the **Physical Path** as ```C:/adventure``` and use Port number ```80```.
 
     ![AzureMigrate](assets/image85.png)
 
-10.	Add default document as “home.aspx”.
+10.	Add default document as **home.aspx**.
 
     ![AzureMigrate](assets/image86.png)
 
