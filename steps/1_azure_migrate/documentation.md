@@ -8,6 +8,76 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 - Identification of servers that must be migrated together. This is especially useful if there are no data about app dependency.
 - Analyzing dependencies helps ensure that nothing is left behind, and thus avoids surprise outages after migration.
 
+## App Service Migration Assistant
+
+### IIS Configuration
+
+Before hosting any site on the WebServer(IIS), We need to activate the server role for the IIS and ASP.NET 4.7.
+
+1. Open “Server Manager” and click on “Add roles and feature”.
+
+    ![AzureMigrate](assets/image76.png)
+
+2. Go to Server Roles by clicking on “Next” button.
+
+3. Search for WebServer (IIS) and check the checkbox. Use “Add Features” button to add the feature.
+
+    ![AzureMigrate](assets/image77.png)
+
+4.	Click on “next” and then install.
+
+    ![AzureMigrate](assets/image78.png)
+    
+    ![AzureMigrate](assets/image79.png)
+    
+5.	Reopen “Add Roles and Feature Wizard” by clicking on “Add roles and feature”. 
+
+6.	Goto server role and Check the “ASP.NET 4.7” check box.
+
+    ![AzureMigrate](assets/image80.png)
+
+7.	Click on “next” and then install.
+
+    ![AzureMigrate](assets/image81.png)
+
+8.	Close the wizard.
+
+> Note: VM Restart is not required.
+
+Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
+
+1.	Open C drive and extract the adventure.zip file.
+
+2.	Open the extracted folder and open web.config in notepad to edit.
+
+3.	Replace the server name in the connection string with the Source Server IP or hostname.
+
+    ![AzureMigrate](assets/image82.png)
+
+4.	Open Run Window using “Ctrl + R“ and enter ‘inetmgr’ and press enter.
+
+    ![AzureMigrate](assets/image83.png)
+
+5.	This will open the IIS Manager.
+
+6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the “Default Web Site” and delete.
+
+7.	Right click on “Sites” and select Add Website.
+
+    ![AzureMigrate](assets/image84.png)
+
+8.	Provide the site name as “adventure”.
+
+9.	Select the “Physical Path” as C:/adventure and use Port number 80.
+
+    ![AzureMigrate](assets/image85.png)
+
+10.	Add default document as “home.aspx”.
+
+    ![AzureMigrate](assets/image86.png)
+
+11.	Now Browse the application and check data.
+
 ## Create a project for the first time
 
 Set up a new project in an Azure subscription -
@@ -196,47 +266,4 @@ In this task, you will configure the Azure Migrate dependency visualization feat
 1. Return to the Azure Migrate blade in the Azure Portal, and select Servers databases and web apps. Under Azure Migrate: Discovery and assessment select Groups, then select the AdventureVMs group to see the group details. Note that each VM has their Dependencies status as Requires agent installation. Select Requires agent installation for the web1 VM.
 
 2. On the Dependencies blade, select Configure OMS workspace.
-
-3. Create a new OMS workspace. Use AzureMigrateWS<unique number> as the workspace name, where <unique number> is a random number. Choose a workspace location close to your lab deployment, then select Configure.
-    
-4. Wait for the Log Analytics workspace to be deployed. Once it is deployed, navigate to it, and select Agents management under Settings on the left. Make a note of the Workspace ID and Primary Key (for example by using Notepad). 
-    
-5. Return to the Azure Migrate 'Dependencies' blade. Copy each of the 2 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step.
-    
-6. Connect to the Web server1 and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer.
-    
-7. Select through the installation wizard until you get to the Agent Setup Options page. From there, select Connect the agent to Azure Log Analytics (OMS) and select Next. Enter the Workspace ID and Workspace Key that you copied earlier, and select Azure Commercial from the Azure Cloud drop-down. Select through the remaining pages and install the agent.
-
-8. Now paste the link to the Dependency Agent Windows installer into the browser address bar. Run the installer and select through the install wizard to complete the installation.
-    
-9. Connect to the SQL and web2 VM and repeat the installation process (steps 6-8) for both agents.
-    
-10. The agent installation is now complete. Next, you need to generate some traffic on the hosted application so the dependency visualization has some data to work with. Browse to the public IP address of the Web1 server, and spend a few minutes refreshing the page.
-    
-####Explore dependency visualization
-    
-In this task, you will explore the dependency visualization feature of Azure Migrate. This feature uses data gathered by the dependency agent you installed in above task.
-
-1. Return to the Azure Portal and refresh the Azure Migrate SmartHotel VMs VM group blade. The 3 VMs on which the dependency agent was installed should now show their status as 'Installed'. (If not, refresh the page using the browser refresh button, not the refresh button in the blade. It may take up to 5 minutes after installation for the status to be updated.)
-    
-2. Select View dependencies.
-    
-3. Take a few minutes to explore the dependencies view. Expand each server to show the processes running on that server. Select a process to see process information. See which connections each server makes.
-    
-In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
-    
-Next you can proceed with Actual lift and sift of server using the Azure Migrate. For details please go thorugh below link :
-    
-If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
-    
-1.  Download and install AppServiceMigrationAssistant using below link
-    https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
-
-2.	Select the hosted site and click on next.
-3.	Check the report and resolved errors if any.
-4.	Click on “copy code and open browser” and login.
-5.	Go back to the App Service Migration Assistant and select the Azure Migrate Project().
-6.	Select Subscription, Use existing Resource group, and Provide site name as “adventureweb”
-7.	Select “Create new” in  App service plan and no other changes. Click on Migrate.
-
 
