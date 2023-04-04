@@ -143,38 +143,6 @@ Set up the appliance by with below steps:
     ![AzureMigrate](assets/image49.png)
 
 
-18. Go back to Discovered server in Azure Migrate Hub, to enable the dependency mapping.
-
-    ![AzureMigrate](assets/image50.png)
-
-    ![AzureMigrate](assets/image51.png)
-    
-19. Click on **Dependency analysis** and select **Add servers**.
-
-    ![AzureMigrate](assets/image52.png)
-
-20. Select the **servers** that needs dependency mapping to initiate the analysis.
-
-    ![AzureMigrate](assets/image53.png)
-
-    ![AzureMigrate](assets/image54.png)
-
-21. Once servers are added to analysis, you can now see option to **view dependencies**.
-
-    ![AzureMigrate](assets/image55.png)
-
-22. Click on each server to view respective dependency analysis.
-
-    ![AzureMigrate](assets/image56.png)
-
-#### SAMPLE MAPPING VIEW:
-
-   ![AzureMigrate](assets/image57.png)
-    
-   ![AzureMigrate](assets/image58.png)
-    
-   ![AzureMigrate](assets/image59.png)
-
 ## ASSESSMENT:
 
 23. Click **create group** to Group the servers for assessment.
