@@ -54,11 +54,11 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image8.png)
 
-5. Once Key has been generated, click **Download** to get the OVA file.
+5. Once Key has been generated, Right click on **Download** and copy link adress to get the OVA file link.
 
     ![AzureMigrate](assets/image10.png)
 
-6. Go to **Downloads** folder on the VM and **unzip** the Azure migrate folder.
+6. Open Source VM and open the link on Microsoft Edge. Now Go to **Downloads** folder on the VM and **unzip** the Azure migrate folder.
 
     ![AzureMigrate](assets/image11.png)
 
