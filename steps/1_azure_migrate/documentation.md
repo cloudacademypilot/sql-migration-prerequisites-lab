@@ -305,10 +305,12 @@ In this task, you will configure the Azure Migrate dependency visualization feat
     
 6. Connect to the Web server1 and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer. First you need to unistall.
 Note : Machine Restart is NOT required.
-    ![AzureMigrate](assets/dependency6_1.jpg)
+   
+   ![AzureMigrate](assets/dependency6_1.jpg)
     
 Re launch the installer 
-    ![AzureMigrate](assets/dependency6_2.jpg)
+   
+   ![AzureMigrate](assets/dependency6_2.jpg)
     
 7. Select through the installation wizard until you get to the Agent Setup Options page. From there, select Connect the agent to Azure Log Analytics (OMS) and select Next. Enter the Workspace ID and Workspace Key that you copied earlier, and select Azure Commercial from the Azure Cloud drop-down. Select through the remaining pages and install the agent.
     
@@ -328,11 +330,17 @@ The agent installation is now complete. Next, you need to generate some traffic 
 
 In this task, you will explore the dependency visualization feature of Azure Migrate. This feature uses data gathered by the dependency agent you installed in above task.
 
-1. Return to the Azure Portal and refresh the Azure Migrate SmartHotel VMs VM group blade. The 3 VMs on which the dependency agent was installed should now show their status as 'Installed'. (If not, refresh the page using the browser refresh button, not the refresh button in the blade. It may take up to 5 minutes after installation for the status to be updated.)
+1. Return to the Azure Portal and refresh the Azure Migrate adventureGroup VMs group blade. The 3 VMs on which the dependency agent was installed should now show their status as 'Installed'. (If not, refresh the page using the browser refresh button, not the refresh button in the blade. It may take up to 5 minutes after installation for the status to be updated.)
+
+    ![AzureMigrate](assets/dependency9.jpg)
 
 2. Select View dependencies.
 
+    ![AzureMigrate](assets/dependency10.jpg)
+
 3. Take a few minutes to explore the dependencies view. Expand each server to show the processes running on that server. Select a process to see process information. See which connections each server makes.
+
+    ![AzureMigrate](assets/dependency11.jpg)
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
 
