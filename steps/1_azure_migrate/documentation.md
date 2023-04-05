@@ -165,7 +165,7 @@ Set up the appliance by with below steps:
     
     ![AzureMigrate](assets/image15.png)
     
-    Enter 1 to select "Public Endpoint option"
+    Enter 1 to select "Public Endpoint option" and then Enter "Y" to continue
 
     ![AzureMigrate](assets/image17.png)
     
