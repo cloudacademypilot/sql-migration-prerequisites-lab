@@ -348,11 +348,11 @@ Next you can proceed with Actual lift and sift of server using the Azure Migrate
 
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
-1. Download and install AppServiceMigrationAssistant using below link on WebServer1
+1. Download and install AppServiceMigrationAssistant using below link on WebServer1 
 
 https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
 
-2. Select the hosted site and click on next.
+2. Open the AppServiceMigrationAssistant using shortcut present on Desktop. Select the hosted site and click on next.
 
     ![AzureMigrate](assets/sma1.jpg)
 
@@ -364,7 +364,7 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
 
     ![AzureMigrate](assets/sma4.jpg)
 
-5. Go back to the App Service Migration Assistant and select the Azure Migrate Project().
+5. Go back to the App Service Migration Assistant and select the Azure Migrate Project () which was created before .
 
     ![AzureMigrate](assets/sma4_1.jpg)
 
@@ -377,4 +377,13 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
     ![AzureMigrate](assets/sma6.jpg)
     ![AzureMigrate](assets/sma6_1.jpg)
     
-8. 
+8. Select "Automatically install and complete HCM setup on this server" and download the setup using link provided and complete the installation.
+
+    ![AzureMigrate](assets/sma7.jpg)
+    ![AzureMigrate](assets/sma8.jpg)
+    
+9. Click next after installation to see the Migration Result. Click on "Go to your website" to view the migrated site.
+    
+     ![AzureMigrate](assets/sma9.jpg)
+     ![AzureMigrate](assets/sma10.jpg)
+    
