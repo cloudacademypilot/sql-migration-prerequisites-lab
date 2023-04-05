@@ -215,22 +215,16 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image42.jpg)
 
-14.  Add WebServer1 and WebServer2 similarily as discovery source
+14. Add WebServer1 and WebServer2 similarily as discovery source
 
     ![AzureMigrate](assets/image43.jpg)
 
 15. If any validation fails, fix the error, and do **revalidate**.
 
-    ![AzureMigrate](assets/image44.png)
-        
-    ![AzureMigrate](assets/image45.png)
-
 16. Specify the **SQL credentials** for SQL DB discovery.
 
-    ![AzureMigrate](assets/image46.png)
-
-    ![AzureMigrate](assets/image47.png)
-    
+    ![AzureMigrate](assets/image46.jpg)
+   
 17. Now click **Start discovery** to initiate the discovery process.
 
     ![AzureMigrate](assets/image48.png)
