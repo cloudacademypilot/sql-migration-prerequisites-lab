@@ -85,7 +85,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 11.	Now Browse the application and check data.
 
-     ![AzureMigrate](assets/image87.png)
+     ![AzureMigrate](assets/image87.jpg)
 
 ## Create a project in Azure Migrate
 
