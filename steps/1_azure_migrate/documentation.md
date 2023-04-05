@@ -90,7 +90,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 2.	Open the extracted folder and open **web.config** in notepad to edit.
 
-3.	Replace the **server name** in the connection string with the **Source Server IP or hostname**.
+3.	Replace the **XX.XX.XXX.XXX** in the connection string with the **IP or hostname** of the SourceSQLServer.
 
     ![AzureMigrate](assets/image82.png)
 
