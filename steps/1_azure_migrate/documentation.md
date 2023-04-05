@@ -236,45 +236,39 @@ Set up the appliance by with below steps:
 
 23. Click **create group** to Group the servers for assessment.
 
-    ![AzureMigrate](assets/image60.png)
+    ![AzureMigrate](assets/assessment1.jpg)
 
 24. Provide **group name** and select the **discovered machines**. Click **create**.
 
-    ![AzureMigrate](assets/image61.png)
-    
-    ![AzureMigrate](assets/image62.png)
+    ![AzureMigrate](assets/assessment2.jpg)
 
 25. Select **Create Assessment** and choose **Azure VM**.
 
-    ![AzureMigrate](assets/image63.png)
+    ![AzureMigrate](assets/assessment3.jpg)
     
-    ![AzureMigrate](assets/image64.png)
+    ![AzureMigrate](assets/assessment4.jpg)
     
 26. Select the **Group** that was created earlier to perform the assessment on those servers.
 
-    ![AzureMigrate](assets/image65.png)
+    ![AzureMigrate](assets/assessment5.jpg)
 
 27. Review and **create assessment**.
 
-    ![AzureMigrate](assets/image66.png)
-    
-    ![AzureMigrate](assets/image67.png)
+    ![AzureMigrate](assets/assessment6.jpg)
 
 28. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
 
-    ![AzureMigrate](assets/image68.png)
+    ![AzureMigrate](assets/assessment7.jpg)
 
 29. Click on the **assessment report** that has been generated.
 
-    ![AzureMigrate](assets/image69.png)
+    ![AzureMigrate](assets/assessment8.jpg)
 
 30. Click on the various options available assessment details blade to see **Azure Readiness & Cost details**.
 
-    ![AzureMigrate](assets/image70.png)
-    
-    ![AzureMigrate](assets/image71.png)
-    
-    ![AzureMigrate](assets/image72.png)
+   ![AzureMigrate](assets/assessment10.jpg)
+   ![AzureMigrate](assets/assessment11.jpg)
+   ![AzureMigrate](assets/assessment12.jpg)
     
 DEPENDANCY ANALYSIS:
 
