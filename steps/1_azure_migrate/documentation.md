@@ -32,8 +32,6 @@ In the Deployed resource group the VM that starts with
 - WebServer1XXXX will be reffered as WebServer1 in the lab
 - WebServer2XXXX will be reffered as WebServer2 in the lab
 
-## Hosting Web Application
-
 ## Connecting to application server virtual machine via RDP
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** .
@@ -45,6 +43,8 @@ In the Deployed resource group the VM that starts with
 4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
 
 5. Now you are inside the **virtual machine**.
+
+## Hosting Web Application
 
 ### IIS Configuration
 
