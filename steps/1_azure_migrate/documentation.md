@@ -255,10 +255,10 @@ Set up the appliance by with below steps:
 27. Review and **create assessment**.
 
     ![AzureMigrate](assets/assessment6.jpg)
+    ![AzureMigrate](assets/assessment7.jpg)
 
 28. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
 
-    ![AzureMigrate](assets/assessment7.jpg)
     ![AzureMigrate](assets/assessment8.jpg)
 
 29. Click on the **assessment report** that has been generated.
