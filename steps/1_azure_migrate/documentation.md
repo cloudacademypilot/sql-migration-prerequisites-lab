@@ -215,9 +215,9 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image42.jpg)
 
-14. **Verify** the input post adding the values.
+14.  Add WebServer1 and WebServer2 similarily as discovery source
 
-    ![AzureMigrate](assets/image43.png)
+    ![AzureMigrate](assets/image43.jpg)
 
 15. If any validation fails, fix the error, and do **revalidate**.
 
