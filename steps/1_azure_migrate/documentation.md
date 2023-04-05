@@ -10,13 +10,25 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 
 ## Hosting Web Application
 
+## Connecting to application server virtual machine via RDP
+
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```DMA```.
+
+2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.
+
+3. File will be downloaded inside **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
+
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+
+5. Now you are inside the **virtual machine**.
+
 ### IIS Configuration
 
 Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the IIS and ASP.NET 4.7.
 
 Connect Webserver1 as mentions above and follow below steps :
 
-1. Open **Server Manager** and click on **Add roles and feature**.
+1. Inside server, Open **Server Manager** and click on **Add roles and feature**.
 
     ![AzureMigrate](assets/image76.png)
 
