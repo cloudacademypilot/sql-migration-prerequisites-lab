@@ -157,6 +157,10 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image17.png)
     
+    Enter N to continue
+
+    ![AzureMigrate](assets/image17_1.jpg)
+    
 8. Once setup is completed, go to Desktop to run the **Migrate Appliance configuration webpage**.
 
     ![AzureMigrate](assets/image25.png)
