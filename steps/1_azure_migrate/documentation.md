@@ -377,7 +377,7 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
     ![AzureMigrate](assets/sma6.jpg)
     ![AzureMigrate](assets/sma6_1.jpg)
     
-8. Select "Automatically install and complete HCM setup on this server" and download the setup using link provided and complete the installation.
+8. After Migration is completed, Select "Automatically install and complete HCM setup on this server" and download the setup using link provided and complete the installation.
 
     ![AzureMigrate](assets/sma7.jpg)
     ![AzureMigrate](assets/sma8.jpg)
