@@ -258,7 +258,7 @@ Set up the appliance by with below steps:
 
 ## ASSESSMENT:
 
-23. Click **create group** to Group the servers for assessment.
+23. Go Back to Azure Portal and open Azure Migrate. Click **create group** to Group the servers for assessment.
 
     ![AzureMigrate](assets/assessment1.jpg)
 
