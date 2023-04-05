@@ -12,7 +12,7 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 
 ## Connecting to application server virtual machine via RDP
 
-1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```DMA```.
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** .
 
 2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.
 
