@@ -8,6 +8,30 @@ Dependency analysis identifies dependencies between discovered on-premises serve
 - Identification of servers that must be migrated together. This is especially useful if there are no data about app dependency.
 - Analyzing dependencies helps ensure that nothing is left behind, and thus avoids surprise outages after migration.
 
+## Abstract and learning objectives
+
+In this hands-on lab, you will learn how to assess the servers and application. You will learn how to use Azure Migrate as the hub for discovery and assessement, together with accompanying tools.
+
+## Overview
+
+Before the lab, you will have pre-deployed an on-premises infrastructure hosted as Azure VMs.  This infrastructure is hosting a multi-tier application called 'adventure', using Azure VMs for each of the application tiers.
+
+During the lab, you will migrate this entire application to Azure. This will include assessing the on-premises application using Azure Migrate and  assessing the database migration using Microsoft Data Migration Assistant (DMA)
+
+## Solution architecture
+
+The Adventure application comprises 3 VMs hosted in Azure:
+
+- **Database tier** Hosted on the smarthotelSQL1 VM, which is running Windows Server 2016 and SQL Server 2017.
+
+- **Application tier** Hosted on the smarthotelweb2 VM, which is running Windows Server 2012R2.
+
+- **Web tier** Hosted on the smarthotelweb1 VM, which is running Windows Server 2012R2.
+
+- **Web proxy** Hosted on the  UbuntuWAF VM, which is running Nginx on Ubuntu 18.04 LTS.
+
+
+
 ## Hosting Web Application
 
 ## Connecting to application server virtual machine via RDP
