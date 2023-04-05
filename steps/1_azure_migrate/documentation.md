@@ -299,7 +299,7 @@ Set up the appliance by with below steps:
    ![AzureMigrate](assets/assessment11.jpg)
    ![AzureMigrate](assets/assessment12.jpg)
     
-DEPENDANCY ANALYSIS:
+## DEPENDANCY ANALYSIS:
 
 
 When migrating a workload to Azure, it is important to understand all workload dependencies. A broken dependency could mean that the application doesn't run properly in Azure, perhaps in hard-to-detect ways. Some dependencies, such as those between application tiers, are obvious. Other dependencies, such as DNS lookups, Kerberos ticket validation or certificate revocation checks, are not.
