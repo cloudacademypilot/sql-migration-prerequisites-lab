@@ -348,19 +348,33 @@ Next you can proceed with Actual lift and sift of server using the Azure Migrate
 
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
-1. Download and install AppServiceMigrationAssistant using below link 
+1. Download and install AppServiceMigrationAssistant using below link on WebServer1
 
 https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
 
 2. Select the hosted site and click on next.
 
-3. Check the report and resolved errors if any.
+    ![AzureMigrate](assets/sma1.jpg)
+
+3. Check the report and resolved errors if any. Click on next
+
+    ![AzureMigrate](assets/sma2.jpg)
 
 4. Click on “copy code and open browser” and login.
 
+    ![AzureMigrate](assets/sma4.jpg)
+
 5. Go back to the App Service Migration Assistant and select the Azure Migrate Project().
+
+    ![AzureMigrate](assets/sma4_1.jpg)
 
 6. Select Subscription, Use existing Resource group, and Provide site name as “adventureweb”
 
-7. Select “Create new” in App service plan and no other changes. Click on Migrate.
+    ![AzureMigrate](assets/sma5.jpg)
 
+7. Select “Create new” in App service plan and no other changes. Click on Migrate.
+    
+    ![AzureMigrate](assets/sma6.jpg)
+    ![AzureMigrate](assets/sma6_1.jpg)
+    
+8. 
