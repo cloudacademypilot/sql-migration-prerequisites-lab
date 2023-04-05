@@ -141,7 +141,7 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image11.png)
 
-7. Run the **Azure migrate installer** PowerShell script as specified below.
+7. Run the **Azure migrate installer** PowerShell(As Administrator ) script as specified below.
 
     ![AzureMigrate](assets/image12.png)
     
