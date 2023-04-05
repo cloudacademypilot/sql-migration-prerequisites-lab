@@ -24,7 +24,7 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 - **Database tier** Hosted on the SourceSQLServer VM, which is running SQL Server 2019.
 
-- **Application tier** Hosted on the WebServer1 and WebServer2 VM, which is running Windows Server 2019.
+- **Web tier** Hosted on the WebServer1 and WebServer2 VM, which is running Windows Server 2019.
 
 In the Deployed resource group the VM that starts with 
 
