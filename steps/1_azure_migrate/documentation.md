@@ -66,6 +66,8 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the **Default Web Site** and remove.
 
+    ![AzureMigrate](assets/image83_1.jpg)
+
 7.	Right click on **Sites** and select **Add Website**.
 
     ![AzureMigrate](assets/image84.png)
@@ -78,7 +80,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 10.	Add default document as **home.aspx**.
 
-    ![AzureMigrate](assets/image86_1.png)
+    ![AzureMigrate](assets/image86_1.jpg)
     ![AzureMigrate](assets/image86.png)
 
 11.	Now Browse the application and check data.
