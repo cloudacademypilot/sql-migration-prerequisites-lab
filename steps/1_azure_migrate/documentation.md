@@ -259,10 +259,11 @@ Set up the appliance by with below steps:
 28. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
 
     ![AzureMigrate](assets/assessment7.jpg)
+    ![AzureMigrate](assets/assessment8.jpg)
 
 29. Click on the **assessment report** that has been generated.
 
-    ![AzureMigrate](assets/assessment8.jpg)
+    ![AzureMigrate](assets/assessment9.jpg)
 
 30. Click on the various options available assessment details blade to see **Azure Readiness & Cost details**.
 
