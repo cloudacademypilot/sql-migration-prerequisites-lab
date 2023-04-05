@@ -197,11 +197,11 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image40.png)
     
-    ![AzureMigrate](assets/image41.png)
+    ![AzureMigrate](assets/image41.jpg)
 
 13. Now **add discovery source**. Specify the IP address and the friendly name with given format.
 
-    ![AzureMigrate](assets/image42.png)
+    ![AzureMigrate](assets/image42.jpg)
 
 14. **Verify** the input post adding the values.
 
