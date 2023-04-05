@@ -22,15 +22,15 @@ During the lab, you will migrate this entire application to Azure. This will inc
 
 The Adventure application comprises 3 VMs hosted in Azure:
 
-- **Database tier** Hosted on the smarthotelSQL1 VM, which is running Windows Server 2016 and SQL Server 2017.
+- **Database tier** Hosted on the SourceSQLServer VM, which is running SQL Server 2019.
 
-- **Application tier** Hosted on the smarthotelweb2 VM, which is running Windows Server 2012R2.
+- **Application tier** Hosted on the WebServer1 and WebServer2 VM, which is running Windows Server 2019.
 
-- **Web tier** Hosted on the smarthotelweb1 VM, which is running Windows Server 2012R2.
+In the Deployed resource group the VM that starts with 
 
-- **Web proxy** Hosted on the  UbuntuWAF VM, which is running Nginx on Ubuntu 18.04 LTS.
-
-
+- SourceXXXX will be reffered as SourceSQLServer in the lab
+- WebServer1XXXX will be reffered as WebServer1 in the lab
+- WebServer2XXXX will be reffered as WebServer2 in the lab
 
 ## Hosting Web Application
 
