@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-## Exercise 1: Connecting to target virtual machine via RDP
+## Exercise 1: Connecting to virtual machine via RDP
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```DMA```.
 
