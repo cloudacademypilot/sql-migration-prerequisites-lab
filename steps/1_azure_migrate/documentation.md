@@ -20,6 +20,8 @@ During the lab, you will migrate this entire application to Azure. This will inc
 
 ## Solution architecture
 
+   ![AzureMigrate](assets/architecture.jpg)
+
 The Adventure application comprises 3 VMs hosted in Azure:
 
 - **Database tier** Hosted on the SourceSQLServer VM, which is running SQL Server 2019.
