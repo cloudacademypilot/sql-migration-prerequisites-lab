@@ -124,6 +124,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 11.	Now Browse the application and check data.
 
      ![AzureMigrate](assets/image87.jpg)
+     ![AzureMigrate](assets/website1.jpg)
 
 ## Create a project in Azure Migrate
 
@@ -410,5 +411,5 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
 9. Click next after installation to see the Migration Result. Click on "Go to your website" to view the migrated site.
     
      ![AzureMigrate](assets/sma9.jpg)
-     ![AzureMigrate](assets/sma10.jpg)
+     ![AzureMigrate](assets/website2.jpg)
     
