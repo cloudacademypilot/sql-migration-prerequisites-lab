@@ -34,7 +34,7 @@ $fileList = Invoke-Sqlcmd `
                     -ServerInstance . `
                     -UserName $username `
                     -Password $password `
-		    -TrustServerCertificate True `
+		    -TrustServerCertificate `
                     -Query "restore filelistonly from disk='$($pwd)\AdventureWorksLT2019.bak'";
 
 # Create move records for each file in the backup
