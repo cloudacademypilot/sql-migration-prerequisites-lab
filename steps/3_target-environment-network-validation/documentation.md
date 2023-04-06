@@ -6,7 +6,7 @@
 
 ## Exercise 1: Connecting to target virtual machine via RDP
 
-1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```Target```.
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** starting with name ```DMA```.
 
     ![DMA Assessment](assets/1.jpg)
     
@@ -60,29 +60,27 @@
     
 ## Exercise 3: Preparing the Input excel file
 
-1. Since this virtual machine is based on SQL server image, it won't have ```MS Office``` installed, so you can't edit the file here. To edit the excel file copy-paste this ```Network_Validation.xlsx``` file to another virtual machine name starting with ```DMA{*}``` where you edited the excel in the previous lab step.
+1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
+
+    ![DMA Assessment](assets/20.jpg)
+
+2. Click **Sign in** and sign into **MS office** using your lab credentials.
+
+    ![DMA Assessment](assets/21.jpg)
+
+3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
 
     ![DMA Assessment](assets/22.jpg)
     
     ![DMA Assessment](assets/23.jpg)
-    
-    ![DMA Assessment](assets/24.jpg)
 
-2. Search for ```Office``` in the search bar at the bottom and click **Open**. 
-
-    ![DMA Assessment](assets/25.jpg)
-    
-3. Select **Excel** and click on **Upload** and browse to the input file ```Network_Validation.xlsx``` you copied, select it and click **Open**. The file will be opened in Edge browser.
-
-    ![DMA Assessment](assets/26.jpg)
-
-4. 
+4. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
 
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/35.jpg)
 
-11. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go back to the virtual machine name starting with ```Target{*}``` and go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
+11. Open **File explorer** and Go to **Downloads** folder and select ```DMA-INPUT-FILE.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
     ![DMA Assessment](assets/36.jpg)
     
