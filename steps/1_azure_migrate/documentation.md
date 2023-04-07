@@ -2,7 +2,7 @@
 
 This lab provides step by step procedures to configure dependency analysis in **Azure Migrate: Discovery and assessment**.
 
-Dependency analysis identifies dependencies between discovered on-premises servers. It provides these advantages:
+**Dependency analysis** identifies dependencies between discovered on-premises servers. It provides these advantages:
 
 - This lets us to gather servers into groups for assessment more accurately.
 - Identification of servers that must be migrated together. This is especially useful if there are no data about app dependency.
@@ -14,7 +14,7 @@ In this hands-on lab, you will learn how to assess the servers and application. 
 
 ## Overview
 
-Before the lab, you will have pre-deployed an on-premises infrastructure hosted as Azure VMs.  This infrastructure is hosting a multi-tier application called 'adventure', using Azure VMs for each of the application tiers.
+Before the lab, you will have pre-deployed an on-premises infrastructure hosted as Azure VMs.  This infrastructure is hosting a multi-tier application called **adventure**, using Azure VMs for each of the application tiers.
 
 During the lab, you will migrate this entire application to Azure. This will include assessing the on-premises application using Azure Migrate and  assessing the database migration using Microsoft Data Migration Assistant (DMA)
 
@@ -28,15 +28,15 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 - **Web tier** Hosted on the WebServer1 and WebServer2 VM, which is running Windows Server 2019.
 
-In the Deployed resource group the VM that starts with 
+> Note:
+> In the Deployed resource group, the VM that starts with 
+> - **Source{XXXX}** will be reffered as **SourceSQLServer** in the lab
+> - **WebServer1{XXXX}** will be reffered as **WebServer1** in the lab
+> - **WebServer2{XXXX}** will be reffered as **WebServer2** in the lab
 
-- SourceXXXX will be reffered as SourceSQLServer in the lab
-- WebServer1XXXX will be reffered as WebServer1 in the lab
-- WebServer2XXXX will be reffered as WebServer2 in the lab
+## Steps on how to connect to virtual machines via RDP
 
-## Connecting to application server virtual machine via RDP
-
-1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** .
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** you want to connect to.
 
 2. Click on **Connect** and then click **Select** to connect via native RDP. Click **Download RDP file** to download.
 
@@ -50,9 +50,9 @@ In the Deployed resource group the VM that starts with
 
 ### IIS Configuration
 
-Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the IIS and ASP.NET 4.7.
+Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the ```IIS``` and ```ASP.NET 4.7```.
 
-Connect Webserver1 as mentions above and follow below steps :
+Connect to **Webserver1** as mentioned above and follow below steps :
 
 1. Inside server, Open **Server Manager** and click on **Add roles and feature**.
 
@@ -116,7 +116,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
     ![AzureMigrate](assets/image85.png)
 
-10.	Add default document as **home.aspx**.
+10. Add default document as **home.aspx**.
 
     ![AzureMigrate](assets/image86_1.jpg)
     ![AzureMigrate](assets/image86.png)
@@ -130,7 +130,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 Set up a new project in an Azure subscription -
 
-1. In the Azure portal, search for **Azure Migrate**.
+1. Go back to your local machine, in **Azure portal**, search for **Azure Migrate**.
 
 2. In Services , select **Azure Migrate**.
 
@@ -176,7 +176,7 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image10.png)
 
-6. Open Source VM and open the link on Microsoft Edge. Now Go to **Downloads** folder on the VM and **unzip** the Azure migrate folder.
+6. Open **SourceSQLServer** VM and open the link on Microsoft Edge. The OVA file will be downloaded. Now Go to **Downloads** folder on the VM and **unzip** the Azure migrate folder.
 
     ![AzureMigrate](assets/image11.png)
 
@@ -184,19 +184,19 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image12.png)
     
-    Enter 3 to select "Physical or other"
+    Enter ```3``` to select **Physical or other**
     
     ![AzureMigrate](assets/image13.png)
     
-    Enter 1 to select "Azure Public"
+    Enter ```1``` to select **Azure Public**
     
     ![AzureMigrate](assets/image15.png)
     
-    Enter 1 to select "Public Endpoint option" and then Enter "Y" to continue
+    Enter ```1``` to select **Public Endpoint option** and then Enter ```Y``` to continue
 
     ![AzureMigrate](assets/image17.png)
     
-    Enter N to continue
+    Enter ```N``` to continue
 
     ![AzureMigrate](assets/image17_1.jpg)
     
@@ -242,7 +242,7 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image42.jpg)
 
-14. Add WebServer1 and WebServer2 similarily as discovery source
+14. Add ```WebServer1``` and ```WebServer2``` similarily as discovery source
 
     ![AzureMigrate](assets/image43.jpg)
 
@@ -261,106 +261,108 @@ Set up the appliance by with below steps:
 
 ## ASSESSMENT:
 
-23. Go Back to Azure Portal to open Azure Migrate,Goto Discover,access and migrate. Click on Discovered Server Count.
+1. Go Back to **Azure Portal** in your local machine to open Azure Migrate, Goto **Discover,access and migrate**. Click on **Discovered Server Count**.
 
     ![AzureMigrate](assets/image23_1.jpg)
     
-19. Click **create group** to Group the servers for assessment.
+2. Click **create group** to Group the servers for assessment.
  
     ![AzureMigrate](assets/assessment1.jpg)
 
-24. Provide **group name** and select the **discovered machines**. Click **create**.
+3. Provide **group name** and select the **discovered machines**. Click **create**.
 
     ![AzureMigrate](assets/assessment2.jpg)
 
-25. Select **Create Assessment** and choose **Azure VM**.
+4. Select **Create Assessment** and choose **Azure VM**.
 
     ![AzureMigrate](assets/assessment3.jpg)
     
     ![AzureMigrate](assets/assessment4.jpg)
     
-26. Select the **Group** that was created earlier to perform the assessment on those servers.
+5. Select the **Group** that was created earlier to perform the assessment on those servers.
 
     ![AzureMigrate](assets/assessment5.jpg)
 
-27. Review and **create assessment**.
+6. Review and **create assessment**.
 
     ![AzureMigrate](assets/assessment6.jpg)
+    
     ![AzureMigrate](assets/assessment7.jpg)
 
-28. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
+7. Go to **Azure Migrate Hub** overview page and select the **assessment** that has been populated.
 
     ![AzureMigrate](assets/assessment8.jpg)
 
-29. Click on the **assessment report** that has been generated.
+8. Click on the **assessment report** that has been generated.
 
     ![AzureMigrate](assets/assessment9.jpg)
 
-30. Click on the various options available assessment details blade to see **Azure Readiness & Cost details**.
+9. Click on the various options available assessment details blade to see **Azure Readiness & Cost details**.
 
    ![AzureMigrate](assets/assessment10.jpg)
+   
    ![AzureMigrate](assets/assessment11.jpg)
+   
    ![AzureMigrate](assets/assessment12.jpg)
     
-## DEPENDANCY ANALYSIS:
-
+## DEPENDENCY ANALYSIS:
 
 When migrating a workload to Azure, it is important to understand all workload dependencies. A broken dependency could mean that the application doesn't run properly in Azure, perhaps in hard-to-detect ways. Some dependencies, such as those between application tiers, are obvious. Other dependencies, such as DNS lookups, Kerberos ticket validation or certificate revocation checks, are not.
 
 In this task, you will configure the Azure Migrate dependency visualization feature. This requires you to first create a Log Analytics workspace, and then to deploy agents on the to-be-migrated VMs.
 
-1. Return to the Azure Migrate blade in the Azure Portal, and select Servers databases and web apps. Under Azure Migrate: Discovery and assessment select Groups, then select the AdventureVMs group to see the group details. Note that each VM has their Dependencies status as Requires agent installation. Select Requires agent installation for the web1 VM.
+1. Return to the Azure Migrate blade in the Azure Portal, and select **Servers databases and web apps**. Under **Azure Migrate: Discovery and assessment** select **Groups**, then select the **AdventureVMs** group to see the group details. Note that each VM has their Dependencies status as Requires agent installation. Select Requires agent installation for the webserver1 VM.
     
     ![AzureMigrate](assets/dependency1.jpg)
     
-2. On the Dependencies blade, select Configure OMS workspace.
+2. On the Dependencies blade, select **Configure OMS workspace**.
     
     ![AzureMigrate](assets/dependency2.png)
     
-3. Create a new OMS workspace. Use AzureMigrateWS as the workspace name, where is a random number. Choose a workspace location close to your lab deployment, then select Configure.
+3. Create a new **OMS workspace**. Use ```AzureMigrateWS``` as the workspace name, where is a random number. Choose a workspace location close to your lab deployment, then select **Configure**.
     
     ![AzureMigrate](assets/dependency3.png)
     
-4. Wait for the Log Analytics workspace to be deployed. Once it is deployed, navigate to it, and select Agents under Settings on the left. Make a note of the Workspace ID and Primary Key (for example by using Notepad).
+4. Wait for the **Log Analytics workspace** to be deployed. Once it is deployed, navigate to it, and select **Agents** under Settings on the left. Make a note of the **Workspace ID** and **Primary Key** by copying into notepad.
     
     ![AzureMigrate](assets/dependency4.jpg)
     
-5. Return to the Azure Migrate 'Dependencies' blade. Copy each of the 2 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step.
+5. Return to the **Azure Migrate Dependencies** blade. Copy each of the 2 agent download URLs and paste them alongside the Workspace ID and key you noted in the previous step.
     
     ![AzureMigrate](assets/dependency5.jpg)
     
-6. Connect to the Web server1 and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer. First you need to unistall.
+6. Connect to the Webserver1 vm and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer. First you need to unistall.
 Note : Machine Restart is NOT required.
    
    ![AzureMigrate](assets/dependency6_1.jpg)
     
-Re launch the installer 
+   Re-launch the installer.
    
    ![AzureMigrate](assets/dependency6_2.jpg)
     
-7. Select through the installation wizard until you get to the Agent Setup Options page. From there, select Connect the agent to Azure Log Analytics (OMS) and select Next. Enter the Workspace ID and Workspace Key that you copied earlier, and select Azure Commercial from the Azure Cloud drop-down. Select through the remaining pages and install the agent.
+7. Select through the installation wizard until you get to the Agent Setup Options page. From there, select Connect the agent to **Azure Log Analytics (OMS)** and select **Next**. Enter the **Workspace ID** and **Workspace Key** that you copied earlier, and select **Azure Commercial** from the Azure Cloud drop-down. Select through the remaining pages and install the agent.
     
     ![AzureMigrate](assets/dependency7_1.jpg)
     
     ![AzureMigrate](assets/dependency7_2.jpg)
     
-8. Now paste the link to the Dependency Agent Windows installer into the browser address bar. Run the installer and select through the install wizard to complete the installation.
+8. Now paste the link to the **Dependency Agent Windows installer** into the browser address bar. Run the installer and select through the install wizard to complete the installation.
     
     ![AzureMigrate](assets/dependency8.jpg)
     
-Connect to the SQL and web2 VM and repeat the installation process (steps 6-8) for both agents.
+Connect to the SourceSQLServer and webserver2 VM and repeat the installation process (steps 6-8) for both agents.
 
-The agent installation is now complete. Next, you need to generate some traffic on the hosted application so the dependency visualization has some data to work with. Browse to the public IP address of the Web1 server, and spend a few minutes refreshing the page.
+The agent installation is now complete. Next, you need to generate some traffic on the hosted application so the dependency visualization has some data to work with. Browse to the public IP address of the webserver1 server, and spend a few minutes refreshing the page.
 
-####Explore dependency visualization
+## Explore dependency visualization
 
 In this task, you will explore the dependency visualization feature of Azure Migrate. This feature uses data gathered by the dependency agent you installed in above task.
 
-1. Return to the Azure Portal and refresh the Azure Migrate adventureGroup VMs group blade. The 3 VMs on which the dependency agent was installed should now show their status as 'Installed'. (If not, refresh the page using the browser refresh button, not the refresh button in the blade. It may take up to 5 minutes after installation for the status to be updated.)
+1. Return to the **Azure Portal** and refresh the Azure Migrate adventureGroup VMs group blade. The 3 VMs on which the dependency agent was installed should now show their status as ```Installed```. (If not, refresh the page using the browser refresh button, not the refresh button in the blade. It may take up to 5 minutes after installation for the status to be updated.)
 
     ![AzureMigrate](assets/dependency9.jpg)
 
-2. Select View dependencies.
+2. Select **View dependencies**.
 
     ![AzureMigrate](assets/dependency10.jpg)
 
@@ -370,46 +372,49 @@ In this task, you will explore the dependency visualization feature of Azure Mig
 
 In this exercise, you used Azure Migrate to assess the on-premises environment. This included selecting Azure Migrate tools, deploying the Azure Migrate appliance into the on-premises environment, creating a migration assessment, and using the Azure Migrate dependency visualization.
 
-Next you can proceed with Actual lift and sift of server using the Azure Migrate. For details please go thorugh below link :
+Next you can proceed with Actual lift and shift of server using the Azure Migrate. For details please go thorugh below link :
 
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
-1. Download and install AppServiceMigrationAssistant using below link on WebServer1 
+1. Download and install **AppServiceMigrationAssistant** using below link on WebServer1 
 
 https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
 
-2. Open the AppServiceMigrationAssistant using shortcut present on Desktop. Select the hosted site and click on next.
+2. Open the **AppServiceMigrationAssistant** using shortcut present on Desktop. Select the **hosted site** and click on **next**.
 
     ![AzureMigrate](assets/sma1.jpg)
 
-3. Check the report and resolved errors if any. Click on next
+3. Check the **report** and resolved errors if any. Click on **next**.
 
     ![AzureMigrate](assets/sma2.jpg)
 
-4. Click on “copy code and open browser” and login.
+4. Click on **copy code and open browser** and **login**.
 
     ![AzureMigrate](assets/sma4.jpg)
 
-5. Go back to the App Service Migration Assistant and select the Azure Migrate Project () which was created before .
+5. Go back to the **App Service Migration Assistant** and select the **Azure Migrate Project** which was created before .
 
     ![AzureMigrate](assets/sma4_1.jpg)
 
-6. Select Subscription, Use existing Resource group, and Provide site name as “adventureweb”
+6. Select Subscription, use existing Resource group, and Provide site name as ```adventureweb```.
 
     ![AzureMigrate](assets/sma5.jpg)
 
-7. Select “Create new” in App service plan and no other changes. Click on Migrate.
+7. Select **Create new** in App service plan and no other changes. Click on **Migrate**.
     
     ![AzureMigrate](assets/sma6.jpg)
+    
     ![AzureMigrate](assets/sma6_1.jpg)
     
-8. After Migration is completed, Select "Automatically install and complete HCM setup on this server" and download the setup using link provided and complete the installation.
+8. After Migration is completed, Select **Automatically install and complete HCM setup on this server** and download the setup using link provided and complete the installation.
 
     ![AzureMigrate](assets/sma7.jpg)
+    
     ![AzureMigrate](assets/sma8.jpg)
     
-9. Click next after installation to see the Migration Result. Click on "Go to your website" to view the migrated site.
+9. Click next after installation to see the Migration Result. Click on **Go to your website** to view the migrated site.
     
      ![AzureMigrate](assets/sma9.jpg)
+     
      ![AzureMigrate](assets/website2.jpg)
     
