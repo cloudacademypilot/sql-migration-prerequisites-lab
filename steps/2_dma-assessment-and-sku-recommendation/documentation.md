@@ -2,7 +2,7 @@
 
 ## Data Migration Assistant
 
-**The Data Migration Assistant (DMA)** helps you upgrade to a modern data platform by detecting compatibility issues that can impact database functionality in your new version of SQL Server or Azure SQL Database. DMA recommends performance and reliability improvements for your target environment and allows you to move your schema, data, and uncontained objects from your source server to your target server.
+**The Data Migration Assistant (DMA)** helps you upgrade to a modern data platform by detecting compatibility issues that can impact database functionality in your new version of SQL Server or Azure SQL Database. DMA recommends performance and reliability improvements for your target environment and allows you to move your schema, data, and uncontained objects from your source server to your target server. 
 
 ## Capabilities of DMA
 
