@@ -2,7 +2,19 @@
 
 ## Learning Objectives
 
+This lab step is to provide the detailed procedure/step to use the Network Validation script (Network_Validation.ps1) to perform the following basic checks on target SQL environmnent:
+- Check for target server IP address
+- Check for network diagnostics
+- Check for firewall settings
+- Check for infrastructure validation
+- Check connection w.r.t port and server
+- Check diskspace
+
 ## Prerequisites
+
+- Virtual Machine - Already setup for you.
+- ImportExcel and Az module  
+- Input Excel File - The Network Validation script is based on the worksheet named ‘Network_Validation.xlsx’
 
 ## Exercise 1: Connecting to virtual machine via RDP
 
