@@ -1,0 +1,6 @@
+title: Completed DMA assessment and SKU recommendation
+internal_name: Completed DMA assessment and SKU recommendation
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
