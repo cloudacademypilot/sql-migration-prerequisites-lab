@@ -74,9 +74,9 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
 1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
 
-    ![DMA Assessment](assets/20.jpg)
+    ![DMA Assessment](assets/25.jpg)
 
-2. Click **Sign in** and sign into **MS office** using your lab credentials.
+2. Click **Sign in** and sign into **MS office** using your lab credentials if you're not signed in.
 
     ![DMA Assessment](assets/21.jpg)
 
@@ -88,6 +88,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
 4. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
 
+5. 
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/35.jpg)
