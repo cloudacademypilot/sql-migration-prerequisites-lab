@@ -144,25 +144,62 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/42.jpg)
 
-9. Open **Test-Connection** worksheet. Copy-Paste the **DNS name** of the Target VM 
+9. Open **Test-Connection** worksheet. Copy-Paste the **DNS name** of the Target VM into the field **target server dns name**.
 
-5. Open **Nslookup** worksheet.
+    ![DMA Assessment](assets/43.jpg)
+
+5. Open **Check_Diskspace** worksheet. Copy-Paste the **Private IP address** of the Target VM into the field **target server private ip address**.
+
+    ![DMA Assessment](assets/44.jpg)
+
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
-    ![DMA Assessment](assets/35.jpg)
+    ![DMA Assessment](assets/45.jpg)
 
 11. Open **File explorer** and Go to **Downloads** folder and select ```DMA-INPUT-FILE.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
-    ![DMA Assessment](assets/36.jpg)
+    ![DMA Assessment](assets/46.jpg)
     
-    ![DMA Assessment](assets/37.jpg)
+    ![DMA Assessment](assets/47.jpg)
 
 ## Exercise 4: Runing DMA assessment powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```Network_Validation.ps1``` script and select **Run with PowerShell** to run the script.
 
-    ![DMA Assessment](assets/38.jpg)
+    ![DMA Assessment](assets/48.jpg)
 
-2. Now **Windows powershell** will open and ask for your input.
+2. Now **Windows powershell** will open and script will run. Creates the required folders and installs **ImportExcel** and **Az** modules.
 
-    ![DMA Assessment](assets/39.jpg)
+    ![DMA Assessment](assets/49.jpg)
+
+3. Enter ```1``` for Validation of the IP adress.
+
+    ![DMA Assessment](assets/50.jpg)
+    
+    ![DMA Assessment](assets/51.jpg)
+    
+4. Enter ```2``` for Checking inbound and outbound rules of firewall.
+
+    ![DMA Assessment](assets/52.jpg)
+    
+    ![DMA Assessment](assets/53.jpg)
+    
+5. Enter ```3``` for Test connection w.r.t target vm and port.
+
+    ![DMA Assessment](assets/54.jpg)
+    
+    ![DMA Assessment](assets/55.jpg)
+    
+6. Enter ```4``` for Checking Network diagnostics. Popup window will appear. Please login with your lab credentials.
+
+
+    
+7. Enter ```5``` for Infrastructure validation. Popup window will appear. Please login with your lab credentials.
+
+
+    
+8. Enter ```6``` for Checking Diskspace. Popup window will appear. Enter ```sqladmin``` as User name and ```Mail@123``` as Password. Click **Ok**.
+
+    ![DMA Assessment](assets/56.jpg)
+    
+    ![DMA Assessment](assets/57.jpg)
