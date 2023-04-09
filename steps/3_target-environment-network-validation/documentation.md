@@ -88,7 +88,65 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
 4. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
 
-5. 
+    ![DMA Assessment](assets/24.jpg)
+
+5. Open **Nslookup** worksheet. Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **DNS name** and Paste it in the field **target server dns name**.
+
+    ![DMA Assessment](assets/26.jpg) 
+    
+    ![DMA Assessment](assets/27.jpg)
+
+6. Open **Network_Diagnostic** worksheet. 
+
+    ![DMA Assessment](assets/28.jpg) 
+    
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Source{*}```. Copy the **Private IP address** and Paste it in the field **source server private ip address**.
+    
+    ![DMA Assessment](assets/29.jpg)
+    
+    ![DMA Assessment](assets/30.jpg)
+    
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Private IP address** and Paste it in the field **target server private ip address**.
+
+    ![DMA Assessment](assets/31.jpg)
+    
+    ![DMA Assessment](assets/32.jpg)
+    
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Subscription ID**, **Resource group name** and **Target VM name**. And Paste it in the respective placeholders ```/subscriptions/{SubscriptionID}/resourceGroups/{resourcegroupname}/providers/Microsoft.Compute/virtualMachines/{target vm name}```.
+
+    ![DMA Assessment](assets/33.jpg)
+    
+    ![DMA Assessment](assets/34.jpg)
+
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Location** and Paste it in the field **location**.
+
+    ![DMA Assessment](assets/35.jpg)
+    
+    ![DMA Assessment](assets/36.jpg)
+
+    Go to **Azure Portal** opened in your local machine and search for **Azure Active Directory** and open it. Copy the **Tenant ID** and Paste it in the field **Tenant id**.
+
+    ![DMA Assessment](assets/37.jpg)
+    
+    ![DMA Assessment](assets/38.jpg)
+
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Subscription ID** and Paste it in the field **Subscription**.
+
+    ![DMA Assessment](assets/39.jpg)
+    
+    ![DMA Assessment](assets/40.jpg)
+    
+7. Open **Infra_validation** worksheet. Copy-Paste the **Resource group name**, **Target VM name**, **Tenant ID** and **Subscription ID** you copied earlier into the respective fields.
+
+    ![DMA Assessment](assets/41.jpg)
+    
+8. Open **Windows_firewall** worksheet. Keep the values default.
+
+    ![DMA Assessment](assets/42.jpg)
+
+9. Open **Test-Connection** worksheet. Copy-Paste the **DNS name** of the Target VM 
+
+5. Open **Nslookup** worksheet.
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/35.jpg)
