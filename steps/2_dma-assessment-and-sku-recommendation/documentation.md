@@ -480,3 +480,9 @@ In this lab step, you learned:
 - How to prepare DMA input file which contains details of source database server.
 - How to use the DMA automation script to detect/assess the issues.
 - How to get SKU recommendation report for migrating on-premises SQL Server database(s) to target server i.e., Azure SQL Database, Azure SQL Managed Instance or SQL Server on Azure Virtual Machines.
+
+For Database migration please refer the following Cloud Academy training labs:
+- [Migrating an On-Premise SQL Server to Azure SQL Virtual Machine](https://cloudacademy.com/lab/on-premise-sql-server-azure-sql-vm)
+- [Migrating an On-Premise SQL Server to Azure SQL Database with Azure DMS](https://cloudacademy.com/lab/on-premise-sql-server-azure-sql-db)
+- [Migrating an On-Premise SQL Server to Azure SQL Managed Instance with Azure DMS](https://cloudacademy.com/lab/on-premise-sql-server-azure-sql-mi)
+- [Migrating an On-Premise SQL Server to Arc-Enabled Azure SQL Managed Instance](https://cloudacademy.com/lab/on-premise-sql-server-arc-enabled-azure-sql-mi) 
