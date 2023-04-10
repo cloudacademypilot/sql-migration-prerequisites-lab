@@ -323,7 +323,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
     
     ![AzureMigrate](assets/dependency2.png)
     
-3. Create a new **OMS workspace**. Use ```AzureMigrateWS``` as the workspace name, where is a random number. Choose a workspace location close to your lab deployment, then select **Configure**.
+3. Create a new **OMS workspace**. Use ```AzureMigrateWS``` as the workspace name with is a random number, lets take 98. Choose a workspace location close to your lab deployment, then select **Configure**.
     
     ![AzureMigrate](assets/dependency3.png)
     
