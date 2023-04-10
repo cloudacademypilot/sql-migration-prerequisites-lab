@@ -54,6 +54,8 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 3. Name of virtual machine is the hostname.
 
+     ![AzureMigrate](assets/iphostname.jpg)
+
 ## Hosting Web Application
 
 ### IIS Configuration
