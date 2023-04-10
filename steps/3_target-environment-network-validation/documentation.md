@@ -192,11 +192,23 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
 6. Enter ```4``` for Checking Network diagnostics. Popup window will appear. Please login with your lab credentials.
 
-
+    ![DMA Assessment](assets/61.jpg)
+    
+    ![DMA Assessment](assets/58.jpg)
+    
+    ![DMA Assessment](assets/59.jpg)
+    
+    ![DMA Assessment](assets/62.jpg)
     
 7. Enter ```5``` for Infrastructure validation. Popup window will appear. Please login with your lab credentials.
 
-
+    ![DMA Assessment](assets/63.jpg)
+    
+    ![DMA Assessment](assets/58.jpg)
+    
+    ![DMA Assessment](assets/59.jpg)
+    
+    ![DMA Assessment](assets/64.jpg)
     
 8. Enter ```6``` for Checking Diskspace. Popup window will appear. Enter ```sqladmin``` as User name and ```Mail@123``` as Password. Click **Ok**.
 
