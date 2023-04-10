@@ -354,7 +354,7 @@ Note : Machine Restart is NOT required.
     
     ![AzureMigrate](assets/dependency8.jpg)
     
-Connect to the SourceSQLServer and webserver2 VM and repeat the installation process (steps 6-8) for both agents.
+Connect to the **SourceSQLServer** and **webserver2** VM and repeat the installation process (steps 6-8) for both agents.
 
 The agent installation is now complete. Next, you need to generate some traffic on the hosted application so the dependency visualization has some data to work with. Browse to the public IP address of the webserver1 server, and spend a few minutes refreshing the page.
 
