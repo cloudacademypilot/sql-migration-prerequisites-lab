@@ -6,6 +6,9 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/CSLabsInternal/sql-migratio
 Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+Install-Module -Name Az.Accounts -Force
+Install-Module Az.Resources -Force
+Install-Module Az.Storage -Force
 winrm quickconfig -Force
 Enable-PSRemoting -Force
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*' -Force
