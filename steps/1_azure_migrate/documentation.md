@@ -390,7 +390,7 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
 
     ![AzureMigrate](assets/sma1.jpg)
 
-3. Check the **report** and resolved errors if any. Click on **next**.
+3. Check the **report** and resolve errors if any. Click on **next**.
 
     ![AzureMigrate](assets/sma2.jpg)
 
