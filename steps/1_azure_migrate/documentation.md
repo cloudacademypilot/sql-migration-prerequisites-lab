@@ -388,7 +388,7 @@ In this exercise, you used Azure Migrate to assess the on-premises environment. 
 
 Next you can proceed with Actual lift and shift of server using the Azure Migrate. For details please go thorugh below link :
 
-
+https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview
 
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
