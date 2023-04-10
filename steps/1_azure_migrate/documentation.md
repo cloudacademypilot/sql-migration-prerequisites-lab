@@ -273,7 +273,7 @@ In this task, you will use Azure Migrate to create a migration assessment for th
  
     ![AzureMigrate](assets/assessment1.jpg)
 
-3. Provide **group name** and select the **discovered machines**. Click **create**.
+3. Provide group name as **adventureGroup** and select the **discovered machines**. Click **create**.
 
     ![AzureMigrate](assets/assessment2.jpg)
 
