@@ -388,7 +388,7 @@ In this exercise, you used Azure Migrate to assess the on-premises environment. 
 
 If a customer has a clear list of servers for migration and the customer requirement is only to move the Vms (Lift and shift) to IaaS then, **Azure Migrate** can be considered, it covers Hyper-V, VMware, and physical servers. However, discuss and define with the customer which platform will be assessed.
 
-If a customer has a clear list of servers for migration and the customer requirement is to modernize the databases with target minimal landing SKUs options then DMA assessment can be considered which is explained further in the lab.
+If a customer has a clear list of servers for migration and the customer requirement is to modernize the databases with target minimal landing SKUs options then **DMA assessment** can be considered which is explained further in the lab.
 
 After all the Assessment and Dependency visualization next you can proceed with Actual lift and shift of server using the Azure Migrate. For details please go thorugh below link :
 
