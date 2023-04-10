@@ -168,7 +168,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/48.jpg)
 
-2. Now **Windows powershell** will open and script will run. Creates the required folders and installs **ImportExcel** and **Az** modules.
+2. Now **Windows powershell** will open and script will run. Creates the required folders and installs **ImportExcel** and **Az** modules. Please wait for 2-3 minutes.
 
     ![DMA Assessment](assets/49.jpg)
 
