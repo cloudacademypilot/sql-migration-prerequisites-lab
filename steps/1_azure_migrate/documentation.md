@@ -424,3 +424,6 @@ https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank
      
      ![AzureMigrate](assets/website2.jpg)
     
+## Exercise summary
+
+In this exercise you migrated the web tier of the application from on-premises to Azure using Azure Migrate. Completed prerequisites to migrate the virtual machines, you reconfigured the application tier to use the migrated application database hosted in Azure SQL Database, and verified that the migrated application is working end-to-end. You also installed the VM Agent on the migrated virtual machines and explored the dependency mapping.
