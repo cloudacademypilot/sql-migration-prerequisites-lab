@@ -14,7 +14,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
 - Virtual Machine - Already setup for you.
 - ImportExcel and Az module  
-- Input Excel File - The Network Validation script is based on the worksheet named ‘Network_Validation.xlsx’
+- Input Excel File - The Network Validation script is based on the worksheet named ```Network_Validation.xlsx```
 
 ## Exercise 1: Connecting to virtual machine via RDP
 
