@@ -66,10 +66,9 @@ if((Get-Module -ListAvailable).Name -notcontains "ImportExcel")
 #Checking for Az module
 Write-Host "Checking for Az Module"
 
-Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force 
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force    
 Import-Module Az.Network
 Import-Module Az.Compute
-
    
 # Read the input config Excel and validate
 $inputfile = $PSScriptRoot+"\Network_Validation.xlsx"
@@ -398,8 +397,8 @@ try {
     Continue
     }
 
-    $connect_Azaccount=Connect-AzAccount -Tenant '72f988bf-86f1-41af-91ab-2d7cd011db47' 
-    $Set_azAccount=Set-AzContext -Tenant '72f988bf-86f1-41af-91ab-2d7cd011db47' -Subscription 'cbb956ec-6c04-42ae-8428-91d91154f780'
+    $connect_Azaccount=Connect-AzAccount -Tenant $Tenant_Network_Diagnos 
+    $Set_azAccount=Set-AzContext -Tenant $Tenant_Network_Diagnos -Subscription $Subscription_Network_Diagnos
      $profile = New-AzNetworkWatcherNetworkConfigurationDiagnosticProfile -Direction $Direction_Network_Diagnos -Protocol Tcp -Source $Source_IP_Network_Diagnos -Destination $Destination_IP_Network_Diagnos -DestinationPort $DestinationPort_Network_Diagnos
      $Output_Network_Diagnostic_Status=Invoke-AzNetworkWatcherNetworkConfigurationDiagnostic -Location $Location_Network_Diagnos -TargetResourceId $TargetResourceId_Network_Diagnos -Profile $profile
         
@@ -455,8 +454,8 @@ try {
     Continue
     }
 
-    $connect_Azaccount=Connect-AzAccount -Tenant '72f988bf-86f1-41af-91ab-2d7cd011db47' 
-    $Set_azAccount=Set-AzContext -Tenant '72f988bf-86f1-41af-91ab-2d7cd011db47' -Subscription 'cbb956ec-6c04-42ae-8428-91d91154f780'
+    $connect_Azaccount=Connect-AzAccount -Tenant $Tenant_Infra_Valid 
+    $Set_azAccount=Set-AzContext -Tenant $Tenant_Infra_Valid -Subscription $Subscription_Infra_Valid
      $Output_Infra_Validation_Status=Get-AzVM -ResourceGroupName $ResourceGroup_Name_Infra_Valid | where-object {$_.Name -eq $VM_Name_Infra_Valid}
      $vmsize=$Output_Infra_Validation_Status.HardwareProfile.VmSize
      #Invoke-AzVMRunCommand -ResourceGroupName Test -VMName VM-1 -CommandId."RunPowerShellCommand" az vm show -g $ResourceGroup_Name_Infra_Valid -n $VM_Name_Infra_Valid --query 'hardwareProfile.vmSize'
