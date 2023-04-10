@@ -66,7 +66,9 @@ if((Get-Module -ListAvailable).Name -notcontains "ImportExcel")
 #Checking for Az module
 Write-Host "Checking for Az Module"
 
-Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force    
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force 
+Import-Module Az.Network
+Import-Module Az.Compute
 
    
 # Read the input config Excel and validate
