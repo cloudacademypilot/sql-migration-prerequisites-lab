@@ -37,13 +37,6 @@
               "description": "seconduniquestring"
             }
         },
-        "identityName": {
-            "defaultValue": "PostDeploymentScriptuserAssignedName",
-            "type": "string",
-            "metadata": {
-                "description": "Name of identity"
-            }
-        },
         "createPublicIP": {
             "defaultValue": true,
             "type": "bool",
@@ -98,7 +91,14 @@
             "metadata": {
                 "description": "Source VM size"
             },
-            "defaultValue": "Standard_D8s_v3"
+            "defaultValue": "Standard_D2as_v4"
+        },
+        "vmSize1": {
+            "type": "string",
+            "metadata": {
+                "description": "Target VM size"
+            },
+            "defaultValue": "Standard_D2as_v4"
         },
         "dataDisksLUNs": {
             "type": "array",
@@ -148,19 +148,27 @@
         "DMSServiceName": "[concat('DMS', uniqueString(resourceGroup().id))]",
         "sourceServerName": "[take(concat('Source', uniqueString(resourceGroup().id)), 15)]",
         "targetServerName": "[take(concat('DMA', uniqueString(resourceGroup().id)), 15)]",
+        "webServerName": "[take(concat('WebServer1', uniqueString(resourceGroup().id)), 15)]",
+        "webServerName2": "[take(concat('WebServer2', uniqueString(resourceGroup().id)), 15)]",
+        "targetSQLServerName": "[take(concat('Target', uniqueString(resourceGroup().id)), 15)]",
         "scriptLocation": "AddDatabaseToSqlServer.ps1",
         "scriptLocation1": "uploadfiles.ps1",
+        "scriptLocation2": "uploadfiles1.ps1",
         "scriptLocationToUploadFile": "UploadBlobFile.ps1",
         "bakFileLocation": "AdventureWorksLT2019.bak",
+        "Adventurefilelocation": "adventure.ps1",
         "scriptFiles": [
             "[uri(parameters('_artifactsLocation'), concat(variables('scriptLocation'), parameters('_artifactsLocationSasToken')))]",
             "[uri(parameters('_artifactsLocation'), concat(variables('scriptLocation1'), parameters('_artifactsLocationSasToken')))]",
             "[uri(parameters('_artifactsLocation'), concat(variables('bakFileLocation'), parameters('_artifactsLocationSasToken')))]"
         ],
         "scriptFilesToUploadFile": [
-            "[uri(parameters('_artifactsLocation'), concat(variables('scriptLocationToUploadFile'), parameters('_artifactsLocationSasToken')))]",
-            "[uri(parameters('_artifactsLocation'), concat(variables('bakFileLocation'), parameters('_artifactsLocationSasToken')))]"
+            "[uri(parameters('_artifactsLocation'), concat(variables('Adventurefilelocation'), parameters('_artifactsLocationSasToken')))]"
         ],
+        "scriptFilesToUploadFile1": [
+            "[uri(parameters('_artifactsLocation'), concat(variables('scriptLocation2'), parameters('_artifactsLocationSasToken')))]"
+        ],
+        
         "scriptParameters": "[concat('-userName ', parameters('sourceWindowsAdminUserName'), ' -password \"', parameters('sourceWindowsAdminPassword'))]",
         "scriptParametersToUploadFile": "[concat('-Resourcegroupname ', parameters('resourcegroupname'), ' -uri \"', parameters('bakpakuri'))]",
         "storageAccountNamePrefix": "storage",
@@ -169,8 +177,17 @@
         "publicIPSourceServer": "[take(concat('SourceIp', uniqueString(resourceGroup().id)), 15)]",
         "sourceServerNSG": "[take(concat('Sourcensg', uniqueString(resourceGroup().id)), 15)]",
         "adVNet": "[take(concat('Sourcevnet', uniqueString(resourceGroup().id)), 15)]",
+        "SQLServerNSG": "[take(concat('SQLnsg', uniqueString(resourceGroup().id)), 15)]",
+        "WebServerNSG": "[take(concat('Webnsg', uniqueString(resourceGroup().id)), 15)]",
+        "WebServerNSG2": "[take(concat('Webnsg2', uniqueString(resourceGroup().id)), 15)]",
         "defaultSubnetName": "default",
         "targetNicName": "[take(concat('TargetNIC', uniqueString(resourceGroup().id)), 15)]",
+        "webNicName": "[take(concat('WebNIC', uniqueString(resourceGroup().id)), 15)]",
+        "webNicName2": "[take(concat('WebNIC2', uniqueString(resourceGroup().id)), 15)]",
+        "SQLtargetNicName": "[take(concat('SQLTargetNIC', uniqueString(resourceGroup().id)), 15)]",
+        "publicIPSQLSourceServer": "[take(concat('SQLSourceIp', uniqueString(resourceGroup().id)), 15)]",
+         "publicIPWebSourceServer": "[take(concat('WebSourceIp', uniqueString(resourceGroup().id)), 15)]",
+         "publicIPWebSourceServer2": "[take(concat('WebSourceIp2', uniqueString(resourceGroup().id)), 15)]",
         "publicIPTargetServer": "[take(concat('TargetIp', uniqueString(resourceGroup().id)), 15)]",
         "targetServerNSG": "[take(concat('Targetnsg', uniqueString(resourceGroup().id)), 15)]",
         "adVNettarget": "[take(concat('Targetvnet', uniqueString(resourceGroup().id)), 15)]",
@@ -179,7 +196,18 @@
         },
         "publicIpAddressIdTarget": {
             "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPTargetServer'))]"
-        }
+        },
+        "publicIpAddressIdSQLSource": {
+            "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPSQLSourceServer'))]"
+        },
+        "publicIpAddressIdWebSource": {
+            "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPWebSourceServer'))]"
+        },
+        "publicIpAddressIdWebSource2": {
+            "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicIPWebSourceServer2'))]"
+        },
+        "SourceDNS":  "[take(concat('source', uniqueString(resourceGroup().id)), 15)]",
+        "TargetDNS":  "[take(concat('target', uniqueString(resourceGroup().id)), 15)]"
     },
     "resources": [
         {
@@ -325,6 +353,148 @@
         },
         {
             "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('targetSQLServerName')]",
+            "apiVersion": "2019-12-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('SQLtargetNicName'))]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize1')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftSQLServer",
+                        "offer": "sql2019-ws2019",
+                        "sku": "Standard",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(variables('targetSQLServerName'),'_disk-1')]",
+                            "createOption": "Empty",
+                            "caching": "ReadOnly",
+                            "managedDisk": {
+                                "storageAccountType": "Premium_LRS"
+                            },
+                            "diskSizeGB": 1023
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[variables('targetSQLServerName')]",
+                    "adminUsername": "[parameters('sourceWindowsAdminUserName')]",
+                    "adminPassword": "[parameters('sourceWindowsAdminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('SQLtargetNicName')))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[reference(variables('storageAccountName'), '2019-06-01').primaryEndpoints['blob']]"
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "apiVersion": "2019-12-01",
+                    "type": "extensions",
+                    "name": "SqlIaasExtension",
+                    "location": "[parameters('location')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('targetSQLServerName'))]"
+                    ],
+                    "properties": {
+                        "type": "SqlIaaSAgent",
+                        "publisher": "Microsoft.SqlServer.Management",
+                        "typeHandlerVersion": "1.2",
+                        "autoUpgradeMinorVersion": "true",
+                        "settings": {
+                            "AutoTelemetrySettings": {
+                                "Region": "[parameters('location')]"
+                            },
+                            "AutoPatchingSettings": {
+                                "PatchCategory": "WindowsMandatoryUpdates",
+                                "Enable": false,
+                                "DayOfWeek": "Sunday",
+                                "MaintenanceWindowStartingHour": "2",
+                                "MaintenanceWindowDuration": "60"
+                            },
+                            "KeyVaultCredentialSettings": {
+                                "Enable": false
+                            },
+                            "ServerConfigurationsManagementSettings": {
+                                "SQLConnectivityUpdateSettings": {
+                                    "ConnectivityType": "Private",
+                                    "Port": "1433"
+                                },
+                                "SQLWorkloadTypeUpdateSettings": {
+                                    "SQLWorkloadType": "OLTP"
+                                },
+                                "SQLStorageUpdateSettings": {
+                                    "DiskCount": "1",
+                                    "NumberOfColumns": "8",
+                                    "StartingDeviceID": "2",
+                                    "DiskConfigurationType": "NEW"
+                                },
+                                "AdditionalFeaturesServerConfigurations": {
+                                    "IsRServicesEnabled": "false"
+                                }
+                            }
+                        },
+                        "protectedSettings": {
+                            "SQLAuthUpdateUserName": "[parameters('sourceWindowsAdminUserName')]",
+                            "SQLAuthUpdatePassword": "[parameters('sourceSqlAuthenticationPassword')]"
+                        }
+                    }
+                },
+                {
+                    "apiVersion": "2019-12-01",
+                    "type": "extensions",
+                    "name": "CustomScriptExtension",
+                    "location": "[parameters('location')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('targetSQLServerName'))]",
+                        "[resourceId('Microsoft.Compute/virtualMachines/extensions', variables('targetSQLServerName'), 'SqlIaasExtension')]"
+                    ],
+                    "properties": {
+                        "publisher": "Microsoft.Compute",
+                        "type": "CustomScriptExtension",
+                        "typeHandlerVersion": "1.9",
+                        "autoUpgradeMinorVersion": true,
+                        "settings": {
+                            "fileUris": "[variables('scriptFilesToUploadFile1')]"
+                        },
+                        "protectedSettings": {
+                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('scriptLocation2'), ' ', variables('scriptParameters'))]"
+                        }
+                    } 
+                }
+                
+            ]
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
             "name": "[variables('targetServerName')]",
             "apiVersion": "2019-12-01",
             "location": "[parameters('location')]",
@@ -413,44 +583,165 @@
                 }
             ]
         },
-        // {
-        //     "type": "Microsoft.SqlVirtualMachine/sqlVirtualMachines",
-        //     "apiVersion": "2021-11-01-preview",
-        //     "name": "[variables('targetServerName')]",
-        //     "location": "[parameters('location')]",
-        //     "properties": {
-        //       "virtualMachineResourceId": "[resourceId('Microsoft.Compute/virtualMachines', variables('targetServerName'))]",
-        //       "sqlManagement": "Full",
-        //       "sqlServerLicenseType": "PAYG",
-        //       "storageConfigurationSettings": {
-        //         "diskConfigurationType": "NEW",
-        //         "storageWorkloadType": "General",
-        //         "sqlDataSettings": {
-        //           "LUNs": "[parameters('dataDisksLUNs')]",
-        //           "DefaultFilePath": "F:\\data"
-        //         },
-        //         "sqlLogSettings": {
-        //           "LUNs": "[parameters('logDisksLUNs')]",
-        //           "DefaultFilePath": "F:\\log"
-        //         },
-        //         "sqlTempDbSettings": {
-        //           "LUNs": "[parameters('tempDisksLUNs')]",
-        //           "DefaultFilePath": "F:\\tempDb"
-        //         }
-        //       },
-        //       "ServerConfigurationsManagementSettings": {
-        //           "SQLConnectivityUpdateSettings": {
-        //               "ConnectivityType": "Private",
-        //               "Port": "1433",
-        //               "SQLAuthUpdateUserName": "[parameters('sourceWindowsAdminUserName')]",
-        //               "SQLAuthUpdatePassword": "[parameters('sourceSqlAuthenticationPassword')]"
-        //           }
-        //       }
-        //     },
-        //     "dependsOn": [
-        //       "[resourceId('Microsoft.Compute/virtualMachines', variables('targetServerName'))]"
-        //     ]
-        // },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('webServerName')]",
+            "apiVersion": "2019-12-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('webNicName'))]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(variables('webServerName'),'_disk-1')]",
+                            "createOption": "Empty",
+                            "caching": "ReadOnly",
+                            "managedDisk": {
+                                "storageAccountType": "Premium_LRS"
+                            },
+                            "diskSizeGB": 1023
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[variables('webServerName')]",
+                    "adminUsername": "[parameters('targetWindowsAdminUserName')]",
+                    "adminPassword": "[parameters('targetWindowsAdminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('webNicName')))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[reference(variables('storageAccountName'), '2019-06-01').primaryEndpoints['blob']]"
+                    }
+                }
+            },
+             "resources": [
+               {
+                    "apiVersion": "2019-12-01",
+                    "type": "extensions",
+                    "name": "CustomScriptExtension",
+                    "location": "[parameters('location')]",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('webServerName'))]"
+                        
+                    ],
+                    "properties": {
+                        "publisher": "Microsoft.Compute",
+                        "type": "CustomScriptExtension",
+                        "typeHandlerVersion": "1.9",
+                        "autoUpgradeMinorVersion": true,
+                        "settings": {
+                            "fileUris": "[variables('scriptFilesToUploadFile')]"
+                        },
+                        "protectedSettings": {
+                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('Adventurefilelocation'))]"
+                        }
+                    }
+                }
+               
+            ]
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('webServerName2')]",
+            "apiVersion": "2019-12-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('webNicName2'))]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Windows",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS"
+                        },
+                        "diskSizeGB": 127
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 0,
+                            "name": "[concat(variables('webServerName2'),'_disk-1')]",
+                            "createOption": "Empty",
+                            "caching": "ReadOnly",
+                            "managedDisk": {
+                                "storageAccountType": "Premium_LRS"
+                            },
+                            "diskSizeGB": 1023
+                        }
+                    ]
+                },
+                "osProfile": {
+                    "computerName": "[variables('webServerName2')]",
+                    "adminUsername": "[parameters('targetWindowsAdminUserName')]",
+                    "adminPassword": "[parameters('targetWindowsAdminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVMAgent": true,
+                        "enableAutomaticUpdates": true
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('webNicName2')))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[reference(variables('storageAccountName'), '2019-06-01').primaryEndpoints['blob']]"
+                    }
+                }
+            },
+             "resources": [
+               
+               
+            ]
+        },
         {
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('sourceNicName')]",
@@ -480,6 +771,102 @@
                 "enableIPForwarding": false,
                 "networkSecurityGroup": {
                     "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('sourceServerNSG'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('SQLtargetNicName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNettarget'), variables('defaultSubnetName'))]",
+                "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIPSQLSourceServer'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('SQLServerNSG'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNettarget'), variables('defaultSubnetName'))]"
+                            },
+                            "publicIPAddress": "[if(parameters('createPublicIP'), variables('publicIpAddressIdSQLSource'), json('null'))]",
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('SQLServerNSG'))]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('webNicName')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]",
+                "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIPWebSourceServer'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('WebServerNSG'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]"
+                            },
+                            "publicIPAddress": "[if(parameters('createPublicIP'), variables('publicIpAddressIdWebSource'), json('null'))]",
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('WebServerNSG'))]"
+                }
+            }
+        },
+         {
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[variables('webNicName2')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]",
+                "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIPWebSourceServer2'))]",
+                "[resourceId('Microsoft.Network/networkSecurityGroups', variables('WebServerNSG2'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('adVNet'), variables('defaultSubnetName'))]"
+                            },
+                            "publicIPAddress": "[if(parameters('createPublicIP'), variables('publicIpAddressIdWebSource2'), json('null'))]",
+                            "primary": true,
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ],
+                "enableAcceleratedNetworking": false,
+                "enableIPForwarding": false,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('WebServerNSG2'))]"
                 }
             }
         },
@@ -555,7 +942,121 @@
         },
         {
             "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('SQLServerNSG')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "AllowSQLServerInBound",
+                        "properties": {
+                            "description": "Allow inbound SQL Server Traffic",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "1433",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "AllowAnyRDPInbound",
+                        "properties": {
+                            "description": "Allow virtual machine connection through rdp",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 110,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('targetServerNSG')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "AllowSQLServerInBound",
+                        "properties": {
+                            "description": "Allow inbound SQL Server Traffic",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "1433",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "AllowAnyRDPInbound",
+                        "properties": {
+                            "description": "Allow virtual machine connection through rdp",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 110,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('webServerNSG')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "AllowSQLServerInBound",
+                        "properties": {
+                            "description": "Allow inbound SQL Server Traffic",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "1433",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    },
+                    {
+                        "name": "AllowAnyRDPInbound",
+                        "properties": {
+                            "description": "Allow virtual machine connection through rdp",
+                            "protocol": "TCP",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "3389",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 110,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            }
+        },
+         {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[variables('webServerNSG2')]",
             "apiVersion": "2020-05-01",
             "location": "[parameters('location')]",
             "properties": {
@@ -604,7 +1105,29 @@
             "properties": {
                 "publicIPAddressVersion": "IPv4",
                 "publicIPAllocationMethod": "Dynamic",
-                "idleTimeoutInMinutes": 4
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('SourceDNS')]"
+                }
+            }
+        },
+        {
+            "condition": "[parameters('createPublicIP')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[variables('publicIPSQLSourceServer')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "dnsSettings": {
+                    "domainNameLabel": "[variables('TargetDNS')]"
+                }
             }
         },
         {
@@ -615,6 +1138,38 @@
                 "tier": "Regional"
             },
             "name": "[variables('publicIPTargetServer')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            }
+        },
+        {
+            "condition": "[parameters('createPublicIP')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[variables('publicIPWebSourceServer')]",
+            "apiVersion": "2020-05-01",
+            "location": "[parameters('location')]",
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4
+            }
+        },
+        {
+            "condition": "[parameters('createPublicIP')]",
+            "type": "Microsoft.Network/publicIPAddresses",
+            "sku": {
+                "name": "Basic",
+                "tier": "Regional"
+            },
+            "name": "[variables('publicIPWebSourceServer2')]",
             "apiVersion": "2020-05-01",
             "location": "[parameters('location')]",
             "properties": {
@@ -696,52 +1251,6 @@
             ]
         },
         {
-            "type": "Microsoft.Resources/deploymentScripts",
-            "apiVersion": "2020-10-01",
-            "name": "PostDeploymentScriptForBackupUpload",
-            "location": "[resourceGroup().location]",
-            "kind": "AzurePowerShell",
-            "identity": {
-                "type": "UserAssigned",
-                "userAssignedIdentities": {
-                    "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]": {}
-                }
-            },
-            "dependsOn": [
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]",
-                "[resourceId('Microsoft.Storage/storageAccounts/blobServices/containers', variables('storageAccountName'), 'default', 'backup')]"
-            ],
-            "properties": {
-                "azPowerShellVersion": "7.2.4",
-                "cleanupPreference": "OnSuccess",
-                "retentionInterval": "P1D",
-                "timeout": "PT30M",
-                "arguments": "[variables('scriptParametersToUploadFile')]",
-                "primaryScriptUri": "[variables('fileuploadurivariable')]"
-                
-            }
-        },
-        {
-            "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
-            "apiVersion": "2018-11-30",
-            "name": "[parameters('identityName')]",
-            "location": "[resourceGroup().location]"
-        },
-        {
-            "type": "Microsoft.Authorization/roleAssignments",
-            "apiVersion": "2018-09-01-preview",
-            "name": "[variables('bootstrapRoleAssignmentId')]",
-            "dependsOn": [
-                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName'))]"
-            ],
-            "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('contributorRoleDefinitionId'))]",
-                "principalId": "[reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('identityName')), '2018-11-30').principalId]",
-                "scope": "[resourceGroup().id]",
-                "principalType": "ServicePrincipal"
-            }
-        },
-        {
             "type": "Microsoft.Storage/storageAccounts",
             "sku": {
                 "name": "Standard_LRS",
@@ -797,6 +1306,42 @@
             "properties": {
                 "publicAccess": "None"
             }
+        },
+        {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2021-02-01",
+      "name": "[format('{0}/peering-to-remote-vnet', variables('adVNet'))]",
+      "dependsOn": [
+      "[resourceId('Microsoft.Network/virtualNetworks', variables('adVNet'))]",
+      "[resourceId('Microsoft.Network/virtualNetworks', variables('adVNettarget'))]"
+      ],
+      "properties": {
+        "allowVirtualNetworkAccess": true,
+        "allowForwardedTraffic": true,
+        "allowGatewayTransit": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId(parameters('resourcegroupname'), 'Microsoft.Network/virtualNetworks', variables('adVNettarget'))]"
         }
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+      "apiVersion": "2021-02-01",
+      "name": "[format('{0}/peering-to-remote-vnet', variables('adVNettarget'))]",
+      "dependsOn": [
+      "[resourceId('Microsoft.Network/virtualNetworks', variables('adVNet'))]",
+      "[resourceId('Microsoft.Network/virtualNetworks', variables('adVNettarget'))]"
+      ],
+      "properties": {
+        "allowVirtualNetworkAccess": true,
+        "allowForwardedTraffic": true,
+        "allowGatewayTransit": true,
+        "useRemoteGateways": false,
+        "remoteVirtualNetwork": {
+          "id": "[resourceId(parameters('resourcegroupname'), 'Microsoft.Network/virtualNetworks', variables('adVNet'))]"
+        }
+      }
+    }
     ]
 }
