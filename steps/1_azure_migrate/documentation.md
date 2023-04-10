@@ -262,7 +262,7 @@ Set up the appliance by with below steps:
 
 15. If any validation fails, fix the error, and do **revalidate**.
 
-16. Specify the **SQL credentials** for SQL DB discovery.
+16. Specify the **SQL credentials** for SQL DB discovery. Enter Friendly name as **sqladminAuth**, Username as **sqladmin** and Password as **Mail@123**
 
     ![AzureMigrate](assets/image46.jpg)
    
