@@ -263,6 +263,8 @@ Set up the appliance by with below steps:
 
 ## ASSESSMENT:
 
+In this task, you will use Azure Migrate to create a migration assessment for the Adventure application, using the data gathered during the discovery phase.
+
 1. Go Back to **Azure Portal** in your local machine to open Azure Migrate, Goto **Discover,access and migrate**. Click on **Discovered Server Count**.
 
     ![AzureMigrate](assets/image23_1.jpg)
