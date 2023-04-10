@@ -335,7 +335,7 @@ In this task, you will configure the Azure Migrate dependency visualization feat
     
     ![AzureMigrate](assets/dependency5.jpg)
     
-6. Connect to the Webserver1 vm and Open Edge, and paste the link to the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer. First you need to unistall.
+6. Connect to the **Webserver1** vm and Open Edge, and paste the link of the 64-bit Microsoft Monitoring Agent for Windows, which you noted earlier. When prompted, Run the installer. First you need to unistall.
 Note : Machine Restart is NOT required.
    
    ![AzureMigrate](assets/dependency6_1.jpg)
