@@ -46,6 +46,14 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 5. Now you are inside the **virtual machine**.
 
+## Steps on how to check Public IP Address and Hostname of VMs
+
+1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** you want to connect to.
+
+2. Click on **Connect** and then copy **Public IP**.
+
+3. Name of virtual machine is the hostname.
+
 ## Hosting Web Application
 
 ### IIS Configuration
