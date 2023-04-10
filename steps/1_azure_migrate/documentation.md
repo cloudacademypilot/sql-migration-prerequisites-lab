@@ -236,6 +236,8 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image40.png)
     
+    Enter Friendly name as **sqladmin**, Username as **sqladmin** and Password as **Mail@123**
+    
     ![AzureMigrate](assets/image41.jpg)
 
 13. Now **add discovery source**. Specify the hostname of the SourceSQL Server and the friendly name (sqladmin) with given format.
