@@ -203,3 +203,5 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     ![DMA Assessment](assets/56.jpg)
     
     ![DMA Assessment](assets/57.jpg)
+    
+    ![DMA Assessment](assets/60.jpg)
