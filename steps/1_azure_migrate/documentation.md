@@ -50,9 +50,9 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 1. Go to **Azure portal** and click on hamburger button ☰ on top-left side and select **Resource groups**. Select the resource group deployed in the Azure Portal. Amongst the list of resources, open the **virtual machine** you want to connect to.
 
-2. Click on **Connect** and then copy **Public IP**.
+2. Click on **Connect** and then copy **Public IP Address**.
 
-3. Name of virtual machine is the hostname.
+3. Name of virtual machine is the **Hostname**.
 
      ![AzureMigrate](assets/Iphostname.jpg)
 
