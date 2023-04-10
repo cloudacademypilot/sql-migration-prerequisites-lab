@@ -240,6 +240,8 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image35.png)
 
+    Provide your Username and Password to complete the login process and then continue.
+    
     ![AzureMigrate](assets/image39.png)
     
 12. Once Azure credentials are authenticated. Proceed adding **Domain credentials**.
