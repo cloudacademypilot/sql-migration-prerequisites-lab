@@ -112,7 +112,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 5.	This will open the **IIS Manager**.
 
-6.	First we will delete the default website hosted on Port number 80 then host our website. Right click on the **Default Web Site** and remove.
+6.	First we will delete the default website hosted using Port number 80 then host our website. Right click on the **Default Web Site** and remove.
 
     ![AzureMigrate](assets/image83_1.jpg)
 
