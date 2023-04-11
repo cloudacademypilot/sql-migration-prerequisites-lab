@@ -9,7 +9,4 @@ Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI
 Install-Module -Name Az.Accounts -Force
 Install-Module Az.Resources -Force
 Install-Module Az.Storage -Force
-winrm quickconfig -Force
-Enable-PSRemoting -Force
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*' -Force
 Restart-Computer
