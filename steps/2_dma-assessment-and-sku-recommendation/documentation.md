@@ -96,7 +96,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/8.jpg)
 
-4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Password@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
     
     ![DMA Assessment](assets/9.jpg)
     
@@ -150,7 +150,7 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/24.jpg)
 
-5. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace```12345``` with  ```Mail@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
+5. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace```12345``` with  ```Password@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
 
     ![DMA Assessment](assets/25.jpg)
 
@@ -326,7 +326,7 @@ After running for a specific period of time, the process will stop executing on 
     
     ![DMA Assessment](assets/55.jpg) 
 
-4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Password@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
 
     ![DMA Assessment](assets/56.jpg) 
     
