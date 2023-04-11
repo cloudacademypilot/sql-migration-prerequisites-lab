@@ -89,23 +89,22 @@ if (-not(Test-Path -Path $inputfile -PathType Leaf)) {
      }
  }
 
-$validInputs = 1..7
+$validInputs = 1..6
     $User_Exit_Response = "F"
 
 do {
     Write-Host "=======================================================================================" 
-    Write-Host "Please enter enter the Action names to be esecuted - " -ForegroundColor Green
+    Write-Host "Please enter the action name to be executed - " -ForegroundColor Green
     Write-Host "===================================================================="
     Write-Host "1. Validate the ip address is in private range or not"
     Write-Host "2. Windows Firewall for Inbound & Outbound rules"
     Write-Host "3. Test Connection w.r.t Hostname & Port"
     Write-Host "4. Check Network Diagnostic Status w.r.t Source Ip and Destination Ip"
     Write-Host "5. Infra Validation w.r.t Resource Group Name and VM Name"
-    Write-Host "6. Check Disk Space"
-    Write-Host "7. Exit"
+    Write-Host "6. Exit"
     
     [int]$response_Execute_Operation = read-host "Please provide your inputs"
-    if(-not $validInputs.Contains($response_Execute_Operation)){write-host "Please select the choice between 1 - 4"}
+    if(-not $validInputs.Contains($response_Execute_Operation)){write-host "Please select the choice between 1 - 6"}
     
  
   if ($response_Execute_Operation -eq 1) {
@@ -470,64 +469,6 @@ try {
          Write-Host ($Output_Infra_Validation | select Resource_Group_Name,VM_Name,VM_SKU| Format-Table | Out-String)
          $Output_Infra_Validation | select Resource_Group_Name,VM_Name,VM_SKU| Export-Excel $PSScriptRoot\Output\Output.xlsx -WorksheetName "Infra_validation"
     }
-    if ($response_Execute_Operation -eq 6) {
+    
 
-    try {
-         $ConfigList_Test_Connection = Import-Excel -Path $inputfile -WorksheetName Check_DiskSpace    
-         }
-  catch {
-         Write-Host "=================================================================================="  
-         Write-Host "The file [$inputfile] does not have the woksheet named Check_DiskSpace  "  -ForegroundColor Red  
-         Write-Host "=================================================================================="  
-         Write-Host "Please see the error below process has been stopped          "  
-         throw $_.Exception.Message
-         }
-
-  
-     
-  $Output_Available_drive_space =@()
-  foreach ($Disk_Space in $ConfigList_Test_Connection){
-
-    $Server_IP_Disk_Space = $Disk_Space.'Server_IP'
-    if ([string]::IsNullOrWhitespace($Server_IP_Disk_Space)){
-    #$Output_Port_Connectivity+=New-Object psobject -Property @{HostName="Missing Data in Input Sheet";Port_No="Missing Data in Input Sheet";Connection_Status ="NA"}  
-    Continue
-    }
-    $cred = Get-Credential
-    $session = new-pssession -computername $Server_IP_Disk_Space -credential $cred
-
-    if ($session -eq $null){
-    Write-Host "Not able to connect to the remote host"
-    Continue
-    }
-    $available_drive_space=Invoke-Command -Session $session -ScriptBlock { Get-Volume}
-    #$available_drive_space=Get-Volume
-    foreach($available_drive in $available_drive_space)
-    {
-        $driveletter =$available_drive.DriveLetter
-        
-        if(($available_drive.FileSystemLabel -ne "Recovery") )
-        {
-            
-            [int]$drive_available_space_gb=$($available_drive.SizeRemaining/1GB)
-            
-            $Output_Available_drive_space+=New-Object psobject -Property @{Drive_Letter=$driveletter;Available_Space_in_GB=$drive_available_space_gb}
-        }
-    }
-    #Remove-PSSession $session
-    }
-    if($Output_Available_drive_space -ne $nul){
-    Write-Host "======================================================================================="  
-         Write-Host "Below are the Available Drive Space  for the vm"  -ForegroundColor Green  
-         Write-Host "======================================================================================="  
-         Write-Host ($Output_Available_drive_space | select Drive_Letter,Available_Space_in_GB| Format-Table | Out-String)
-         $Output_Available_drive_space | Select-Object Drive_Letter,Available_Space_in_GB| Export-Excel $PSScriptRoot\Output\Output.xlsx -WorksheetName "Diskspace"
-    }
-    }
-
-} until ($response_Execute_Operation -eq 7)
-
-
-
-  
-
+} until ($response_Execute_Operation -eq 6)
