@@ -375,7 +375,7 @@
                         },
                         "diskSizeGB": 127
                     },
-                    "dataDisks": [
+                     "dataDisks": [
                         {
                             "lun": 0,
                             "name": "[concat(variables('targetSQLServerName'),'_disk-1')]",
@@ -387,6 +387,7 @@
                             "diskSizeGB": 1023
                         }
                     ]
+                    
                 },
                 "osProfile": {
                     "computerName": "[variables('targetSQLServerName')]",
@@ -494,19 +495,8 @@
                             "storageAccountType": "Premium_LRS"
                         },
                         "diskSizeGB": 127
-                    },
-                    "dataDisks": [
-                        {
-                            "lun": 0,
-                            "name": "[concat(variables('targetServerName'),'_disk-1')]",
-                            "createOption": "Empty",
-                            "caching": "ReadOnly",
-                            "managedDisk": {
-                                "storageAccountType": "Premium_LRS"
-                            },
-                            "diskSizeGB": 1023
-                        }
-                    ]
+                    }
+                    
                 },
                 "osProfile": {
                     "computerName": "[variables('targetServerName')]",
@@ -584,19 +574,8 @@
                             "storageAccountType": "Premium_LRS"
                         },
                         "diskSizeGB": 127
-                    },
-                    "dataDisks": [
-                        {
-                            "lun": 0,
-                            "name": "[concat(variables('webServerName'),'_disk-1')]",
-                            "createOption": "Empty",
-                            "caching": "ReadOnly",
-                            "managedDisk": {
-                                "storageAccountType": "Premium_LRS"
-                            },
-                            "diskSizeGB": 1023
-                        }
-                    ]
+                    }
+                    
                 },
                 "osProfile": {
                     "computerName": "[variables('webServerName')]",
@@ -674,19 +653,7 @@
                             "storageAccountType": "Premium_LRS"
                         },
                         "diskSizeGB": 127
-                    },
-                    "dataDisks": [
-                        {
-                            "lun": 0,
-                            "name": "[concat(variables('webServerName2'),'_disk-1')]",
-                            "createOption": "Empty",
-                            "caching": "ReadOnly",
-                            "managedDisk": {
-                                "storageAccountType": "Premium_LRS"
-                            },
-                            "diskSizeGB": 1023
-                        }
-                    ]
+                    }
                 },
                 "osProfile": {
                     "computerName": "[variables('webServerName2')]",
