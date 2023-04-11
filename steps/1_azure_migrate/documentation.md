@@ -98,7 +98,9 @@ Connect to **Webserver1** as mentioned above and follow below steps :
 
 Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
 
-1.	Open ```C drive``` and extract the **adventure.zip** file.
+1.	Open ```C drive``` and extract the **adventure.zip** file to the C Drive (Remove adventure from the path).
+
+   ![AzureMigrate](assets/image81_1.jpg)
 
 2.	Open the extracted folder and open **web.config** in notepad to edit.
 
