@@ -210,12 +210,6 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/64.jpg)
     
-8. Enter ```6``` for Checking Diskspace. Popup window will appear. Enter ```sqladmin``` as User name and ```Mail@123``` as Password. Click **Ok**.
-
-    ![DMA Assessment](assets/56.jpg)
-    
-    ![DMA Assessment](assets/57.jpg)
-    
-    ![DMA Assessment](assets/60.jpg)
-
-9. Enter ```7``` to Exit. An Excel file will be created with all the information in ```C:\Users\sqladmin\Output``` folder.
+    In the output, you can see that ```VM_SKU``` is **Standard_D2as_v4**. You can compare it with the recommended compute size from SKU recommendation report generated in the previous lab step.
+   
+9. Enter ```6``` to Exit. An Excel file will be created with all the information in ```C:\Users\sqladmin\Output``` folder.
