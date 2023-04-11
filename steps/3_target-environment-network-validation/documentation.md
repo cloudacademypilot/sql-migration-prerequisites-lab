@@ -8,7 +8,6 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 - Check for firewall settings
 - Check for infrastructure validation
 - Check connection w.r.t port and server
-- Check diskspace
 
 ## Prerequisites
 
@@ -148,15 +147,11 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/43.jpg)
 
-5. Open **Check_Diskspace** worksheet. Copy-Paste the **Private IP address** of the Target VM into the field **target server private ip address**.
-
-    ![DMA Assessment](assets/44.jpg)
-
 10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/45.jpg)
 
-11. Open **File explorer** and Go to **Downloads** folder and select ```DMA-INPUT-FILE.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
+11. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
     ![DMA Assessment](assets/46.jpg)
     
