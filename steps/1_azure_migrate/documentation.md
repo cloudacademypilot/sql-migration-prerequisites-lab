@@ -100,7 +100,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 1.	Open ```C drive``` and extract the **adventure.zip** file to the C Drive (Remove adventure from the path).
 
-   ![AzureMigrate](assets/image81_1.jpg)
+   ![AzureMigrate](assets/image81_1.png)
 
 2.	Open the extracted folder and open **web.config** in notepad to edit.
 
