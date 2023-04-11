@@ -117,7 +117,8 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/34.jpg)
 
-    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Location** and Paste it in the field **location**.
+    Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **Location** and Paste it in the field **location**. 
+    Note : **Location** should be in small case letters without any whitespaces. For ex: ```East US``` should be ```eastus```, ```West US 2``` should be ```westus2```.
 
     ![DMA Assessment](assets/35.jpg)
     
