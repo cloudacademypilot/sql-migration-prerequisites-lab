@@ -29,12 +29,6 @@ else
 	Import-Module -Name SqlServer;
 }
 
-$comp = $env:ComputerName
-$sql = [Microsoft.SqlServer.Management.Smo.Server]::new("$comp")
-$sql.Settings.LoginMode = 'Mixed'
-$sql.Alter()
-Get-Service -Name 'MSSQLSERVER' | Restart-Service -Force
-
 $fileList = Invoke-Sqlcmd `
                     -QueryTimeout 0 `
                     -ServerInstance . `
