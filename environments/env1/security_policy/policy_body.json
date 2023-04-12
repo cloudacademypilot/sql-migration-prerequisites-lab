@@ -69,7 +69,8 @@
         "Microsoft.Network/publicIPAddresses",
         "Microsoft.Network/virtualNetworks",
         "Microsoft.Network/virtualNetworks/subnets",
-        "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+        "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+        "Microsoft.Migrate/MigrateProjects"
       ]
     }
   }
