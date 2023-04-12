@@ -63,6 +63,7 @@
         "Microsoft.Storage/storageAccounts/blobServices/containers",
         "Microsoft.Compute/virtualMachines",
         "Microsoft.Compute/virtualMachines/extensions",
+        "Microsoft.Compute/disks",
         "Microsoft.Network/networkInterfaces",
         "Microsoft.Network/networkSecurityGroups",
         "Microsoft.Network/publicIPAddresses",
