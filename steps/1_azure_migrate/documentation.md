@@ -42,7 +42,7 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 3. File will be downloaded inside **Downloads** folder in your local system. Open the RDP file. Then select **Connect**.
 
-4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Password@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
 
 5. Now you are inside the **virtual machine**.
 
@@ -250,7 +250,7 @@ Set up the appliance by with below steps:
 
     ![AzureMigrate](assets/image40.png)
     
-    Enter Friendly name as **sqladmin**, Username as **sqladmin** and Password as **Mail@123**
+    Enter Friendly name as **sqladmin**, Username as **sqladmin** and Password as **Password@123**
     
     ![AzureMigrate](assets/image41.jpg)
 
@@ -264,7 +264,7 @@ Set up the appliance by with below steps:
 
 15. If any validation fails, fix the error, and do **revalidate**.
 
-16. Specify the **SQL credentials** for SQL DB discovery. Enter Friendly name as **sqladminAuth**, Username as **sqladmin** and Password as **Mail@123**
+16. Specify the **SQL credentials** for SQL DB discovery. Enter Friendly name as **sqladminAuth**, Username as **sqladmin** and Password as **Password@123**
 
     ![AzureMigrate](assets/image46.jpg)
    

@@ -39,7 +39,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/8.jpg)
 
-4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Mail@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
+4. Click on **More choices** and then select **Use a different account**. Enter ```sqladmin``` as Email address and ```Password@123``` as Password. Click **Ok**. And Select **Yes** to verify the certificate.
     
     ![DMA Assessment](assets/9.jpg)
     
