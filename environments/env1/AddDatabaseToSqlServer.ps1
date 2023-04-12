@@ -30,15 +30,10 @@ else
 }
 
 $comp = $env:ComputerName
-$s = new-object ('Microsoft.SqlServer.Management.Smo.Server') "$comp"
-[string]$nm = $s.Name
-[string]$mode = $s.Settings.LoginMode
-write-output "Instance Name: $nm"
-write-output "Login Mode: $mode"
-$s.Settings.LoginMode = 'Mixed'
-$s.Alter()
-$mode = $s.Settings.LoginMode
-write-output "Login Mode: $mode"
+$sql = [Microsoft.SqlServer.Management.Smo.Server]::new("$comp")
+$sql.Settings.LoginMode = 'Mixed'
+$sql.Alter()
+Get-Service -Name 'MSSQLSERVER' | Restart-Service -Force
 
 $fileList = Invoke-Sqlcmd `
                     -QueryTimeout 0 `
