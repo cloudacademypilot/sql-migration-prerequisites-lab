@@ -71,7 +71,13 @@
         "Microsoft.Network/virtualNetworks/subnets",
         "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
         "Microsoft.Migrate/MigrateProjects",
-        "Microsoft.Migrate/MigrateProjects/Solutions"
+        "Microsoft.Migrate/MigrateProjects/Solutions",
+        "Microsoft.Migrate/assessmentprojects",
+        "Microsoft.KeyVault/vaults",
+        "Microsoft.OffAzure/ServerSites",
+        "Microsoft.OffAzure/MasterSites",
+        "Microsoft.OffAzure/MasterSites/SqlSites",
+        "Microsoft.OffAzure/MasterSites/WebAppSites"
       ]
     }
   }
