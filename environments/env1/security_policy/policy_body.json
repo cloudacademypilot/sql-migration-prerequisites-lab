@@ -54,7 +54,7 @@
   },
   "parameters_values": {
     "allowedLocations": {
-      "value": ["{RGLocation}"]
+      "value": ["{RGLocation}","CentralUS", "WestUS"]
     },
     "allowedServices": {
       "value": [
@@ -70,7 +70,8 @@
         "Microsoft.Network/virtualNetworks",
         "Microsoft.Network/virtualNetworks/subnets",
         "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
-        "Microsoft.Migrate/MigrateProjects"
+        "Microsoft.Migrate/MigrateProjects",
+        "Microsoft.Migrate/MigrateProjects/Solutions"
       ]
     }
   }
