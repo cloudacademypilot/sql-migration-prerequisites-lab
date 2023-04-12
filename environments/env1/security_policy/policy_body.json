@@ -6,7 +6,9 @@
         "Microsoft.Authorization/*/Delete",
         "Microsoft.Authorization/*/Write",
         "Microsoft.Authorization/elevateAccess/Action",
-        "Microsoft.MarketplaceOrdering/*"
+        "Microsoft.MarketplaceOrdering/*",
+        "Microsoft.Compute/virtualMachines/Write",
+        "Microsoft.Compute/disks/Write"
       ]
     }
   ],
@@ -57,10 +59,16 @@
     "allowedServices": {
       "value": [
         "Microsoft.Storage/storageAccounts",
+        "Microsoft.Storage/storageAccounts/blobServices",
         "Microsoft.Storage/storageAccounts/blobServices/containers",
-        "Microsoft.Resources/deploymentScripts",
-        "Microsoft.ManagedIdentity/userAssignedIdentities",
-        "Microsoft.Authorization/roleAssignments"
+        "Microsoft.Compute/virtualMachines",
+        "Microsoft.Compute/virtualMachines/extensions",
+        "Microsoft.Network/networkInterfaces",
+        "Microsoft.Network/networkSecurityGroups",
+        "Microsoft.Network/publicIPAddresses",
+        "Microsoft.Network/virtualNetworks",
+        "Microsoft.Network/virtualNetworks/subnets",
+        "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
       ]
     }
   }
