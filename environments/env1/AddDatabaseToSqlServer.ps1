@@ -29,6 +29,17 @@ else
 	Import-Module -Name SqlServer;
 }
 
+$comp = $env:ComputerName
+$s = new-object ('Microsoft.SqlServer.Management.Smo.Server') "$comp"
+[string]$nm = $s.Name
+[string]$mode = $s.Settings.LoginMode
+write-output "Instance Name: $nm"
+write-output "Login Mode: $mode"
+$s.Settings.LoginMode = 'Mixed'
+$s.Alter()
+$mode = $s.Settings.LoginMode
+write-output "Login Mode: $mode"
+
 $fileList = Invoke-Sqlcmd `
                     -QueryTimeout 0 `
                     -ServerInstance . `
