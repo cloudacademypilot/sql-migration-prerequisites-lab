@@ -68,6 +68,7 @@
         "Microsoft.ContainerInstance/containerGroups",
         "Microsoft.Storage/storageAccounts/fileServices/*",
         "Microsoft.Resources/deployments",
+        "Microsoft.Authorization/roleAssignments",
         "Microsoft.Storage/storageAccounts",
         "Microsoft.Storage/storageAccounts/blobServices",
         "Microsoft.Storage/storageAccounts/blobServices/containers",
