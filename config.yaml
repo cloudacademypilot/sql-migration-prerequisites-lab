@@ -3,7 +3,7 @@ slug: sql-migration-prerequisites-lab
 short_description: Get Started with SQL Migration
 lab_features: # cloud-environment|remote-desktop|cli|code-ide
   - cloud-environment
-duration: 3600
+duration: 21600
 step_variables:
   - "SetupTime: '12'"
 #  - "required_step_var: This <strong>string</strong> will be substituted in lab steps with {LabStep.required_step_var} and available in VCFs."
