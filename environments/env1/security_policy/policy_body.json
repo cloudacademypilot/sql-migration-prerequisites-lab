@@ -54,7 +54,7 @@
   },
   "parameters_values": {
     "allowedLocations": {
-      "value": ["{RGLocation}","CentralUS", "WestUS"]
+      "value": ["{RGLocation}","CentralUS", "WestUS", "EastUS"]
     },
     "allowedServices": {
       "value": [
@@ -73,6 +73,8 @@
         "Microsoft.Migrate/MigrateProjects",
         "Microsoft.Migrate/MigrateProjects/Solutions",
         "Microsoft.Migrate/AssessmentProjects",
+        "Microsoft.Migrate/assessmentprojects/groups",
+        "Microsoft.Migrate/assessmentprojects/groups/assessments",
         "Microsoft.Migrate/AssessmentProjects/servercollectors",
         "Microsoft.Migrate/AssessmentProjects/webappcollectors",
         "Microsoft.Migrate/AssessmentProjects/sqlcollectors",
@@ -85,7 +87,15 @@
         "Microsoft.OffAzure/MasterSites/SqlSites",
         "Microsoft.OffAzure/MasterSites/SqlSites/DiscoverySiteDataSources",
         "Microsoft.OffAzure/MasterSites/WebAppSites",
-        "Microsoft.OffAzure/MasterSites/WebAppSites/DiscoverySiteDataSources"
+        "Microsoft.OffAzure/MasterSites/WebAppSites/DiscoverySiteDataSources",
+        "Microsoft.OperationsManagement/solutions",
+        "Microsoft.OperationalInsights/workspaces",
+        "Microsoft.Web/sites",
+        "Microsoft.Web/serverfarms",
+        "Microsoft.Relay/namespaces",
+        "Microsoft.Relay/namespaces/hybridConnections",
+        "Microsoft.Relay/namespaces/hybridConnections/authorizationRules",
+        "Microsoft.Web/sites/hybridConnectionNamespaces/relays"
       ]
     }
   }
