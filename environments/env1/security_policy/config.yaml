@@ -1,4 +1,4 @@
 title: SQL Migration
 description: SQL Migration
 vendor: azure # aws|azure|google|alibaba-cloud
-#custom_policy_tags: azure-vm.allow_d8s_v3
+custom_policy_tags: azure-vm.allow_d2as_v4
