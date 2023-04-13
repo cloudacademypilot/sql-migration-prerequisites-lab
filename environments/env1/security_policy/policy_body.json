@@ -72,12 +72,20 @@
         "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
         "Microsoft.Migrate/MigrateProjects",
         "Microsoft.Migrate/MigrateProjects/Solutions",
-        "Microsoft.Migrate/assessmentprojects",
+        "Microsoft.Migrate/AssessmentProjects",
+        "Microsoft.Migrate/AssessmentProjects/servercollectors",
+        "Microsoft.Migrate/AssessmentProjects/webappcollectors",
+        "Microsoft.Migrate/AssessmentProjects/sqlcollectors",
         "Microsoft.KeyVault/vaults",
         "Microsoft.OffAzure/ServerSites",
+        "Microsoft.OffAzure/ServerSites/machines",
+        "Microsoft.OffAzure/ServerSites/providers",
+        "Microsoft.OffAzure/ServerSites/providers/links",
         "Microsoft.OffAzure/MasterSites",
         "Microsoft.OffAzure/MasterSites/SqlSites",
-        "Microsoft.OffAzure/MasterSites/WebAppSites"
+        "Microsoft.OffAzure/MasterSites/SqlSites/DiscoverySiteDataSources",
+        "Microsoft.OffAzure/MasterSites/WebAppSites",
+        "Microsoft.OffAzure/MasterSites/WebAppSites/DiscoverySiteDataSources"
       ]
     }
   }
