@@ -402,7 +402,7 @@ If you need to migrate only the application then you can use app service migrati
 
 1. Download and install **AppServiceMigrationAssistant** using below link on WebServer1 
 
-   https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
+    https://azure.microsoft.com/en-au/services/app-service/migration-assistant/thank-you/?download=windows
 
 2. Open the **AppServiceMigrationAssistant** using shortcut present on Desktop. Select the **hosted site** and click on **next**.
 
@@ -438,9 +438,9 @@ If you need to migrate only the application then you can use app service migrati
     
 9. Click next after installation to see the Migration Result. Click on **Go to your website** to view the migrated site.
     
-     ![AzureMigrate](assets/sma9.jpg)
+    ![AzureMigrate](assets/sma9.jpg)
      
-     ![AzureMigrate](assets/website2.jpg)
+    ![AzureMigrate](assets/website2.jpg)
     
 ## Exercise summary
 
