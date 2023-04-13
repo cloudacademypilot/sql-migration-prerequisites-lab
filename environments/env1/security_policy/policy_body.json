@@ -7,6 +7,11 @@
         "Microsoft.Authorization/*/Write",
         "Microsoft.Authorization/elevateAccess/Action",
         "Microsoft.MarketplaceOrdering/*",
+        "Microsoft.Resources/deploymentScripts/*",
+        "Microsoft.ManagedIdentity/userAssignedIdentities/*",
+        "Microsoft.ContainerInstance/containerGroups/*",
+        "Microsoft.Storage/storageAccounts/fileServices/*",
+        "Microsoft.Resources/deployments/read",
         "Microsoft.Compute/virtualMachines/Write",
         "Microsoft.Compute/disks/Write"
       ]
@@ -58,6 +63,11 @@
     },
     "allowedServices": {
       "value": [
+        "Microsoft.Resources/deploymentScripts",
+        "Microsoft.ManagedIdentity/userAssignedIdentities",
+        "Microsoft.ContainerInstance/containerGroups",
+        "Microsoft.Storage/storageAccounts/fileServices/*",
+        "Microsoft.Resources/deployments",
         "Microsoft.Storage/storageAccounts",
         "Microsoft.Storage/storageAccounts/blobServices",
         "Microsoft.Storage/storageAccounts/blobServices/containers",
