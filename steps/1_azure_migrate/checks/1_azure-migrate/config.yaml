@@ -3,4 +3,4 @@ internal_name: Completed Azure Migrate
 vendor: azure
 runtime: python3.8
 memory: 128
-timeout: 10
+timeout: 20
