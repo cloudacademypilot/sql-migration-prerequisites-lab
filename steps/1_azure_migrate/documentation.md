@@ -66,7 +66,7 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
 2.	Open **web.config** in notepad to edit.
 
-3.	Replace the **XX.XX.XXX.XXX** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
+3.	Replace the **Source3yoftbswj** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
 
     ![AzureMigrate](assets/image82.png)
 
