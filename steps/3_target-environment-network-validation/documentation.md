@@ -71,21 +71,8 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
 ## Exercise 3: Preparing the Input excel file
 
-1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
-
-    ![DMA Assessment](assets/25.jpg)
-
-2. Click **Sign in** and sign into **MS office** using your lab credentials if you're not signed in.
-
-    ![DMA Assessment](assets/21.jpg)
-
-3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
-
-    ![DMA Assessment](assets/22.jpg)
-    
-    ![DMA Assessment](assets/23.jpg)
-
-4. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
+1. We need **Excel** to edit the input excel file. Since **CloudAcademy** lab credentials don't have license to MS office. Please use your Microsoft account to use MS office for editing.
+2. Go to ```C:\Users\sqladmin``` path and select the ```Network_Validation.xlsx``` and copy-paste the file to your local machine like you did in the previous step. And open it from your local machine. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
 
     ![DMA Assessment](assets/24.jpg)
 
@@ -148,14 +135,10 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/43.jpg)
 
-10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
+10. Once the input file is prepared, Press ```Ctrl + S``` to save the excel file. And Close the file.
 
-    ![DMA Assessment](assets/45.jpg)
-
-11. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
-
-    ![DMA Assessment](assets/46.jpg)
-    
+11. Now select the updated ```Network_Validation.xlsx``` file from your local and right-click on the mouse and select Copy or press Ctrl + C. Navigate to DMA virtual machine and go to C:\Users\sqladmin path and right-click on the mouse and select Paste or press Ctrl + V to replace the existing file. Please make sure that the file name should not be changed.
+   
     ![DMA Assessment](assets/47.jpg)
 
 ## Exercise 4: Runing DMA assessment powershell script
