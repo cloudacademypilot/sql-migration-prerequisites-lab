@@ -216,7 +216,7 @@
         "deploymentScriptdentityName": "[concat('caldeployer-',resourceGroup().name)]",
         "deploymentScriptRoleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('readerRoleDefinitionId'))]",
         "deploymentScriptRoleAssignmentName": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('deploymentScriptdentityName')), variables('deploymentScriptRoleDefinitionId'), resourceGroup().id)]",
-        "studentRoleDefinitionName": "774c2bbc-5a03-43d4-a05b-cd59f1d6525a",
+        "studentRoleDefinitionName": "35016dfd-ade0-4d50-95be-45c178cf0637",
         "studentRoleAssignmentId": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('deploymentScriptdentityName')), variables('deploymentScriptRoleDefinitionId'), resourceGroup().id, parameters('utcValue'))]"
 
     },
