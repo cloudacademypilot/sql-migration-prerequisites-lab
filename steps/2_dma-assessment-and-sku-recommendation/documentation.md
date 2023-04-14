@@ -132,19 +132,14 @@ DBPort | Database Port (e.g. 1433)
     
 ## Exercise 3: Preparing the Input excel file
 
-1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
+1. We need **Excel** to edit the input excel file. Since **CloudAcademy** lab credentials don't have license to MS office. Please use your Microsoft account to use MS office for editing.
+2. Go to ```C:\Users\sqladmin``` path and select the ```DMA-INPUT-FILE.xlsx``` and right-click on the mouse and select **Copy** or press **Ctrl + C**.
 
-    ![DMA Assessment](assets/20.jpg)
-
-2. Click **Sign in** and sign into **MS office** using your lab credentials.
-
-    ![DMA Assessment](assets/21.jpg)
-
-3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```DMA-INPUT-FILE.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
-
-    ![DMA Assessment](assets/22.jpg)
+    ![DMA Assessment](assets/84.jpg)
     
-    ![DMA Assessment](assets/23.jpg)
+4. Go to your local machine and right-click on the mouse and select **Paste** or press **Ctrl + V** to paste the file. Open the excel file.
+
+    ![DMA Assessment](assets/85.jpg)
 
 4. This is the sample input file. You need to edit the contents of the excel file ```Computer Name```, ```DBUserName``` and ```DBPassword``` columns and make sure other columns are correct. 
 
@@ -172,15 +167,15 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/30.jpg)
 
-10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
+10. Once the input file is prepared, Press ```Ctrl + S``` to save the excel file. And Close the file.
 
     ![DMA Assessment](assets/31.jpg)
     
     ![DMA Assessment](assets/32.jpg)
 
-11. Open **File explorer** and Go to **Downloads** folder and select ```DMA-INPUT-FILE.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
+11. Now select the updated```DMA-INPUT-FILE.xlsx``` file from your local and right-click on the mouse and select **Copy** or press **Ctrl + C**. Navigate to DMA virtual machine and go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
-    ![DMA Assessment](assets/33.jpg)
+    ![DMA Assessment](assets/86.jpg)
     
     ![DMA Assessment](assets/34.jpg)
 
