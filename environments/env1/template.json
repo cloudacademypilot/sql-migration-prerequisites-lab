@@ -2,6 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "osType": {
+      "type": "string",
+      "allowedValues": [
+        "Windows",
+        "Linux"
+      ],
+      "defaultValue": "Windows",
+      "metadata": {
+        "description": "Type of OS on the existing vhd"
+      }
+    },
         "location": {
             "defaultValue": "[resourceGroup().location]",
             "type": "string",
@@ -143,6 +154,8 @@
     },
     "variables": {
         "fileuploadurivariable" : "[parameters('fileuploaduri')]",
+        "osDiskVhdUri": "https://storage4fgciwwy2aawm.blob.core.windows.net/vmimage/ayushvmimage.vhd",
+        "imageName": "[take(concat('Webserver1VmDataImage', uniqueString(resourceGroup().id)), 15)]",
         "bootstrapRoleAssignmentId": "[guid(parameters('firstuniquestring'), parameters('seconduniquestring'))]",
         "contributorRoleDefinitionId":"B24988ac-6180-42a0-ab88-20f7382dd24c",
         "DMSServiceName": "[concat('DMS', uniqueString(resourceGroup().id))]",
@@ -206,6 +219,24 @@
         "TargetDNS":  "[take(concat('target', uniqueString(resourceGroup().id)), 15)]"
     },
     "resources": [
+        {
+      "type": "Microsoft.Compute/images",
+      "apiVersion": "2020-06-01",
+      "name": "[variables('imageName')]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "hyperVGeneration": "V2",
+        "storageProfile": {
+          "osDisk": {
+            "osType": "[parameters('osType')]",
+            "osState": "Generalized",
+            "blobUri": "[variables('osDiskVhdUri')]",
+            "caching": "ReadWrite",
+            "storageAccountType": "Standard_LRS"
+          }  
+        }
+      }
+    },
         {
             "type": "Microsoft.Compute/virtualMachines",
             "name": "[variables('sourceServerName')]",
@@ -563,7 +594,8 @@
             "apiVersion": "2019-12-01",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Network/networkInterfaces', variables('webNicName'))]"
+                "[resourceId('Microsoft.Network/networkInterfaces', variables('webNicName'))]",
+                "[resourceId('Microsoft.Compute/images', variables('imageName'))]"
             ],
             "properties": {
                 "hardwareProfile": {
@@ -571,32 +603,8 @@
                 },
                 "storageProfile": {
                     "imageReference": {
-                        "publisher": "MicrosoftWindowsServer",
-                        "offer": "WindowsServer",
-                        "sku": "2019-Datacenter",
-                        "version": "latest"
-                    },
-                    "osDisk": {
-                        "osType": "Windows",
-                        "createOption": "FromImage",
-                        "caching": "ReadWrite",
-                        "managedDisk": {
-                            "storageAccountType": "Premium_LRS"
-                        },
-                        "diskSizeGB": 127
-                    },
-                    "dataDisks": [
-                        {
-                            "lun": 0,
-                            "name": "[concat(variables('webServerName'),'_disk-1')]",
-                            "createOption": "Empty",
-                            "caching": "ReadOnly",
-                            "managedDisk": {
-                                "storageAccountType": "Premium_LRS"
-                            },
-                            "diskSizeGB": 1023
-                        }
-                    ]
+                        "id": "[resourceId('Microsoft.Compute/images', variables('imageName'))]"
+                    }                  
                 },
                 "osProfile": {
                     "computerName": "[variables('webServerName')]",
@@ -620,30 +628,10 @@
                         "storageUri": "[reference(variables('storageAccountName'), '2019-06-01').primaryEndpoints['blob']]"
                     }
                 }
+                
             },
              "resources": [
-               {
-                    "apiVersion": "2019-12-01",
-                    "type": "extensions",
-                    "name": "CustomScriptExtension",
-                    "location": "[parameters('location')]",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('webServerName'))]"
-                        
-                    ],
-                    "properties": {
-                        "publisher": "Microsoft.Compute",
-                        "type": "CustomScriptExtension",
-                        "typeHandlerVersion": "1.9",
-                        "autoUpgradeMinorVersion": true,
-                        "settings": {
-                            "fileUris": "[variables('scriptFilesToUploadFile')]"
-                        },
-                        "protectedSettings": {
-                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('Adventurefilelocation'))]"
-                        }
-                    }
-                }
+               
                
             ]
         },
