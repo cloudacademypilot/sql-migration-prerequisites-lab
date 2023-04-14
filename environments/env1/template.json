@@ -615,7 +615,7 @@
                         "managedDisk": { "storageAccountType": "[parameters('osDiskType')]" }
                     },
                     "imageReference": { "id": "[variables('image')]" }
-                },,
+                },
                 "osProfile": {
                     "computerName": "[variables('webServerName')]",
                     "adminUsername": "[parameters('targetWindowsAdminUserName')]",
