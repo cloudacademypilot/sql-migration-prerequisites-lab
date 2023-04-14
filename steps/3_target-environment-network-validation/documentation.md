@@ -135,9 +135,9 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/43.jpg)
 
-10. Once the input file is prepared, Press ```Ctrl + S``` to save the excel file. And Close the file.
+10. Once the input file is prepared, Press **Ctrl + S** to save the excel file. And Close the file.
 
-11. Now select the updated ```Network_Validation.xlsx``` file from your local and right-click on the mouse and select Copy or press Ctrl + C. Navigate to DMA virtual machine and go to C:\Users\sqladmin path and right-click on the mouse and select Paste or press Ctrl + V to replace the existing file. Please make sure that the file name should not be changed.
+11. Now select the updated ```Network_Validation.xlsx``` file from your local and right-click on the mouse and select **Copy** or press **Ctrl + C**. Navigate to DMA virtual machine and go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
    
     ![DMA Assessment](assets/47.jpg)
 
