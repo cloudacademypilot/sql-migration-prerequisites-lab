@@ -364,7 +364,7 @@ If you need to migrate only the application then you can use app service migrati
     ![AzureMigrate](assets/sma4_1.jpg)
 
 6. Select Subscription, use existing Resource group, and Provide site name as ```adventureweb```.
-   > Note: If you get error message that site name is already taken then use an unique name and proceed.
+   > Note: If you get an error message that site name is already taken then use an unique name and proceed.
     
     
     ![AzureMigrate](assets/sma5.jpg)
