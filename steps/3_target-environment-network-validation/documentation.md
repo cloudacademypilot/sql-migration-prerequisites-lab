@@ -53,7 +53,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/13.jpg)
 
-## Exercise 2: Copying powershell scripts and input excel file for DMA assessment
+## Exercise 2: Copying powershell scripts and input excel file for basic target server network validation
 
 1. Click on **File Explorer** present in Taskbar at the bottom. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path. This folder contains ```Network_Validation.xlsx``` and ```Network_Validation.ps1``` files.
 
@@ -162,7 +162,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
 > Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.
 
-## Exercise 4: Runing DMA assessment powershell script
+## Exercise 4: Runing target server network validation powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```Network_Validation.ps1``` script and select **Run with PowerShell** to run the script.
 
