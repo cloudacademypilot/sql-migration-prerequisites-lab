@@ -77,7 +77,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/25.jpg)
 
-3. Click **Sign in** and sign into **MS office** using your lab credentials if you're not signed in.
+3. Click **Sign in** and sign into **MS office** using your Microsoft account credentials if you're not signed in.
 
     ![DMA Assessment](assets/21.jpg)
 
