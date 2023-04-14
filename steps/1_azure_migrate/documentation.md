@@ -58,8 +58,9 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
 ## Configuring Web Application
 
+A Web application(adventure) is hosted on WebServer1, where you need to modify config file for connecting to database.
 
-Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
+Connect to Webserver1 as mentioned above, then follow below steps:
 
 1.	Open ```C drive``` and open **adventure** folder.
 
