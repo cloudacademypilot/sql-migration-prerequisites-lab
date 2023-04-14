@@ -2,6 +2,29 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "imageGallery": {
+            "type": "string",
+            "defaultValue": "MSCA"
+        },
+        "imageName": {
+            "type": "string",
+            "defaultValue": "webserver_1"
+        },
+        "osDiskType": {
+            "type": "string",
+            "defaultValue": "Premium_LRS"
+        },       
+         "osType": {
+            "type": "string",
+            "allowedValues": [
+                "Windows",
+                "Linux"
+            ],
+            "defaultValue": "Windows",
+            "metadata": {
+                "description": "Type of OS on the existing vhd"
+            }
+        },
         "location": {
             "defaultValue": "[resourceGroup().location]",
             "type": "string",
@@ -211,6 +234,7 @@
         },
         "SourceDNS":  "[take(concat('source', uniqueString(resourceGroup().id)), 15)]",
         "TargetDNS":  "[take(concat('target', uniqueString(resourceGroup().id)), 15)]",
+        "image": "[concat('/subscriptions/c4fd644c-22da-4e2e-8c6c-86dfa6a28964/resourceGroups/MSCA/providers/Microsoft.Compute/galleries/',parameters('imageGallery'),'/images/',parameters('imageName'))]",
         "readerRoleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
         "deploymentScriptName": "lab-deployer",
         "deploymentScriptdentityName": "[concat('caldeployer-',resourceGroup().name)]",
@@ -585,34 +609,13 @@
                     "vmSize": "[parameters('vmSize')]"
                 },
                 "storageProfile": {
-                    "imageReference": {
-                        "publisher": "MicrosoftWindowsServer",
-                        "offer": "WindowsServer",
-                        "sku": "2019-Datacenter",
-                        "version": "latest"
-                    },
                     "osDisk": {
-                        "osType": "Windows",
-                        "createOption": "FromImage",
-                        "caching": "ReadWrite",
-                        "managedDisk": {
-                            "storageAccountType": "Premium_LRS"
-                        },
-                        "diskSizeGB": 127
+                        "osType": "[parameters('osType')]",
+                        "createOption": "fromImage",
+                        "managedDisk": { "storageAccountType": "[parameters('osDiskType')]" }
                     },
-                    "dataDisks": [
-                        {
-                            "lun": 0,
-                            "name": "[concat(variables('webServerName'),'_disk-1')]",
-                            "createOption": "Empty",
-                            "caching": "ReadOnly",
-                            "managedDisk": {
-                                "storageAccountType": "Premium_LRS"
-                            },
-                            "diskSizeGB": 1023
-                        }
-                    ]
-                },
+                    "imageReference": { "id": "[variables('image')]" }
+                },,
                 "osProfile": {
                     "computerName": "[variables('webServerName')]",
                     "adminUsername": "[parameters('targetWindowsAdminUserName')]",
@@ -637,29 +640,6 @@
                 }
             },
              "resources": [
-               {
-                    "apiVersion": "2019-12-01",
-                    "type": "extensions",
-                    "name": "CustomScriptExtension",
-                    "location": "[parameters('location')]",
-                    "dependsOn": [
-                        "[resourceId('Microsoft.Compute/virtualMachines/', variables('webServerName'))]"
-                        
-                    ],
-                    "properties": {
-                        "publisher": "Microsoft.Compute",
-                        "type": "CustomScriptExtension",
-                        "typeHandlerVersion": "1.9",
-                        "autoUpgradeMinorVersion": true,
-                        "settings": {
-                            "fileUris": "[variables('scriptFilesToUploadFile')]"
-                        },
-                        "protectedSettings": {
-                            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', './', variables('Adventurefilelocation'))]"
-                        }
-                    }
-                }
-               
             ]
         },
         {
