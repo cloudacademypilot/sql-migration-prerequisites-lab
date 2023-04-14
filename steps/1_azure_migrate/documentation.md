@@ -56,55 +56,17 @@ The Adventure application comprises 3 VMs hosted in Azure:
 
      ![AzureMigrate](assets/Iphostname.jpg)
 
-## Hosting Web Application
+## Configuring Web Application
 
-### IIS Configuration
+A Web application(adventure) is hosted on WebServer1, where you need to modify config file for connecting to database.
 
-Before hosting any site on the WebServer(IIS), We need to activate the **server** role for the ```IIS``` and ```ASP.NET 4.7```.
+Connect to Webserver1 as mentioned above, then follow below steps:
 
-Connect to **Webserver1** as mentioned above and follow below steps :
+1.	Open ```C drive``` and open **adventure** folder.
 
-1. Inside server, Open **Server Manager** and click on **Add roles and feature**.
+2.	Open **web.config** in notepad to edit.
 
-    ![AzureMigrate](assets/image76.png)
-
-2. Go to Server Roles by clicking on **Next** button.
-
-3. Search for **WebServer (IIS)** and check the checkbox. Use **Add Features** button to add the feature.
-
-    ![AzureMigrate](assets/image77.png)
-
-4.	Click on **next** and then **install**.
-
-    ![AzureMigrate](assets/image78.png)
-    
-    ![AzureMigrate](assets/image79.png)
-    
-5.	Reopen **Add Roles and Feature Wizard** by clicking on **Add roles and feature**. 
-
-6.	Go to server role and Check the **ASP.NET 4.7** check box.
-
-    ![AzureMigrate](assets/image80.png)
-
-7.	Click on **next** and then **install**.
-
-    ![AzureMigrate](assets/image81.png)
-
-8.	Close the wizard.
-
-> Note: VM Restart is not required.
-
-### Hosting Application
-
-Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will publish the website over the IIS.
-
-1.	Open ```C drive``` and extract the **adventure.zip** file to the C Drive (Remove adventure from the path).
-
-   ![AzureMigrate](assets/image81_1.png)
-
-2.	Open the extracted folder and open **web.config** in notepad to edit.
-
-3.	Replace the **XX.XX.XXX.XXX** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
+3.	Replace the **Source3yoftbswj** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
 
     ![AzureMigrate](assets/image82.png)
 
@@ -114,26 +76,7 @@ Now we have activated the Server Role for the IIS and ASP.NET 4.7. Next, we will
 
 5.	This will open the **IIS Manager**.
 
-6.	First we will delete the default website hosted using Port number 80 then host our website. Right click on the **Default Web Site** and remove.
-
-    ![AzureMigrate](assets/image83_1.jpg)
-
-7.	Right click on **Sites** and select **Add Website**.
-
-    ![AzureMigrate](assets/image84.png)
-
-8.	Provide the site name as ```adventure```.
-
-9.	Select the **Physical Path** as ```C:/adventure``` and use Port number ```80```.
-
-    ![AzureMigrate](assets/image85.png)
-
-10. Add default document as **home.aspx**.
-
-    ![AzureMigrate](assets/image86_1.jpg)
-    ![AzureMigrate](assets/image86.png)
-
-11.	Now Browse the application and check data.
+6.	Now Browse the application and check data.
 
      ![AzureMigrate](assets/image87.jpg)
      ![AzureMigrate](assets/website1.jpg)
@@ -421,7 +364,9 @@ If you need to migrate only the application then you can use app service migrati
     ![AzureMigrate](assets/sma4_1.jpg)
 
 6. Select Subscription, use existing Resource group, and Provide site name as ```adventureweb```.
-
+   > Note: If you get an error message that site name is already taken then use an unique name and proceed.
+    
+    
     ![AzureMigrate](assets/sma5.jpg)
 
 7. Select **Create new** in App service plan and no other changes. Click on **Migrate**.

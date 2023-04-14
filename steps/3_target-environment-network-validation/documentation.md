@@ -53,7 +53,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/13.jpg)
 
-## Exercise 2: Copying powershell scripts and input excel file for DMA assessment
+## Exercise 2: Copying powershell scripts and input excel file for basic target server network validation
 
 1. Click on **File Explorer** present in Taskbar at the bottom. Go to ```C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.10.15\Downloads\0``` path. This folder contains ```Network_Validation.xlsx``` and ```Network_Validation.ps1``` files.
 
@@ -71,31 +71,33 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
 ## Exercise 3: Preparing the Input excel file
 
-1. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
+1. We need **Excel** to edit the input excel file. Since **CloudAcademy** lab credentials don't have license to MS office. Please use your Microsoft account to use MS office for editing.
+
+2. Search for ```Office``` in the **Search bar** at the bottom and click **Open**.
 
     ![DMA Assessment](assets/25.jpg)
 
-2. Click **Sign in** and sign into **MS office** using your lab credentials if you're not signed in.
+3. Click **Sign in** and sign into **MS office** using your Microsoft account credentials if you're not signed in. (You have already signed in in the previous lab step)
 
     ![DMA Assessment](assets/21.jpg)
 
-3. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
+4. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
 
     ![DMA Assessment](assets/22.jpg)
     
-    ![DMA Assessment](assets/23.jpg)
+    ![DMA Assessment](assets/23.jpg) 
 
-4. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
+5. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
 
     ![DMA Assessment](assets/24.jpg)
 
-5. Open **Nslookup** worksheet. Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **DNS name** and Paste it in the field **target server dns name**.
+6. Open **Nslookup** worksheet. Go to **Azure Portal** opened in your local machine and open the **Resource group**. Open the **Virtual machine** starting with ```Target{*}```. Copy the **DNS name** and Paste it in the field **target server dns name**.
 
     ![DMA Assessment](assets/26.jpg) 
     
     ![DMA Assessment](assets/27.jpg)
 
-6. Open **Network_Diagnostic** worksheet. 
+7. Open **Network_Diagnostic** worksheet. 
 
     ![DMA Assessment](assets/28.jpg) 
     
@@ -136,29 +138,31 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/40.jpg)
     
-7. Open **Infra_validation** worksheet. Copy-Paste the **Resource group name**, **Target VM name**, **Tenant ID** and **Subscription ID** you copied earlier into the respective fields.
+8. Open **Infra_validation** worksheet. Copy-Paste the **Resource group name**, **Target VM name**, **Tenant ID** and **Subscription ID** you copied earlier into the respective fields.
 
     ![DMA Assessment](assets/41.jpg)
     
-8. Open **Windows_firewall** worksheet. Keep the values default.
+9. Open **Windows_firewall** worksheet. Keep the values default.
 
     ![DMA Assessment](assets/42.jpg)
 
-9. Open **Test-Connection** worksheet. Copy-Paste the **DNS name** of the Target VM into the field **target server dns name**.
+10. Open **Test-Connection** worksheet. Copy-Paste the **DNS name** of the Target VM into the field **target server dns name**.
 
     ![DMA Assessment](assets/43.jpg)
 
-10. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
+11. Once the input file is prepared, Select **File** at top-left side and then **Save As** and click **Download a copy**. 
 
     ![DMA Assessment](assets/45.jpg)
 
-11. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
+12. Open **File explorer** and Go to **Downloads** folder and select ```Network_Validation.xlsx``` file and right-click on the mouse and select **Copy** or press **Ctrl + C**. Now go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
     ![DMA Assessment](assets/46.jpg)
     
     ![DMA Assessment](assets/47.jpg)
+    
+> Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.
 
-## Exercise 4: Runing DMA assessment powershell script
+## Exercise 4: Runing target server network validation powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```Network_Validation.ps1``` script and select **Run with PowerShell** to run the script.
 

@@ -1119,10 +1119,11 @@ if($SKUNeeded.Contains($taskToPerform))
         }
 }
 
-$username = "student-1545-1760379@labscloudacademy.onmicrosoft.com"
-$password= "Ca1_xFfgb8W0"
+# to be filled with lab user credentials
+$username = "" 
+$password= ""
 az login -u $username -p $password
-$SecurePassword = ConvertTo-SecureString $password -AsPlainText -Force
+$SecurePassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credentials = New-Object System.Management.Automation.PSCredential($username, $SecurePassword)
 Login-AzAccount -Credential $credentials
 $resourceGroupNames = Get-AzResourceGroup
@@ -1149,19 +1150,6 @@ $Blob1HT = @{
 Set-AzStorageBlobContent @Blob1HT
 }
 
-$SKUNeed1 = "1", "3"
-if($SKUNeed1.Contains($taskToPerform))
-{
 
-# upload a file to the default account (inferred) access tier
-$Blob1HT = @{
-  File             = 'C:\Users\sqladmin\output\'+$namelist+',MSSQLSERVER_PerformanceAggregated_Counters.csv'
-  Container        = $ContainerName
-  Blob             = "$namelist"+",MSSQLSERVER_PerformanceAggregated_Counters.csv"
-  Context          = $Context
-  StandardBlobTier = 'Hot'
-}
-Set-AzStorageBlobContent @Blob1HT
-}
 
 timeout /t -1
