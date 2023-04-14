@@ -169,10 +169,6 @@ DBPort | Database Port (e.g. 1433)
 
 10. Once the input file is prepared, Press ```Ctrl + S``` to save the excel file. And Close the file.
 
-    ![DMA Assessment](assets/31.jpg)
-    
-    ![DMA Assessment](assets/32.jpg)
-
 11. Now select the updated```DMA-INPUT-FILE.xlsx``` file from your local and right-click on the mouse and select **Copy** or press **Ctrl + C**. Navigate to DMA virtual machine and go to ```C:\Users\sqladmin``` path and right-click on the mouse and select **Paste** or press **Ctrl + V** to replace the existing file. Please make sure that the file name should not be changed.
 
     ![DMA Assessment](assets/86.jpg)
