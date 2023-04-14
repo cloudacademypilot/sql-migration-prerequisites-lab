@@ -1119,8 +1119,9 @@ if($SKUNeeded.Contains($taskToPerform))
         }
 }
 
-$username = "student-1600-1816179@labscloudacademy.onmicrosoft.com"
-$password= "Ca1_zJAlvvsf"
+# to be filled with lab user credentials
+$username = "" 
+$password= ""
 az login -u $username -p $password
 $SecurePassword = ConvertTo-SecureString $password -AsPlainText -Force
 $credentials = New-Object System.Management.Automation.PSCredential($username, $SecurePassword)
