@@ -140,6 +140,9 @@
             },
             "defaultValue": ""
         },
+        "ResourceSecretTokenParameter": {
+            "type": "securestring"
+        },
         "utcValue": {
             "type": "string",
             "defaultValue": "[utcNow()]"
@@ -212,8 +215,10 @@
         "deploymentScriptName": "lab-deployer",
         "deploymentScriptdentityName": "[concat('caldeployer-',resourceGroup().name)]",
         "deploymentScriptRoleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('readerRoleDefinitionId'))]",
-        "deploymentScriptRoleAssignmentName": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('deploymentScriptdentityName')), variables('deploymentScriptRoleDefinitionId'), resourceGroup().id)]"
-        
+        "deploymentScriptRoleAssignmentName": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('deploymentScriptdentityName')), variables('deploymentScriptRoleDefinitionId'), resourceGroup().id)]",
+        "studentRoleDefinitionName": "774c2bbc-5a03-43d4-a05b-cd59f1d6525a",
+        "studentRoleAssignmentId": "[guid(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', variables('deploymentScriptdentityName')), variables('deploymentScriptRoleDefinitionId'), resourceGroup().id, parameters('utcValue'))]"
+
     },
     "resources": [
         {
@@ -1353,8 +1358,7 @@
             "name": "[variables('deploymentScriptName')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[variables('deploymentScriptRoleAssignmentName')]",
-                "[resourceId('Microsoft.Resources/deployments', 'VaultReference')]"
+                "[variables('deploymentScriptRoleAssignmentName')]"
             ],
             "kind": "AzureCLI",
             "identity": {
@@ -1367,87 +1371,11 @@
                 "forceUpdateTag": "[parameters('utcValue')]",
                 "azCliVersion": "2.41.0",
                 "timeout": "PT10M",
-                "arguments": "[concat(subscription().subscriptionId,' ',resourceGroup().name,' ','1923afe4-b16c-4022-a656-9639c444a1e0',' ',reference(resourceId('Microsoft.Resources/deployments', 'VaultReference')).outputs.secret.value,' ','labscloudacademy.onmicrosoft.com',' ', '35016dfd-ade0-4d50-95be-45c178cf0637')]",
-                "scriptContent": "az login --service-principal -u $3 -p $4 --tenant $5;  user=$(az role assignment list --subscription $1 -g $2 --query \"[?principalType=='User'].principalId\" --output tsv); az role assignment create --assignee-object-id $user --scope /subscriptions/$1 --role $6 --assignee-principal-type User; echo '{\"Finished\": \"True\"}' > $AZ_SCRIPTS_OUTPUT_PATH",
+                "arguments": "[concat(subscription().subscriptionId,' ',resourceGroup().name,' ',variables('studentRoleDefinitionName'),' ',variables('studentRoleAssignmentId'),' ',parameters('ResourceSecretTokenParameter'))]",
+                "scriptContent": "echo \"arg1 is: $1\"; echo \"arg2 is: $2\"; echo \"arg3 is: $3\"; echo \"arg4 is: $4\"; student=\"\"; while [ -z $student ]; do echo \"searching for student\"; echo Running az role assignment list --subscription $1 --resource-group $2 --query \"[? contains(roleDefinitionName,'cal-role-')].principalId\" -o tsv; student=$(az role assignment list --subscription $1 --resource-group $2 --query \"[? contains(roleDefinitionName,'cal-role-')].principalId\" -o tsv); done; echo \"Found student/principalName: $student\"; echo Running curl -XPUT -H \"Content-Type: application/json\" -H \"Authorization: Bearer token\" https://management.azure.com/subscriptions/$1/providers/Microsoft.Authorization/roleAssignments/$4?api-version=2020-04-01-preview -d {\"properties\": {\"roleDefinitionId\": \"/subscriptions/$1/providers/Microsoft.Authorization/roleDefinitions/$3\", \"principalId\": \"$student\", \"principalType\": \"User\", \"description\": \"sqlprereqrole\"}}; curl -XPUT -H \"Content-Type: application/json\" -H \"Authorization: Bearer $5\" https://management.azure.com/subscriptions/$1/providers/Microsoft.Authorization/roleAssignments/$4?api-version=2020-04-01-preview -d \"{\\\"properties\\\": {\\\"roleDefinitionId\\\": \\\"/subscriptions/$1/providers/Microsoft.Authorization/roleDefinitions/$3\\\", \\\"principalId\\\": \\\"$student\\\", \\\"principalType\\\": \\\"User\\\", \\\"description\\\": \\\"sqlprereqrole\\\"}}\"; echo '{\"Finished\": \"True\"}' > $AZ_SCRIPTS_OUTPUT_PATH",
                 "cleanupPreference": "Always",
                 "retentionInterval": "PT1H"
             }
-        },
-        {
-          "name": "VaultReference",
-          "type": "Microsoft.Resources/deployments",
-          "apiVersion": "2021-04-01",
-          "properties": {
-            "expressionEvaluationOptions": {
-              "scope": "inner"
-            },
-            "mode": "Incremental",
-            "parameters": {},
-            "template": {
-              "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-              "contentVersion": "1.0.0.0",
-              "parameters": {
-                "vaultName": {
-                  "type": "string",
-                  "defaultValue": "ca-lab-vault",
-                  "metadata": {
-                    "description": "The name of the key vault that contains the secret."
-                  }
-                },
-                "secretName": {
-                  "type": "string",
-                  "defaultValue": "pb-secret",
-                  "metadata": {
-                    "description": "The name of the secret."
-                  }
-                },
-                "vaultResourceGroupName": {
-                  "type": "string",
-                  "defaultValue": "ca-labs-store",
-                  "metadata": {
-                    "description": "The name of the resource group that contains the key vault."
-                  }
-                },
-                "vaultSubscription": {
-                  "type": "string",
-                  "defaultValue": "c4fd644c-22da-4e2e-8c6c-86dfa6a28964",
-                  "metadata": {
-                    "description": "The name of the subscription that contains the key vault."
-                  }
-                }
-              },
-              "resources": [
-                {
-                  "type": "Microsoft.Resources/deployments",
-                  "apiVersion": "2021-04-01",
-                  "name": "secretlinkedTemplate",
-                  "properties": {
-                    "mode": "Incremental",
-                    "parameters": {
-                      "secret": {
-                        "reference": {
-                          "keyVault": {
-                            "id": "[resourceId(parameters('vaultSubscription'), parameters('vaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
-                          },
-                          "secretName": "[parameters('secretName')]"
-                        }
-                      }
-                    },
-                    "templateLink": {
-                      "uri": "https://raw.githubusercontent.com/cloudacademy/azure-lab-artifacts/master/azure-key-vault/azuredeploy.json",
-                      "contentVersion": "1.0.0.0"
-                    }
-                  }
-                }
-              ],
-              "outputs": {
-                "secret": {
-                  "type": "string",
-                  "value": "[reference('secretlinkedTemplate').outputs.secret.value]"
-                }
-              }
-            }
-          }
         }
     ]
 }
