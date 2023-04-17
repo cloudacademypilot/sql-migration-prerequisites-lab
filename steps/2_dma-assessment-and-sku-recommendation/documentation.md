@@ -218,15 +218,15 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/41.jpg)
 
-    At the end of script Pop up will appear where you need to enter the username and Password. This step is required only for the validation of         completion of script.
-    
-    ![DMA Assessment](assets/cred1.jpg)
-    ![DMA Assessment](assets/cred2.jpg)
-
-
 7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment result is available as shown below.
 
     ![DMA Assessment](assets/43.jpg)
+    
+    At the end of script Pop up will appear where you need to enter the lab credentials (Lab username and password). This process is required only for the validation of step completion in Cloud Academy lab.
+    
+    ![DMA Assessment](assets/cred1.jpg)
+    
+    ![DMA Assessment](assets/cred2.jpg)
 
 8. Go to ```C:\Users\sqladmin\output``` path and copy all the files and paste it in any other folder. You need them in next exercise.
 
