@@ -219,6 +219,9 @@ DBPort | Database Port (e.g. 1433)
     ![DMA Assessment](assets/41.jpg)
 
     At the end of script Pop up will appear where you need to enter the username and Password. This step is required only for the validation of         completion of script.
+    
+    ![DMA Assessment](assets/cred1.jpg)
+    ![DMA Assessment](assets/cred2.jpg)
 
 
 7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment result is available as shown below.
