@@ -140,21 +140,21 @@
             "metadata": {
                 "description": "The URI of script file to upload blob container"
             },
-            "defaultValue": "https://raw.githubusercontent.com/CSLabsInternal/sql-migration-prerequisites-lab/main/environments/env1/UploadBlobFile.ps1"
+            "defaultValue": "https://raw.githubusercontent.com/cloudacademypilot/sql-migration-prerequisites-lab/main/environments/env1/UploadBlobFile.ps1"
         },
         "bakpakuri": {
             "type": "string",
             "metadata": {
                 "description": "The URI of bakpakfile"
             },
-            "defaultValue": "https://raw.githubusercontent.com/CSLabsInternal/sql-migration-prerequisites-lab/main/environments/env1/UploadBlobFile.ps1"
+            "defaultValue": "https://raw.githubusercontent.com/cloudacademypilot/sql-migration-prerequisites-lab/main/environments/env1/UploadBlobFile.ps1"
         },
         "_artifactsLocation": {
             "type": "string",
             "metadata": {
                 "description": "The base URI where artifacts required by this template are located including a trailing '/'"
             },
-            "defaultValue": "https://raw.githubusercontent.com/CSLabsInternal/sql-migration-prerequisites-lab/main/environments/env1/"
+            "defaultValue": "https://raw.githubusercontent.com/cloudacademypilot/sql-migration-prerequisites-lab/main/environments/env1/"
         },
         "_artifactsLocationSasToken": {
             "type": "securestring",
