@@ -58,7 +58,7 @@
   },
   "parameters_values": {
     "allowedLocations": {
-      "value": ["{RGLocation}","CentralUS", "WestUS", "EastUS"]
+      "value": ["{RGLocation}","CentralUS", "WestUS", "EastUS", "eastasia", "australiaeast", "brazilsouth", "canadacentral", "westeurope", "francecentral", "germanywestcentral", "southindia", "japaneast", "koreacentral", "centralindia", "norwayeast", "southafricanorth", "swedencentral", "switzerlandnorth", "uaenorth", "ukwest"]
     },
     "allowedServices": {
       "value": [
