@@ -77,9 +77,11 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
 
     ![DMA Assessment](assets/25.jpg)
 
-3. Click **Sign in** and sign into **MS office** using your Microsoft account credentials if you're not signed in. (You have already signed in in the previous lab step)
+3. Click **Sign in** and sign into **MS office** using your Microsoft account credentials if you're not signed in. (You have already signed-in in the previous lab step)
 
     ![DMA Assessment](assets/21.jpg)
+    
+    **Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.**
 
 4. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```Network_Validation.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
 
@@ -160,8 +162,6 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/47.jpg)
     
-> Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.
-
 ## Exercise 4: Runing target server network validation powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```Network_Validation.ps1``` script and select **Run with PowerShell** to run the script.

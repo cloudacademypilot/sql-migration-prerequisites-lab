@@ -141,6 +141,8 @@ DBPort | Database Port (e.g. 1433)
 3. Click **Sign in** and sign into **MS office** using your Microsoft account credentials.
 
     ![DMA Assessment](assets/21.jpg)
+    
+    **Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.**
 
 4. Select **Excel** and then click **Upload and open...** option. Browse to ```C:\Users\sqladmin``` path and select ```DMA-INPUT-FILE.xlsx``` file and select **Open**. It will be opened in the Microsoft Edge browser.
 
@@ -152,7 +154,7 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/24.jpg)
 
-6. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace```12345``` with  ```Password@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
+6. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace ```12345``` with  ```Password@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
 
     ![DMA Assessment](assets/25.jpg)
 
@@ -186,8 +188,6 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/34.jpg)
     
-> Note: If you are not able to login with your Microsoft account credentials, Please copy-paste the file to your local machine and make the changes and again copy-paste into the virtual machine.
-
 ## Exercise 4: Runing DMA assessment powershell script
 
 1. In ```C:\Users\sqladmin``` path, right-click on ```SMF_DMAPreReqAssessCombo_V5.8.ps1``` script and select **Run with PowerShell** to run the script.
@@ -204,7 +204,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/38.jpg)
     
-> Note: .Net 4.8, .Net Core, DMA and ImportExcel PS module are required for this assessment.  
+    > Note: .Net 4.8, .Net Core, DMA and ImportExcel PS module are required for this assessment.  
 
 4. **.Net 4.8** is already available in the virtual machine. So, it will ask for your input to install **DMA**. Enter ```Y``` to download & install the DMA 5.6.
 
@@ -221,6 +221,12 @@ DBPort | Database Port (e.g. 1433)
 7. After all the requirements are installed, DMA assessment will run and it will bring up a pop up window where the DMA assessment result is available as shown below.
 
     ![DMA Assessment](assets/43.jpg)
+    
+    At the end of the script a pop up will appear where you need to enter the lab credentials (Lab username and password). This process is required only for the validation of step completion in Cloud Academy lab.
+    
+    ![DMA Assessment](assets/cred1.jpg)
+    
+    ![DMA Assessment](assets/cred2.jpg)
 
 8. Go to ```C:\Users\sqladmin\output``` path and copy all the files and paste it in any other folder. You need them in next exercise.
 
@@ -251,7 +257,7 @@ DBPort | Database Port (e.g. 1433)
 
 In the below example we put the day range as 0.
 
-   ![DMA Assessment](assets/46.jpg)
+   ![DMA Assessment](assets/46.png)
     
    - Next the console will ask Hour value (Please Provide the Data Collection duration Hours) – Here , please put any value between 0 to 23. And press enter.
 > Note : If you put the Day value as 0 , please do not put the Hour value as 0 ( It should be anything between 1-23 )
@@ -434,7 +440,7 @@ After running for a specific period of time, the process will stop executing on 
     
     ![DMA Assessment](assets/72.jpg)
 
-5. Now again go back to DMA virtual machine and perform all the instructions of **Exercise 4** again.
+5. Now again go back to DMA virtual machine and perform the instructions from **1 to 8** of **Exercise 4** again. And Copy the files to one more new folder like you did in Exercise 4. 
 
 ## Exercise 7: Comparing compatibility 
 
