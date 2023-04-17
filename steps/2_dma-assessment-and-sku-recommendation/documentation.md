@@ -154,7 +154,7 @@ DBPort | Database Port (e.g. 1433)
 
     ![DMA Assessment](assets/24.jpg)
 
-6. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace```12345``` with  ```Password@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
+6. Replace ```testuser``` with  ```sqladmin``` in **DBUserName** column and replace ```12345``` with  ```Password@123``` in **DBPassword** column. Ensure that Database User Name and Password are correct and can connect to SQL Server instance to be assessed in case of SQL Server Authentication.
 
     ![DMA Assessment](assets/25.jpg)
 
@@ -204,7 +204,7 @@ DBPort | Database Port (e.g. 1433)
     
     ![DMA Assessment](assets/38.jpg)
     
-> Note: .Net 4.8, .Net Core, DMA and ImportExcel PS module are required for this assessment.  
+    > Note: .Net 4.8, .Net Core, DMA and ImportExcel PS module are required for this assessment.  
 
 4. **.Net 4.8** is already available in the virtual machine. So, it will ask for your input to install **DMA**. Enter ```Y``` to download & install the DMA 5.6.
 
@@ -247,14 +247,14 @@ DBPort | Database Port (e.g. 1433)
 13. Upon entering ```Y``` the console will ask for two additional parameters:
    
    - Please Provide the Data Collection duration in Day/s – Here , please put any value between 0 to 15 .
-> Note : There might be a situation where user may want to run this for less than 24 hours , in that situation user should put 0.
+    > Note : There might be a situation where user may want to run this for less than 24 hours , in that situation user should put 0.
 
 In the below example we put the day range as 0.
 
    ![DMA Assessment](assets/46.png)
     
    - Next the console will ask Hour value (Please Provide the Data Collection duration Hours) – Here , please put any value between 0 to 23. And press enter.
-> Note : If you put the Day value as 0 , please do not put the Hour value as 0 ( It should be anything between 1-23 )
+    > Note : If you put the Day value as 0 , please do not put the Hour value as 0 ( It should be anything between 1-23 )
 
 In the below example we put the hour range as 1.
 
