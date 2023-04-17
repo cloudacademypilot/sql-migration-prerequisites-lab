@@ -1120,17 +1120,14 @@ if($SKUNeeded.Contains($taskToPerform))
 }
 
 # to be filled with lab user credentials
-$username = "" 
-$password= ""
-az login -u $username -p $password
-$SecurePassword = ConvertTo-SecureString $password -AsPlainText -Force
-$credentials = New-Object System.Management.Automation.PSCredential($username, $SecurePassword)
-Login-AzAccount -Credential $credentials
+
+Login-AzAccount
+Write-Host "Login successfull"
 $resourceGroupNames = Get-AzResourceGroup
 $resourceGroupName = $resourceGroupNames[0].ResourceGroupName
 $StorageAccountNames = Get-AzStorageAccount -ResourceGroupName $resourceGroupName
 $StorageAccountName = $StorageAccountNames[0].StorageAccountName
-
+Write-Host "Storage Account Name : " $StorageAccountName
 $Context = $StorageAccountNames[0].Context
 $ContainerName = 'backup'
 
@@ -1149,7 +1146,5 @@ $Blob1HT = @{
 }
 Set-AzStorageBlobContent @Blob1HT
 }
-
-
 
 timeout /t -1
