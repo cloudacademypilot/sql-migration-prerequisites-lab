@@ -1120,8 +1120,8 @@ if($SKUNeeded.Contains($taskToPerform))
 }
 
 # to be filled with lab user credentials
-
-Login-AzAccount
+az account clear
+Connect-AzAccount
 Write-Host "Login successfull"
 $resourceGroupNames = Get-AzResourceGroup
 $resourceGroupName = $resourceGroupNames[0].ResourceGroupName
