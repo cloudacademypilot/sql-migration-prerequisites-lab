@@ -17,14 +17,6 @@
     }
   ],
   "parameters": {
-    "allowedLocations": {
-      "type": "array",
-      "metadata": {
-        "description": "The list of locations that can be specified when deploying resources",
-        "strongType": "location",
-        "displayName": "Allowed locations"
-      }
-    },
     "allowedServices": {
       "type": "array",
       "metadata": {
@@ -43,12 +35,6 @@
             "field": "type",
             "in": "[parameters('allowedServices')]"
           }
-        },
-        {
-          "not": {
-            "field": "location",
-            "in": "[parameters('allowedLocations')]"
-          }
         }
       ]
     },
@@ -57,9 +43,6 @@
     }
   },
   "parameters_values": {
-    "allowedLocations": {
-      "value": ["{RGLocation}","CentralUS", "WestUS", "EastUS", "eastasia", "australiaeast", "brazilsouth", "canadacentral", "westeurope", "francecentral", "germanywestcentral", "southindia", "japaneast", "koreacentral", "centralindia", "norwayeast", "southafricanorth", "swedencentral", "switzerlandnorth", "uaenorth", "ukwest"]
-    },
     "allowedServices": {
       "value": [
         "Microsoft.Resources/deploymentScripts",
