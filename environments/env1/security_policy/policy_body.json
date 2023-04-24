@@ -17,20 +17,6 @@
     }
   ],
   "parameters": {
-    "tagName": {
-      "type": "String",
-      "metadata": {
-          "displayName": "custom_policy_tags",
-          "description": "Name of the tag"
-      }
-  },
-  "tagValue": {
-      "type": "String",
-      "metadata": {
-          "displayName": "azure-vm.allow_d8s_v3,azure-app-service.allow_premium_app_plan",
-          "description": "Value of the tag"
-      }
-  },
     "allowedServices": {
       "type": "array",
       "metadata": {
@@ -49,13 +35,7 @@
             "field": "type",
             "in": "[parameters('allowedServices')]"
           }
-        },
-            {
-              "not": {
-              "field": "[concat('tags[', parameters('tagName'), ']')]",
-              "in": "[parameters('tagValue')]"
-            }
-          } 
+        }
       ]
     },
     "then": {
