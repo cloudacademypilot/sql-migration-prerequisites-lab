@@ -6,19 +6,17 @@
         "Microsoft.Authorization/*/Delete",
         "Microsoft.Authorization/*/Write",
         "Microsoft.Authorization/elevateAccess/Action",
-        "Microsoft.MarketplaceOrdering/*"
+        "Microsoft.MarketplaceOrdering/*",
+        "Microsoft.Resources/deploymentScripts/*",
+        "Microsoft.ManagedIdentity/userAssignedIdentities/*",
+        "Microsoft.ContainerInstance/containerGroups/*",
+        "Microsoft.Storage/storageAccounts/fileServices/*",
+        "Microsoft.Compute/virtualMachines/Write",
+        "Microsoft.Compute/disks/Write"
       ]
     }
   ],
   "parameters": {
-    "allowedLocations": {
-      "type": "array",
-      "metadata": {
-        "description": "The list of locations that can be specified when deploying resources",
-        "strongType": "location",
-        "displayName": "Allowed locations"
-      }
-    },
     "allowedServices": {
       "type": "array",
       "metadata": {
@@ -37,12 +35,6 @@
             "field": "type",
             "in": "[parameters('allowedServices')]"
           }
-        },
-        {
-          "not": {
-            "field": "location",
-            "in": "[parameters('allowedLocations')]"
-          }
         }
       ]
     },
@@ -51,16 +43,52 @@
     }
   },
   "parameters_values": {
-    "allowedLocations": {
-      "value": ["{RGLocation}"]
-    },
     "allowedServices": {
       "value": [
-        "Microsoft.Storage/storageAccounts",
-        "Microsoft.Storage/storageAccounts/blobServices/containers",
         "Microsoft.Resources/deploymentScripts",
         "Microsoft.ManagedIdentity/userAssignedIdentities",
-        "Microsoft.Authorization/roleAssignments"
+        "Microsoft.ContainerInstance/containerGroups",
+        "Microsoft.Storage/storageAccounts/fileServices/*",
+        "Microsoft.Resources/deployments",
+        "Microsoft.Authorization/roleAssignments",
+        "Microsoft.Storage/storageAccounts",
+        "Microsoft.Storage/storageAccounts/blobServices",
+        "Microsoft.Storage/storageAccounts/blobServices/containers",
+        "Microsoft.Compute/virtualMachines",
+        "Microsoft.Compute/virtualMachines/extensions",
+        "Microsoft.Compute/disks",
+        "Microsoft.Network/networkInterfaces",
+        "Microsoft.Network/networkSecurityGroups",
+        "Microsoft.Network/publicIPAddresses",
+        "Microsoft.Network/virtualNetworks",
+        "Microsoft.Network/virtualNetworks/subnets",
+        "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+        "Microsoft.Migrate/MigrateProjects",
+        "Microsoft.Migrate/MigrateProjects/Solutions",
+        "Microsoft.Migrate/AssessmentProjects",
+        "Microsoft.Migrate/assessmentprojects/groups",
+        "Microsoft.Migrate/assessmentprojects/groups/assessments",
+        "Microsoft.Migrate/AssessmentProjects/servercollectors",
+        "Microsoft.Migrate/AssessmentProjects/webappcollectors",
+        "Microsoft.Migrate/AssessmentProjects/sqlcollectors",
+        "Microsoft.KeyVault/vaults",
+        "Microsoft.OffAzure/ServerSites",
+        "Microsoft.OffAzure/ServerSites/machines",
+        "Microsoft.OffAzure/ServerSites/providers",
+        "Microsoft.OffAzure/ServerSites/providers/links",
+        "Microsoft.OffAzure/MasterSites",
+        "Microsoft.OffAzure/MasterSites/SqlSites",
+        "Microsoft.OffAzure/MasterSites/SqlSites/DiscoverySiteDataSources",
+        "Microsoft.OffAzure/MasterSites/WebAppSites",
+        "Microsoft.OffAzure/MasterSites/WebAppSites/DiscoverySiteDataSources",
+        "Microsoft.OperationsManagement/solutions",
+        "Microsoft.OperationalInsights/workspaces",
+        "Microsoft.Web/sites",
+        "Microsoft.Web/serverfarms",
+        "Microsoft.Relay/namespaces",
+        "Microsoft.Relay/namespaces/hybridConnections",
+        "Microsoft.Relay/namespaces/hybridConnections/authorizationRules",
+        "Microsoft.Web/sites/hybridConnectionNamespaces/relays"
       ]
     }
   }
