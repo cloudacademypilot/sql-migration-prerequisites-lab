@@ -483,52 +483,6 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
 
       ![DMA Assessment](assets/81.jpg)
 
-## Assess an application's data access layer with Data Migration Assistant
-
-**Data Migration Assistant** enables assessing the queries identified in the application within the context of modernizing the database to Azure Data platform.
-
-1. Copy the JSON file, from your local to this DMA virtual machine, which you generated in the previous lab step.
-
-    ![DMA Assessment](assets/dmajson.jpg)
-
-2. Open **Microsoft Data Migration Assistant** from Desktop.
-
-    ![DMA Assessment](assets/opendma.jpg)
-
-3. Click on ➕ to create an assessment project. Give a project name and choose Assessment type as **Database engine**, Source server type as **SQL Server** and Target server type as **Azure SQL Database**. Click **Create**. 
-
-    ![DMA Assessment](assets/createproject.png)
-
-4. **✔️ Check database compatibility** and **✔️ Check feature parity** options should be selected. Click **Next**. 
-
-    ![DMA Assessment](assets/next.jpg)
-
-5. Select the source SQL Server instance. Copy-paste Source SQL server virtual machine name in Server name field. Choose SQL Server Authentican type. Enter **sqladmin** as username and **Password@123** as password. Check ✔️ connection properties. Click **Connect**.
-
-    ![DMA Assessment](assets/server.jpg)
-
-6. Select the server and both the databases to which the application is connecting. Click **Add**.
-
-    ![DMA Assessment](assets/database.jpg)
-
-    To facilitate data access assessment, DMA introduces the ability to include JSON files with application queries. Next, include the JSON file created earlier with the application queries.
-
-7. Select the database **SampleDatabase1** and browse to the JSON file exported from Data Access Migration Toolkit to include the queries from the application for the assessment. Similarly do it for **SampleDatabase2**.
-
-    ![DMA Assessment](assets/db1.jpg)
-    
-    ![DMA Assessment](assets/db2.jpg)
-
-8. Select **Start Assessment**.
-
-    ![DMA Assessment](assets/start.jpg)
-
-9. Review the assessment report. The generated report includes any compatibility or feature parity issues detected in the application queries as shown below.
-
-    ![DMA Assessment](assets/assessment.jpg)
-
-Now, in addition to having the database perspective of the migration, users also have a view from the application perspective.
-
 ## Summary
 
 In this lab step, you learned:
