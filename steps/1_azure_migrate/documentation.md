@@ -80,7 +80,7 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
      ![AzureMigrate](assets/image87.jpg)
      
-     ![AzureMigrate](assets/website1.jpg)
+     ![AzureMigrate](assets/website.jpg)
 
 ## Assess an application with Data Access Migration Toolkit
 
@@ -104,27 +104,25 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
 
 4. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
 
-    ![AzureMigrate](assets/website1.jpg)
+    ![AzureMigrate](assets/runcommand.jpg)
 
 5. Select the **SQL Server** dialect.
 
-    ![AzureMigrate](assets/website1.jpg)
+    ![AzureMigrate](assets/sqlserver.jpg)
 
-At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
+   At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
 
-6. Review the report for data connectivity components and for SQL queries embedded in the application code. These elements appear highlighted.
+    ![AzureMigrate](assets/report.jpg)
 
-    ![AzureMigrate](assets/website1.jpg)
+6. To assess the application's data layer, export the report in JSON format. Click on **Save**. Give a file name and choose **JSON Document** from dropdown as file type and **Save**.
 
-These queries can be analyzed through DMA for compatibility and feature parity issues based on the target SQL platform.
+    ![AzureMigrate](assets/json.jpg)
 
-7. To assess the application's data layer, export the report in JSON format.
+7. Open the JSON file. The generated file has these contents:
 
-    ![AzureMigrate](assets/website1.jpg)
+    ![AzureMigrate](assets/jsonreport.jpg)
 
-8. The generated file has these contents:
-
-    ![AzureMigrate](assets/website1.jpg)
+8. Copy this JSON file to your local machine. You will need this file in next lab step for generating DMA assessment report. 
 
 ## Create a project in Azure Migrate
 
@@ -432,7 +430,7 @@ If you need to migrate only the application then you can use app service migrati
     
     ![AzureMigrate](assets/sma9.jpg)
      
-    ![AzureMigrate](assets/website2.jpg)
+    ![AzureMigrate](assets/website.jpg)
     
 ## Exercise summary
 
