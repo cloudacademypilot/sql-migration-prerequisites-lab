@@ -84,6 +84,8 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
 ## Assess an application with Data Access Migration Toolkit
 
+Applications typically connect and persist data to a database. The data access layer of the application provides simplified access to this data. Data Migration Assistant (DMA) enables you to assess your databases and related objects. The latest version of DMA (v5.0) introduces support for analyzing database connectivity and embedded SQL queries in the application code.
+
 To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visual Studio Code extension. The latest version of this extension (v 0.2) adds support for .NET applications and T-SQL dialect.
 
 1.	Search for **Visual studio code** in Search bar at the bottom and Open it.
