@@ -82,50 +82,6 @@ Connect to Webserver1 as mentioned above, then follow below steps:
      
      ![AzureMigrate](assets/website.jpg)
 
-## Assess an application with Data Access Migration Toolkit
-
-Applications typically connect and persist data to a database. The data access layer of the application provides simplified access to this data. Data Migration Assistant (DMA) enables you to assess your databases and related objects. The latest version of DMA (v5.0) introduces support for analyzing database connectivity and embedded SQL queries in the application code.
-
-To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visual Studio Code extension. The latest version of this extension (v 0.2) adds support for .NET applications and T-SQL dialect.
-
-1.	Search for **Visual studio code** in Search bar at the bottom and Open it.
-
-    ![AzureMigrate](assets/vscode.jpg)
-
-2.	Now select on **Extensions Marketplace** on the left side and search for **Data Access Migration Toolkit** and Install it.
-
-    ![AzureMigrate](assets/extension.jpg)
-    
-    ![AzureMigrate](assets/toolkit.jpg)
-
-3.	Then click on **Explorer** and **Open Folder…** and go to C drive and select **AdventureWorks** folder.
-
-    ![AzureMigrate](assets/openfolder.jpg)
-    
-    ![AzureMigrate](assets/selectfolder.jpg)
-
-4. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
-
-    ![AzureMigrate](assets/runcommand.jpg)
-
-5. Select the **SQL Server** dialect.
-
-    ![AzureMigrate](assets/sqlserver.jpg)
-
-   At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
-
-    ![AzureMigrate](assets/report.jpg)
-
-6. To assess the application's data layer, export the report in JSON format. Click on **Save**. Give a file name and choose **JSON Document** from dropdown as file type and **Save**.
-
-    ![AzureMigrate](assets/json.jpg)
-
-7. Open the JSON file. The generated file has these contents:
-
-    ![AzureMigrate](assets/jsonreport.jpg)
-
-8. Copy this JSON file to your local machine. You will need this file in next lab step for generating DMA assessment report. 
-
 ## Create a project in Azure Migrate
 
 Set up a new project in an Azure subscription -
