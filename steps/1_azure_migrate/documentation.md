@@ -66,9 +66,9 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
 2.	Open **web.config** in notepad to edit.
 
-3.	Replace the **Source3yoftbswj** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
+3.	Replace the **Source6uo4ez7vv** in both the connection strings with the **Public IP Address or hostname** of the SourceSQLServer.
 
-    ![AzureMigrate](assets/image82.png)
+    ![AzureMigrate](assets/webconfig.jpg)
 
 4.	Open Run Window using **Ctrl + R** and enter **inetmgr** and press enter.
 
@@ -79,7 +79,52 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 6.	Now Browse the application and check data.
 
      ![AzureMigrate](assets/image87.jpg)
+     
      ![AzureMigrate](assets/website1.jpg)
+
+## Assess an application with Data Access Migration Toolkit
+
+To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visual Studio Code extension. The latest version of this extension (v 0.2) adds support for .NET applications and T-SQL dialect.
+
+1.	Search for **Visual studio code** in Search bar at the bottom and Open it.
+
+    ![AzureMigrate](assets/vscode.jpg)
+
+2.	Now select on **Extensions Marketplace** on the left side and search for **Data Access Migration Toolkit** and Install it.
+
+    ![AzureMigrate](assets/extension.jpg)
+    
+    ![AzureMigrate](assets/toolkit.jpg)
+
+3.	Then click on **Explorer** and **Open Folder…** and go to C drive and select **AdventureWorks** folder.
+
+    ![AzureMigrate](assets/openfolder.jpg)
+    
+    ![AzureMigrate](assets/selectfolder.jpg)
+
+4. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
+
+    ![AzureMigrate](assets/website1.jpg)
+
+5. Select the **SQL Server** dialect.
+
+    ![AzureMigrate](assets/website1.jpg)
+
+At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
+
+6. Review the report for data connectivity components and for SQL queries embedded in the application code. These elements appear highlighted.
+
+    ![AzureMigrate](assets/website1.jpg)
+
+These queries can be analyzed through DMA for compatibility and feature parity issues based on the target SQL platform.
+
+7. To assess the application's data layer, export the report in JSON format.
+
+    ![AzureMigrate](assets/website1.jpg)
+
+8. The generated file has these contents:
+
+    ![AzureMigrate](assets/website1.jpg)
 
 ## Create a project in Azure Migrate
 
@@ -340,6 +385,8 @@ If a customer has a clear list of servers for migration and the customer require
 After all the Assessment and Dependency visualization next you can proceed with Actual lift and shift of server using the Azure Migrate. For details please go thorugh below link :
 
 https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview
+
+## App Service Migration Assistant (ASMA) Tool
 
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
