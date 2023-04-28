@@ -483,7 +483,7 @@ Here we will compare the output of **Exercise 4**(without any compatibility issu
 
       ![DMA Assessment](assets/81.jpg)
 
-## Exercise 8: Generate DMA assessment report from JSON file
+## Assess an application's data access layer with Data Migration Assistant
 
 **Data Migration Assistant** enables assessing the queries identified in the application within the context of modernizing the database to Azure Data platform.
 
