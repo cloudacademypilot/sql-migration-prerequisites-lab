@@ -1,10 +1,12 @@
-## Assess an application with Data Access Migration Toolkit
+# Assess an application's data access layer with Data Migration Assistant
 
 Applications typically connect and persist data to a database. The data access layer of the application provides simplified access to this data. Data Migration Assistant (DMA) enables you to assess your databases and related objects. The latest version of DMA (v5.0) introduces support for analyzing database connectivity and embedded SQL queries in the application code.
 
+## Assess an application with Data Access Migration Toolkit
+
 To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visual Studio Code extension. The latest version of this extension (v 0.2) adds support for .NET applications and T-SQL dialect.
 
-1.	Search for **Visual studio code** in Search bar at the bottom and Open it.
+1.	Connect to **Webserver1** virtual machine by following the steps mentioned under heading **Steps on how to connect to virtual machines via RDP** in Azure Migrate lab step. Search for **Visual studio code** in Search bar at the bottom and Open it.
 
     ![AzureMigrate](assets/vscode.jpg)
 
@@ -40,13 +42,11 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
 
     ![AzureMigrate](assets/jsonreport.jpg)
 
-8. Copy this JSON file to your local machine. You will need this file in next lab step for generating DMA assessment report. 
-
-## Assess an application's data access layer with Data Migration Assistant
+8. Copy this JSON file to your local machine. You will need this file in next step for generating DMA assessment report. 
 
 **Data Migration Assistant** enables assessing the queries identified in the application within the context of modernizing the database to Azure Data platform.
 
-1. Copy the JSON file, from your local to this DMA virtual machine, which you generated in the previous lab step.
+1. Connect to virtual machine starting with **DMA** if you're not connected. Copy the JSON file, from your local to this DMA virtual machine, which you generated in the previous step.
 
     ![DMA Assessment](assets/dmajson.jpg)
 
