@@ -80,7 +80,7 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
      ![AzureMigrate](assets/image87.jpg)
      
-     ![AzureMigrate](assets/website.jpg)
+     ![AzureMigrate](assets/websitelocal.jpg)
 
 ## Create a project in Azure Migrate
 
