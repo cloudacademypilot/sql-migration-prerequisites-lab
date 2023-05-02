@@ -23,7 +23,8 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
     ![AzureMigrate](assets/selectfolder.jpg)
     
 4. Before generating the report you need to update the **SourceServer** name in below mentioned files 
-    
+   Replace the SourceServer1 with the Public IP Address or hostname of the SourceSQLServer.
+  
     - CSAutoParameterize.parameters.xml
     - AdventureWorks.SetParameters.xml
     - Web.config
