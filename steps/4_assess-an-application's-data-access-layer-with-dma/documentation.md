@@ -28,9 +28,9 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
     - AdventureWorks.SetParameters.xml
     - Web.config
 
-    ![AzureMigrate](assets/selectfolder.jpg)
-    ![AzureMigrate](assets/selectfolder.jpg)
-    ![AzureMigrate](assets/selectfolder.jpg)
+    ![AzureMigrate](assets/codechange1.jpg)
+    ![AzureMigrate](assets/codechange2.jpg)
+    ![AzureMigrate](assets/codechange3.jpg)
     
 5. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
 
