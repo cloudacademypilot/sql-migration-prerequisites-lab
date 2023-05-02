@@ -277,13 +277,13 @@ In this task, you will configure the Azure Migrate dependency visualization feat
     
     ![AzureMigrate](assets/dependency1.jpg)
     
-2. On the Dependencies blade, select **Configure OMS workspace**.
+2. On the Dependencies blade, select **Configure Log Analytics workspace**.
     
-    ![AzureMigrate](assets/dependency2.png)
+    ![AzureMigrate](assets/dependency2.jpg)
     
-3. Create a new **OMS workspace**. Use ```AzureMigrateWS``` as the workspace name with is a random number, lets take 98. Choose a workspace location close to your lab deployment, then select **Configure**.
+3. Create a new **Log Analytics workspace**. Use ```AzureMigrateWS``` as the workspace name with is a random number, lets take 98. Choose a workspace location close to your lab deployment, then select **Configure**.
     
-    ![AzureMigrate](assets/dependency3.png)
+    ![AzureMigrate](assets/dependency3.jpg)
     
 4. Wait for the **Log Analytics workspace** to be deployed. Once it is deployed, navigate to it, and select **Agents** under Settings on the left. Make a note of the **Workspace ID** and **Primary Key** by copying into notepad.
     
