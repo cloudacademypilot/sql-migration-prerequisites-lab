@@ -21,12 +21,22 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
     ![AzureMigrate](assets/openfolder.jpg)
     
     ![AzureMigrate](assets/selectfolder.jpg)
+    
+4. Before generating the report you need to update the **SourceServer** name in below mentioned files 
+    
+    - CSAutoParameterize.parameters.xml
+    - AdventureWorks.SetParameters.xml
+    - Web.config
 
-4. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
+    ![AzureMigrate](assets/selectfolder.jpg)
+    ![AzureMigrate](assets/selectfolder.jpg)
+    ![AzureMigrate](assets/selectfolder.jpg)
+    
+5. Press **Ctrl+Shift+P** to start the extension console and then run the **Data Access: Analyze Workspace** command.
 
     ![AzureMigrate](assets/runcommand.jpg)
 
-5. Select the **SQL Server** dialect.
+6. Select the **SQL Server** dialect.
 
     ![AzureMigrate](assets/sqlserver.jpg)
 
@@ -34,15 +44,15 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
 
     ![AzureMigrate](assets/report.jpg)
 
-6. To assess the application's data layer, export the report in JSON format. Click on **Save**. Give a file name and choose **JSON Document** from dropdown as file type and **Save**.
+7. To assess the application's data layer, export the report in JSON format. Click on **Save**. Give a file name and choose **JSON Document** from dropdown as file type and **Save**.
 
     ![AzureMigrate](assets/json.jpg)
 
-7. Open the JSON file. The generated file has these contents:
+8. Open the JSON file. The generated file has these contents:
 
     ![AzureMigrate](assets/jsonreport.jpg)
 
-8. Copy this JSON file to your local machine. You will need this file in next step for generating DMA assessment report. 
+9. Copy this JSON file to your local machine. You will need this file in next step for generating DMA assessment report. 
 
 **Data Migration Assistant** enables assessing the queries identified in the application within the context of modernizing the database to Azure Data platform.
 
