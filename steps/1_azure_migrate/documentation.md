@@ -66,9 +66,9 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 
 2.	Open **web.config** in notepad to edit.
 
-3.	Replace the **Source3yoftbswj** in the connection string with the **Public IP Address or hostname** of the SourceSQLServer.
+3.	Replace the **Source6uo4ez7vv** in both the connection strings with the **Public IP Address or hostname** of the SourceSQLServer.
 
-    ![AzureMigrate](assets/image82.png)
+    ![AzureMigrate](assets/webconfig.jpg)
 
 4.	Open Run Window using **Ctrl + R** and enter **inetmgr** and press enter.
 
@@ -79,7 +79,8 @@ Connect to Webserver1 as mentioned above, then follow below steps:
 6.	Now Browse the application and check data.
 
      ![AzureMigrate](assets/image87.jpg)
-     ![AzureMigrate](assets/website1.jpg)
+     
+     ![AzureMigrate](assets/websitelocal.jpg)
 
 ## Create a project in Azure Migrate
 
@@ -276,13 +277,13 @@ In this task, you will configure the Azure Migrate dependency visualization feat
     
     ![AzureMigrate](assets/dependency1.jpg)
     
-2. On the Dependencies blade, select **Configure OMS workspace**.
+2. On the Dependencies blade, select **Configure Log Analytics workspace**.
     
-    ![AzureMigrate](assets/dependency2.png)
+    ![AzureMigrate](assets/dependency2.jpg)
     
-3. Create a new **OMS workspace**. Use ```AzureMigrateWS``` as the workspace name with is a random number, lets take 98. Choose a workspace location close to your lab deployment, then select **Configure**.
+3. Create a new **Log Analytics workspace**. Use ```AzureMigrateWS``` as the workspace name with is a random number, lets take 98. Choose a workspace location close to your lab deployment, then select **Configure**.
     
-    ![AzureMigrate](assets/dependency3.png)
+    ![AzureMigrate](assets/dependency3.jpg)
     
 4. Wait for the **Log Analytics workspace** to be deployed. Once it is deployed, navigate to it, and select **Agents** under Settings on the left. Make a note of the **Workspace ID** and **Primary Key** by copying into notepad.
     
@@ -341,6 +342,8 @@ After all the Assessment and Dependency visualization next you can proceed with 
 
 https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview
 
+## App Service Migration Assistant (ASMA) Tool
+
 If you need to migrate only the application then you can use app service migration tool. Next excercise will go through the steps :
 
 1. Download and install **AppServiceMigrationAssistant** using below link on WebServer1 
@@ -364,8 +367,7 @@ If you need to migrate only the application then you can use app service migrati
     ![AzureMigrate](assets/sma4_1.jpg)
 
 6. Select Subscription, use existing Resource group, and Provide site name as ```adventureweb```.
-
-    > Note: If you get an error message that site name is already taken then use an unique name and proceed.
+   > Note: If you get an error message that site name is already taken then use an unique name and proceed.
     
     
     ![AzureMigrate](assets/sma5.jpg)
@@ -386,7 +388,7 @@ If you need to migrate only the application then you can use app service migrati
     
     ![AzureMigrate](assets/sma9.jpg)
      
-    ![AzureMigrate](assets/website2.jpg)
+    ![AzureMigrate](assets/website.jpg)
     
 ## Exercise summary
 
