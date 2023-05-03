@@ -89,7 +89,7 @@ This lab step is to provide the detailed procedure/step to use the Network Valid
     
     ![DMA Assessment](assets/23.jpg) 
 
-5. This is the sample input file. You need to edit the contents of the excel file and make sure the input values are correct.
+5. This is the sample input file. You need to edit the contents of the excel file and **make sure the input values are correct and not prefixed/suffixed with any special characters/whitespaces while copy-pasting to excel file**.
 
     ![DMA Assessment](assets/24.jpg)
 
