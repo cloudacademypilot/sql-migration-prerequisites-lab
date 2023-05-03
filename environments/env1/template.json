@@ -154,7 +154,7 @@
     },
     "variables": {
         "fileuploadurivariable" : "[parameters('fileuploaduri')]",
-        "osDiskVhdUri": "https://csalabsshrdstrg1.blob.core.windows.net/cloudacademy/sqlmigration/webserver_1.vhd",
+        "osDiskVhdUri": "https://storage4fgciwwy2aawm.blob.core.windows.net/vmimage/webserver_1.vhd",
         "imageName": "[take(concat('Webserver1VmDataImage', uniqueString(resourceGroup().id)), 15)]",
         "bootstrapRoleAssignmentId": "[guid(parameters('firstuniquestring'), parameters('seconduniquestring'))]",
         "contributorRoleDefinitionId":"B24988ac-6180-42a0-ab88-20f7382dd24c",
