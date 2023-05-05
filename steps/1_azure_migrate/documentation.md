@@ -377,7 +377,9 @@ If you need to migrate only the application then you can use app service migrati
     ![AzureMigrate](assets/sma6.jpg)
     
     ![AzureMigrate](assets/sma6_1.jpg)
-    
+
+    > Note : If you get an error message at **Creating site resources (step 2 of 3)** like - Conflict No available instances to satisfy this request. Please select other region in previous step while creating **App Service plan** referring above screenshot (**Change from East US to other region**).
+
 8. After Migration is completed, Select **Automatically install and complete HCM setup on this server** and download the setup using link provided and complete the installation.
 
     ![AzureMigrate](assets/sma7.jpg)
