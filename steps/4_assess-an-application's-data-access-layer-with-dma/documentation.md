@@ -41,7 +41,7 @@ To enable this assessment, use the Data Access Migration Toolkit (DAMT), a Visua
 
     ![AzureMigrate](assets/sqlserver.jpg)
 
-   At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
+    At the end of the analysis, the command produces a report of SQL connectivity commands and queries.
 
     ![AzureMigrate](assets/report.jpg)
 
